@@ -1,5 +1,7 @@
 package com.internals.halcyonhorizons.server.level.biome;
 
+import com.internals.halcyonhorizons.HalcyonHorizons;
+import com.internals.halcyonhorizons.server.config.BiomeGenerationConfig;
 import com.internals.halcyonhorizons.server.misc.VoronoiGenerator;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.world.level.levelgen.XoroshiroRandomSource;
@@ -22,6 +24,11 @@ public class HorizonsBiomeRarity {
     /**
      * Called after config reset
      */
+    public static void init() {
+        VORONOI_GENERATOR.setOffsetAmount(HalcyonHorizons.COMMON_CONFIG.skyBiomeSpacingRandomness.get());
+        biomeSize = HalcyonHorizons.COMMON_CONFIG.skyBiomeMeanWidth.get() * 0.25D;
+        seperationDistance = biomeSize + HalcyonHorizons.COMMON_CONFIG.skyBiomeMeanSeparation.get() * 0.25D;
+    }
 
     /**
      * Does the heavy lifting of finding if x and z quads should contain a rare biome.
@@ -37,8 +44,8 @@ public class HorizonsBiomeRarity {
         VORONOI_GENERATOR.setSeed(worldSeed);
         double sampleX = x / seperationDistance;
         double sampleZ = z / seperationDistance;
-        double positionOffsetX = NOISE_X.getValue(sampleX, sampleZ, false);
-        double positionOffsetZ = NOISE_Z.getValue(sampleX, sampleZ, false);
+        double positionOffsetX = HalcyonHorizons.COMMON_CONFIG.skyBiomeWidthRandomness.get() * NOISE_X.getValue(sampleX, sampleZ, false);
+        double positionOffsetZ = HalcyonHorizons.COMMON_CONFIG.skyBiomeWidthRandomness.get() * NOISE_Z.getValue(sampleX, sampleZ, false);
         VoronoiGenerator.VoronoiInfo info = VORONOI_GENERATOR.get2(sampleX + positionOffsetX, sampleZ + positionOffsetZ);
         if (info.distance() < (biomeSize / seperationDistance)) {
             return info;
@@ -56,6 +63,17 @@ public class HorizonsBiomeRarity {
     @Nullable
     public static Vec3 getRareBiomeCenter(VoronoiGenerator.VoronoiInfo voronoiInfo) {
         return voronoiInfo.cellPos().scale(seperationDistance);
+    }
+
+    /**
+     * gets the 'rarityOffset' for voroniInfo, which is essentially an internal biome ID.
+     *
+     * @param voronoiInfo the info of the sampled biome
+     * @return the rarityOffset of the info
+     */
+    @Nullable
+    public static int getRareBiomeOffsetId(VoronoiGenerator.VoronoiInfo voronoiInfo) {
+        return (int) (((voronoiInfo.hash() + 1D) * 0.5D) * (double) BiomeGenerationConfig.getBiomeCount());
     }
 
     public static boolean isQuartInRareBiome(long worldSeed, int x, int z) {

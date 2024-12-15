@@ -22,11 +22,11 @@ import java.util.function.Function;
 @Mixin(ChunkStatus.class)
 public class ChunkStatusMixin {
     @Inject(at = @At("HEAD"),
-            method = "Lnet/minecraft/world/level/chunk/ChunkStatus;generate(Ljava/util/concurrent/Executor;Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/level/chunk/ChunkGenerator;Lnet/minecraft/world/level/levelgen/structure/templatesystem/StructureTemplateManager;Lnet/minecraft/server/level/ThreadedLevelLightEngine;Ljava/util/function/Function;Ljava/util/List;)Ljava/util/concurrent/CompletableFuture;")
+            method = "generate(Ljava/util/concurrent/Executor;Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/level/chunk/ChunkGenerator;Lnet/minecraft/world/level/levelgen/structure/templatesystem/StructureTemplateManager;Lnet/minecraft/server/level/ThreadedLevelLightEngine;Ljava/util/function/Function;Ljava/util/List;)Ljava/util/concurrent/CompletableFuture;")
     private void citadel_fillFromNoise(Executor p_283276_, ServerLevel serverLevel, ChunkGenerator chunkGenerator, StructureTemplateManager p_281305_, ThreadedLevelLightEngine p_282570_, Function<ChunkAccess, CompletableFuture<Either<ChunkAccess, ChunkHolder.ChunkLoadingFailure>>> p_283114_, List<ChunkAccess> p_282723_, CallbackInfoReturnable<CompletableFuture<Either<ChunkAccess, ChunkHolder.ChunkLoadingFailure>>> cir) {
         if(chunkGenerator.getBiomeSource() instanceof MultiNoiseBiomeSourceAccessor multiNoiseBiomeSourceAccessor){
-            multiNoiseBiomeSourceAccessor.setLastSampledSeed(serverLevel.getSeed());
-            multiNoiseBiomeSourceAccessor.setLastSampledDimension(serverLevel.dimension());
+            multiNoiseBiomeSourceAccessor.halcyonHorizons$setLastSampledSeed(serverLevel.getSeed());
+            multiNoiseBiomeSourceAccessor.halcyonHorizons$setLastSampledDimension(serverLevel.dimension());
         }
     }
 }

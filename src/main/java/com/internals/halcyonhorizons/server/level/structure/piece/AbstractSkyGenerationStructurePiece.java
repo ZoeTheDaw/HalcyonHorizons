@@ -91,6 +91,7 @@ public abstract class AbstractSkyGenerationStructurePiece extends StructurePiece
                                     }
                                 }
                             }
+                            section.biomes = container;
                         }
                     }
                 }

@@ -3,6 +3,7 @@ package com.internals.halcyonhorizons.server.level.structure.piece;
 import com.internals.halcyonhorizons.server.block.HorizonsBlockRegistry;
 import com.internals.halcyonhorizons.server.level.biome.HorizonsBiomeRegistry;
 import com.internals.halcyonhorizons.server.misc.HorizonsMath;
+import com.internals.halcyonhorizons.server.misc.VoronoiGenerator;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Vec3i;
