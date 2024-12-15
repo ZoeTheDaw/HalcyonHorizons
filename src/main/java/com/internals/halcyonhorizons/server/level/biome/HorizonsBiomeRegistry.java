@@ -9,15 +9,15 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
 
 public class HorizonsBiomeRegistry {
-    public static final ResourceKey<Biome> TEST_BIOME = ResourceKey.create(Registries.BIOME,
-            new ResourceLocation(HalcyonHorizons.MODID, "test_biome"));
-
     public static final ResourceKey<Biome> AVIAN_INFIRMARY = ResourceKey.create(Registries.BIOME,
             new ResourceLocation(HalcyonHorizons.MODID, "avian_infirmary"));
 
@@ -26,7 +26,6 @@ public class HorizonsBiomeRegistry {
 
     public static void init() {
         ExpandedBiomes.addExpandedBiome(AVIAN_INFIRMARY, LevelStem.OVERWORLD);
-        ExpandedBiomes.addExpandedBiome(TEST_BIOME, LevelStem.OVERWORLD);
     }
 
     public static float getBiomeAmbientLight(Holder<Biome> value) {

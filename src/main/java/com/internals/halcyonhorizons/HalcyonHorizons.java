@@ -30,6 +30,7 @@ import org.slf4j.Logger;
 public class HalcyonHorizons {
     public static final String MODID = "halcyonhorizons";
     public static final Logger LOGGER = LogUtils.getLogger();
+    private static final ResourceLocation PACKET_NETWORK_NAME = new ResourceLocation("halcyonhorizons:main_channel");
     public static final HorizonsServerConfig COMMON_CONFIG;
     private static final ForgeConfigSpec COMMON_CONFIG_SPEC;
 
