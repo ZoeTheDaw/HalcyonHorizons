@@ -22,36 +22,35 @@ import java.util.Map;
 
 @Mixin(value = MultiNoiseBiomeSource.class, priority = -69420)
 public class MultiNoiseBiomeSourceMixin implements MultiNoiseBiomeSourceAccessor {
-    @Unique
-    private long halcyonHorizons$lastSampledWorldSeed;
+
+    private long lastSampledWorldSeed;
 
     @Unique
-    private ResourceKey<Level> halcyonHorizons$lastSampledDimension;
+    private ResourceKey<Level> lastSampledDimension;
 
     @Inject(at = @At("HEAD"),
             method = "getNoiseBiome(IIILnet/minecraft/world/level/biome/Climate$Sampler;)Lnet/minecraft/core/Holder;",
             cancellable = true
     )
     private void citadel_getNoiseBiomeCoords(int x, int y, int z, Climate.Sampler sampler, CallbackInfoReturnable<Holder<Biome>> cir) {
-        VoronoiGenerator.VoronoiInfo voronoiInfo = HorizonsBiomeRarity.getRareBiomeInfoForQuad(halcyonHorizons$lastSampledWorldSeed, x, z);
+        VoronoiGenerator.VoronoiInfo voronoiInfo = HorizonsBiomeRarity.getRareBiomeInfoForQuad(lastSampledWorldSeed, x, z);
         if(voronoiInfo != null){
             float unquantizedDepth = Climate.unquantizeCoord(sampler.sample(x, y, z).depth());
             int foundRarityOffset = HorizonsBiomeRarity.getRareBiomeOffsetId(voronoiInfo);
             for (Map.Entry<ResourceKey<Biome>, BiomeGenerationNoiseCondition> condition : BiomeGenerationConfig.BIOMES.entrySet()) {
-                if (foundRarityOffset == condition.getValue().getRarityOffset() && condition.getValue().test(x, y, z, unquantizedDepth, sampler, halcyonHorizons$lastSampledDimension, voronoiInfo)) {
-                    cir.setReturnValue(((BiomeSourceAccessor)this).halcyonHorizons$getResourceKeyMap().get(condition.getKey()));
+                if (foundRarityOffset == condition.getValue().getRarityOffset() && condition.getValue().test(x, y, z, unquantizedDepth, sampler, lastSampledDimension, voronoiInfo)) {
+                    cir.setReturnValue(((BiomeSourceAccessor)this).halyconHorizons$getResourceKeyMap().get(condition.getKey()));
                 }
             }
         }
     }
-
     @Override
-    public void halcyonHorizons$setLastSampledSeed(long seed) {
-        halcyonHorizons$lastSampledWorldSeed = seed;
+    public void halyconHorizons$setLastSampledSeed(long seed) {
+        lastSampledWorldSeed = seed;
     }
 
     @Override
-    public void halcyonHorizons$setLastSampledDimension(ResourceKey<Level> dimension) {
-        halcyonHorizons$lastSampledDimension = dimension;
+    public void halyconHorizons$setLastSampledDimension(ResourceKey<Level> dimension) {
+        lastSampledDimension = dimension;
     }
 }

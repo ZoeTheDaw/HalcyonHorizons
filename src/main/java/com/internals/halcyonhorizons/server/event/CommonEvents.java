@@ -36,13 +36,13 @@ public class CommonEvents {
         for (ResourceKey<LevelStem> levelStemResourceKey : levelStems.registryKeySet()) {
             Optional<Holder.Reference<LevelStem>> holderOptional = levelStems.getHolder(levelStemResourceKey);
             if (holderOptional.isPresent() && holderOptional.get().value().generator().getBiomeSource() instanceof BiomeSourceAccessor expandedBiomeSource) {
-                expandedBiomeSource.halcyonHorizons$setResourceKeyMap(biomeMap);
+                expandedBiomeSource.halyconHorizons$setResourceKeyMap(biomeMap);
                 if (levelStemResourceKey.equals(LevelStem.OVERWORLD)) {
                     ImmutableSet.Builder<Holder<Biome>> biomeHolders = ImmutableSet.builder();
                     for (ResourceKey<Biome> biomeResourceKey : HorizonsBiomeRegistry.HALCYON_HORIZONS_BIOMES) {
                         allBiomes.getHolder(biomeResourceKey).ifPresent(biomeHolders::add);
                     }
-                    expandedBiomeSource.halcyonHorizons$expandBiomesWith(biomeHolders.build());
+                    expandedBiomeSource.expandBiomesWith(biomeHolders.build());
                 }
             }
         }

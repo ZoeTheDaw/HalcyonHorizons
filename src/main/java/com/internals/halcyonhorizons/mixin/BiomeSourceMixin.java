@@ -17,33 +17,33 @@ import java.util.function.Supplier;
 @Mixin(BiomeSource.class)
 
 public class BiomeSourceMixin  implements BiomeSourceAccessor {
-    @Mutable
-    @Final
     @Shadow
-    private Supplier<Set<Holder<Biome>>> possibleBiomes;
+    public Supplier<Set<Holder<Biome>>> possibleBiomes;
     @Unique
-    private boolean halcyonHorizons$expanded;
-    @Unique
-    private Map<ResourceKey<Biome>, Holder<Biome>> halcyonHorizons$map = new HashMap<>();
+    private boolean expanded;
+    private Map<ResourceKey<Biome>, Holder<Biome>> map = new HashMap<>();
 
+    @Unique
     @Override
-    public void halcyonHorizons$setResourceKeyMap(Map<ResourceKey<Biome>, Holder<Biome>> map) {
-        this.halcyonHorizons$map = map;
+    public void halyconHorizons$setResourceKeyMap(Map<ResourceKey<Biome>, Holder<Biome>> map) {
+        this.map = map;
     }
 
+    @Unique
     @Override
-    public Map<ResourceKey<Biome>, Holder<Biome>> halcyonHorizons$getResourceKeyMap() {
-        return halcyonHorizons$map;
+    public Map<ResourceKey<Biome>, Holder<Biome>> halyconHorizons$getResourceKeyMap() {
+        return map;
     }
 
+    @Unique
     @Override
-    public void halcyonHorizons$expandBiomesWith(Set<Holder<Biome>> newGenBiomes) {
-        if(!halcyonHorizons$expanded){
+    public void expandBiomesWith(Set<Holder<Biome>> newGenBiomes) {
+        if(!expanded){
             ImmutableSet.Builder<Holder<Biome>> builder = ImmutableSet.builder();
             builder.addAll(this.possibleBiomes.get());
             builder.addAll(newGenBiomes);
             possibleBiomes = Suppliers.memoize(builder::build);
-            halcyonHorizons$expanded = true;
+            expanded = true;
         }
     }
 }

@@ -4,7 +4,8 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.Level;
 
 public interface MultiNoiseBiomeSourceAccessor {
-    void halcyonHorizons$setLastSampledSeed(long var1);
 
-    void halcyonHorizons$setLastSampledDimension(ResourceKey<Level> var1);
+    void halyconHorizons$setLastSampledSeed(long seed);
+
+    void halyconHorizons$setLastSampledDimension(ResourceKey<Level> dimension);
 }

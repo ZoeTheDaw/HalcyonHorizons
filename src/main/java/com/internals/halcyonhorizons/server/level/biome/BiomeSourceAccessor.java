@@ -8,9 +8,9 @@ import java.util.Map;
 import java.util.Set;
 
 public interface BiomeSourceAccessor {
-    void halcyonHorizons$setResourceKeyMap(Map<ResourceKey<Biome>, Holder<Biome>> var1);
+    void halyconHorizons$setResourceKeyMap(Map<ResourceKey<Biome>, Holder<Biome>> var1);
 
-    Map<ResourceKey<Biome>, Holder<Biome>> halcyonHorizons$getResourceKeyMap();
+    Map<ResourceKey<Biome>, Holder<Biome>> halyconHorizons$getResourceKeyMap();
 
-    void halcyonHorizons$expandBiomesWith(Set<Holder<Biome>> var1);
+    void expandBiomesWith(Set<Holder<Biome>> var1);
 }

@@ -35,7 +35,7 @@ public class BiomeGenerationConfig {
     public static final LinkedHashMap<ResourceKey<Biome>, BiomeGenerationNoiseCondition> BIOMES = new LinkedHashMap<>();
 
     public static void reloadConfig() {
-        BIOMES.put(HorizonsBiomeRegistry.AVIAN_INFIRMARY, getConfigData("avian_infirmary", AVIAN_INFIRMARY_CONDITION));
+        BIOMES.put(HorizonsBiomeRegistry.AVIAN_INFIRMARY, getConfigData());
     }
 
     @Nullable
@@ -96,9 +96,8 @@ public class BiomeGenerationConfig {
         return jsonPath.toFile();
     }
 
-    private static BiomeGenerationNoiseCondition getConfigData(String fileName, BiomeGenerationNoiseCondition defaultConfigData) {
-        BiomeGenerationNoiseCondition configData = getOrCreateConfigFile(getConfigDirectory(), fileName, defaultConfigData, new TypeToken<BiomeGenerationNoiseCondition>() {
+    private static BiomeGenerationNoiseCondition getConfigData() {
+        return getOrCreateConfigFile(getConfigDirectory(), "avian_infirmary", BiomeGenerationConfig.AVIAN_INFIRMARY_CONDITION, new TypeToken<BiomeGenerationNoiseCondition>() {
         }.getType(), BiomeGenerationNoiseCondition::isInvalid);
-        return configData;
     }
 }
