@@ -12,8 +12,8 @@ import net.minecraft.world.phys.Vec3;
 import java.util.List;
 
 public class BiomeGenerationNoiseCondition {
-    private boolean disabledCompletely;
-    private int distanceFromSpawn;
+    private final boolean disabledCompletely;
+    private final int distanceFromSpawn;
     private final int horizonsRarityOffset;
     private final float[] continentalness;
     private final float[] erosion;

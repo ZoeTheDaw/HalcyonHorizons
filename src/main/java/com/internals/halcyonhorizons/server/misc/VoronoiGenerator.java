@@ -53,8 +53,8 @@ public class VoronoiGenerator {
 
         int xPrimed = (xr - 1) * PrimeX;
         int zPrimedBase = (zr - 1) * PrimeZ;
-        Vec3 localPos = new Vec3(xr, 0, zr);
-        Vec3 cellPos = new Vec3(xr, 0, zr);
+        Vec3 localPos = new Vec3(xr, 200, zr);
+        Vec3 cellPos = new Vec3(xr, 200, zr);
         for (int xi = xr - 1; xi <= xr + 1; xi++)
         {
             int zPrimed = zPrimedBase;
@@ -77,8 +77,8 @@ public class VoronoiGenerator {
                     distance1 = distance0;
                     distance0 = newDistance;
                     closestHash = hash;
-                    localPos = new Vec3(vecX, 0, vecZ);
-                    cellPos = new Vec3(xi + RandVecs2D[idx] * cellularJitter, 0,  zi + RandVecs2D[idx | 1] * cellularJitter);
+                    localPos = new Vec3(vecX, 200, vecZ);
+                    cellPos = new Vec3(xi + RandVecs2D[idx] * cellularJitter, 200,  zi + RandVecs2D[idx | 1] * cellularJitter);
                 }
                 zPrimed += PrimeZ;
             }

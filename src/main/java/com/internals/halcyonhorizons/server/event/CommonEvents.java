@@ -21,7 +21,6 @@ import java.util.Optional;
 
 public class CommonEvents {
 
-    @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onServerAboutToStart(ServerAboutToStartEvent event) {
         HorizonsBiomeRarity.init();
         //moved from citadel
@@ -42,7 +41,7 @@ public class CommonEvents {
                     for (ResourceKey<Biome> biomeResourceKey : HorizonsBiomeRegistry.HALCYON_HORIZONS_BIOMES) {
                         allBiomes.getHolder(biomeResourceKey).ifPresent(biomeHolders::add);
                     }
-                    expandedBiomeSource.expandBiomesWith(biomeHolders.build());
+                    expandedBiomeSource.halyconHorizons$expandBiomesWith(biomeHolders.build());
                 }
             }
         }

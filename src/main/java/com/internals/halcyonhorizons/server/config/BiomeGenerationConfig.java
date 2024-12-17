@@ -92,7 +92,7 @@ public class BiomeGenerationConfig {
 
     private static File getConfigDirectory() {
         Path configPath = FMLPaths.CONFIGDIR.get();
-        Path jsonPath = Paths.get(configPath.toAbsolutePath().toString(), "alexscaves_biome_generation");
+        Path jsonPath = Paths.get(configPath.toAbsolutePath().toString(), "halcyonhorizons_biome_generation");
         return jsonPath.toFile();
     }
 

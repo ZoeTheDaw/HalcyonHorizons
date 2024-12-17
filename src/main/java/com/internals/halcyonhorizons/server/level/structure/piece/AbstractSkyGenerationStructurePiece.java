@@ -6,6 +6,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.biome.Biome;
@@ -18,6 +19,7 @@ import net.minecraft.world.level.chunk.PalettedContainer;
 import net.minecraft.world.level.chunk.PalettedContainerRO;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.level.levelgen.structure.StructurePiece;
+import net.minecraft.world.level.levelgen.structure.StructurePieceAccessor;
 import net.minecraft.world.level.levelgen.structure.pieces.StructurePieceSerializationContext;
 import net.minecraft.world.level.levelgen.structure.pieces.StructurePieceType;
 import org.jetbrains.annotations.NotNull;
@@ -117,12 +119,8 @@ public abstract class AbstractSkyGenerationStructurePiece extends StructurePiece
         }
     }
 
-    public BlockState checkedGetBlockIgnoreY(WorldGenLevel level, BlockPos position) {
-        if (this.getBoundingBox().isInside(position.getX(), this.getBoundingBox().minY(), position.getZ())) {
-            return level.getBlockState(position);
-        } else {
-            return Blocks.VOID_AIR.defaultBlockState();
-        }
+
+    public void addChildren(StructurePiece piece, StructurePieceAccessor accessor, RandomSource random) {
     }
 
 }

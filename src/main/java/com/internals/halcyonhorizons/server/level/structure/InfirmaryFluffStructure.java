@@ -51,7 +51,7 @@ public class InfirmaryFluffStructure extends AbstractSkyGenerationStructure {
     }
 
     @Override
-    public @NotNull StructureType<?> type() {
+    public StructureType<?> type() {
         return HorizonsStructureRegistry.INFIRMARY_FLUFF.get();
     }
 }

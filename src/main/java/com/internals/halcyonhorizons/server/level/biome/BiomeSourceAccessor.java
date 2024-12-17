@@ -12,5 +12,5 @@ public interface BiomeSourceAccessor {
 
     Map<ResourceKey<Biome>, Holder<Biome>> halyconHorizons$getResourceKeyMap();
 
-    void expandBiomesWith(Set<Holder<Biome>> var1);
+    void halyconHorizons$expandBiomesWith(Set<Holder<Biome>> var1);
 }

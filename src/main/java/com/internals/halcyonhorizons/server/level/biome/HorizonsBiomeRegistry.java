@@ -2,15 +2,23 @@ package com.internals.halcyonhorizons.server.level.biome;
 
 import com.internals.halcyonhorizons.HalcyonHorizons;
 import com.github.alexthe666.citadel.server.world.ExpandedBiomes;
+import com.internals.halcyonhorizons.client.sound.HorizonsMusic;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.BiomeDefaultFeatures;
+import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.Musics;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.dimension.LevelStem;
+import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -22,6 +30,8 @@ public class HorizonsBiomeRegistry {
             new ResourceLocation(HalcyonHorizons.MODID, "avian_infirmary"));
 
     public static final List<ResourceKey<Biome>> HALCYON_HORIZONS_BIOMES = List.of(AVIAN_INFIRMARY);
+
+
     private static final Vec3 DEFAULT_LIGHT_COLOR = new Vec3(1, 1, 1);
 
     public static void init() {

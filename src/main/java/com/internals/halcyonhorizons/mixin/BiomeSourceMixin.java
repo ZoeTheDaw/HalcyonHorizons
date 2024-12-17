@@ -20,30 +20,31 @@ public class BiomeSourceMixin  implements BiomeSourceAccessor {
     @Shadow
     public Supplier<Set<Holder<Biome>>> possibleBiomes;
     @Unique
-    private boolean expanded;
-    private Map<ResourceKey<Biome>, Holder<Biome>> map = new HashMap<>();
+    private boolean halyconHorizons$expanded;
+    @Unique
+    private Map<ResourceKey<Biome>, Holder<Biome>> halyconHorizons$map = new HashMap<>();
 
     @Unique
     @Override
     public void halyconHorizons$setResourceKeyMap(Map<ResourceKey<Biome>, Holder<Biome>> map) {
-        this.map = map;
+        this.halyconHorizons$map = map;
     }
 
     @Unique
     @Override
     public Map<ResourceKey<Biome>, Holder<Biome>> halyconHorizons$getResourceKeyMap() {
-        return map;
+        return halyconHorizons$map;
     }
 
     @Unique
     @Override
-    public void expandBiomesWith(Set<Holder<Biome>> newGenBiomes) {
-        if(!expanded){
+    public void halyconHorizons$expandBiomesWith(Set<Holder<Biome>> newGenBiomes) {
+        if(!halyconHorizons$expanded){
             ImmutableSet.Builder<Holder<Biome>> builder = ImmutableSet.builder();
             builder.addAll(this.possibleBiomes.get());
             builder.addAll(newGenBiomes);
             possibleBiomes = Suppliers.memoize(builder::build);
-            expanded = true;
+            halyconHorizons$expanded = true;
         }
     }
 }

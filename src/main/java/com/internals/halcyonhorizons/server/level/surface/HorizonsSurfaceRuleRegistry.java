@@ -3,7 +3,6 @@ package com.internals.halcyonhorizons.server.level.surface;
 
 import com.internals.halcyonhorizons.HalcyonHorizons;
 import com.internals.halcyonhorizons.server.misc.HorizonsMath;
-import com.internals.halcyonhorizons.server.misc.HorizonsMath;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.registries.Registries;
@@ -12,7 +11,7 @@ import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
-public class HorizonsSurfaceRuleCondition {
+public class HorizonsSurfaceRuleRegistry {
     public static final DeferredRegister<Codec<? extends SurfaceRules.ConditionSource>> DEF_REG = DeferredRegister.create(Registries.MATERIAL_CONDITION, HalcyonHorizons.MODID);
 
     public static final RegistryObject<Codec<? extends SurfaceRules.ConditionSource>> AC_SIMPLEX_CONDITION = DEF_REG.register("ac_simplex", () -> SimplexConditionSource.CODEC.codec());
