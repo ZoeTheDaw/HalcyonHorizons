@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "halcyonhorizons:block/alphabet/alphabet_block_m"
+  }
+}

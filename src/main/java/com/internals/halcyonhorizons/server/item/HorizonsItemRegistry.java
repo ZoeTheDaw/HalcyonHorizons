@@ -39,4 +39,5 @@ import java.util.Map;
 public class HorizonsItemRegistry{
     public static final DeferredRegister<Item> DEF_REG = DeferredRegister.create(ForgeRegistries.ITEMS, HalcyonHorizons.MODID);
     public static final Rarity RARITY_DEMONIC = Rarity.create("halcyonhorizons:youthful",style -> style.withColor(16751342));
+    public static final RegistryObject<Item> BAOBABE_DOOR = DEF_REG.register("baobabe_door", () -> new DoubleHighBlockItem(HorizonsBlockRegistry.BAOBABE_DOOR.get(), (new Item.Properties())));
 }

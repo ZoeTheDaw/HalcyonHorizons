@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "halcyonhorizons:block/baobabe/baobabe_log",
+    "side": "halcyonhorizons:block/baobabe/baobabe_log"
+  }
+}

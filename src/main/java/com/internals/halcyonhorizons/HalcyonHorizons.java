@@ -1,10 +1,13 @@
 package com.internals.halcyonhorizons;
 
 import com.internals.halcyonhorizons.server.block.HorizonsBlockRegistry;
+//import com.internals.halcyonhorizons.server.block.ModBlocks;
 import com.internals.halcyonhorizons.server.config.BiomeGenerationConfig;
 import com.internals.halcyonhorizons.server.config.HorizonsServerConfig;
 import com.internals.halcyonhorizons.server.event.CommonEvents;
 import com.internals.halcyonhorizons.server.item.HorizonsItemRegistry;
+import com.internals.halcyonhorizons.server.item.ModCreativeModeTabs;
+//import com.internals.halcyonhorizons.server.item.ModItems;
 import com.internals.halcyonhorizons.server.level.biome.HorizonsBiomeRegistry;
 import com.internals.halcyonhorizons.server.level.structure.HorizonsStructureRegistry;
 import com.internals.halcyonhorizons.server.level.structure.piece.HorizonsStructurePieceRegistry;
@@ -38,6 +41,11 @@ public class HalcyonHorizons {
     public HalcyonHorizons() {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, COMMON_CONFIG_SPEC, "halcyonhorizons-general.toml");
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModCreativeModeTabs.register(modEventBus);
+//        ModBlocks.register(modEventBus);
+//        ModItems.register(modEventBus);
+
         modEventBus.addListener(this::loadConfig);
         modEventBus.addListener(this::reloadConfig);
         MinecraftForge.EVENT_BUS.register(this);

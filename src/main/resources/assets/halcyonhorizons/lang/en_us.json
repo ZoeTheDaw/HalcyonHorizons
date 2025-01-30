@@ -1,4 +1,52 @@
 {
   "itemGroup.halcyonhorizons": "Halcyon Horizons",
-  "block.halcyonhorizons.fluffpulp": "Fluffpulp"
+
+
+  "block.halcyonhorizons.fluffpulp": "Fluffpulp",
+  "block.halcyonhorizons.baobabe_planks": "Baobabe Planks",
+  "block.halcyonhorizons.baobabe_log": "Baobabe Log",
+  "block.halcyonhorizons.stripped_baobabe_log": "Stripped Baobabe Log",
+  "block.halcyonhorizons.baobabe_wood": "Baobabe Wood",
+  "block.halcyonhorizons.stripped_baobabe_wood": "Stripped Baobabe Wood",
+  "block.halcyonhorizons.baobabe_door": "Baobabe Door",
+  "block.halcyonhorizons.alphabet_block_a": "Alphabet Block A",
+  "block.halcyonhorizons.alphabet_block_b": "Alphabet Block B",
+  "block.halcyonhorizons.alphabet_block_c": "Alphabet Block C",
+  "block.halcyonhorizons.alphabet_block_d": "Alphabet Block D",
+  "block.halcyonhorizons.alphabet_block_e": "Alphabet Block E",
+  "block.halcyonhorizons.alphabet_block_f": "Alphabet Block F",
+  "block.halcyonhorizons.alphabet_block_g": "Alphabet Block G",
+  "block.halcyonhorizons.alphabet_block_h": "Alphabet Block H",
+  "block.halcyonhorizons.alphabet_block_i": "Alphabet Block I",
+  "block.halcyonhorizons.alphabet_block_j": "Alphabet Block J",
+  "block.halcyonhorizons.alphabet_block_k": "Alphabet Block K",
+  "block.halcyonhorizons.alphabet_block_l": "Alphabet Block L",
+  "block.halcyonhorizons.alphabet_block_m": "Alphabet Block M",
+  "block.halcyonhorizons.alphabet_block_n": "Alphabet Block N",
+  "block.halcyonhorizons.alphabet_block_o": "Alphabet Block O",
+  "block.halcyonhorizons.alphabet_block_p": "Alphabet Block P",
+  "block.halcyonhorizons.alphabet_block_q": "Alphabet Block Q",
+  "block.halcyonhorizons.alphabet_block_r": "Alphabet Block R",
+  "block.halcyonhorizons.alphabet_block_s": "Alphabet Block S",
+  "block.halcyonhorizons.alphabet_block_t": "Alphabet Block T",
+  "block.halcyonhorizons.alphabet_block_u": "Alphabet Block U",
+  "block.halcyonhorizons.alphabet_block_v": "Alphabet Block V",
+  "block.halcyonhorizons.alphabet_block_w": "Alphabet Block W",
+  "block.halcyonhorizons.alphabet_block_x": "Alphabet Block X",
+  "block.halcyonhorizons.alphabet_block_y": "Alphabet Block Y",
+  "block.halcyonhorizons.alphabet_block_z": "Alphabet Block Z",
+  "block.halcyonhorizons.number_block_0": "Number Block 0",
+  "block.halcyonhorizons.number_block_1": "Number Block 1",
+  "block.halcyonhorizons.number_block_2": "Number Block 2",
+  "block.halcyonhorizons.number_block_3": "Number Block 3",
+  "block.halcyonhorizons.number_block_4": "Number Block 4",
+  "block.halcyonhorizons.number_block_5": "Number Block 5",
+  "block.halcyonhorizons.number_block_6": "Number Block 6",
+  "block.halcyonhorizons.number_block_7": "Number Block 7",
+  "block.halcyonhorizons.number_block_8": "Number Block 8",
+  "block.halcyonhorizons.number_block_9": "Number Block 9",
+
+
+
+  "creativetab.avian_infirmary": "Avian Infirmary"
 }
