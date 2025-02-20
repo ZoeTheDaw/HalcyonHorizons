@@ -8,6 +8,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -21,15 +22,25 @@ public class HorizonsBlockRegistry {
     public static final BlockBehaviour.Properties BAOBABE_PLANKS_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.5F, 2.0F).sound(SoundType.CHERRY_WOOD).instrument(NoteBlockInstrument.BASS);
     public static final BlockBehaviour.Properties BAOBABE_LOG_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.5F).sound(SoundType.CHERRY_WOOD).instrument(NoteBlockInstrument.BASS);
 
+    public static final WoodType BAOBABE_WOOD_TYPE = WoodType.register(new WoodType("halcyonhorizons:baobabe", BlockSetType.OAK));
+
     public static final DeferredRegister<Block> DEF_REG = DeferredRegister.create(ForgeRegistries.BLOCKS, HalcyonHorizons.MODID);
     public static final RegistryObject<Block> FLUFFPULP = registerBlockAndItem("fluffpulp", () -> new Block(FLUFFPULP_PROPERTIES));
     public static final RegistryObject<Block> BAOBABE_PLANKS = registerBlockAndItem("baobabe_planks", () -> new Block(BAOBABE_PLANKS_PROPERTIES));
+    public static final RegistryObject<Block> BAOBABE_PLANKS_STAIRS = registerBlockAndItem("baobabe_stairs", () -> new StairBlock(BAOBABE_PLANKS.get().defaultBlockState(), BAOBABE_PLANKS_PROPERTIES));
+    public static final RegistryObject<Block> BAOBABE_PLANKS_SLAB = registerBlockAndItem("baobabe_slab", () -> new SlabBlock(BAOBABE_PLANKS_PROPERTIES));
+    public static final RegistryObject<Block> BAOBABE_PLANKS_FENCE = DEF_REG.register("baobabe_fence", () -> new FenceBlock(BAOBABE_PLANKS_PROPERTIES));
+//    public static final RegistryObject<Block> BAOBABE_SIGN = DEF_REG.register("baobabe_sign", () -> new StandingSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noCollission().strength(1.0F).sound(SoundType.CHERRY_WOOD), BAOBABE_WOOD_TYPE));
+//    public static final RegistryObject<Block> BAOBABE_WALL_SIGN = DEF_REG.register("baobabe_wall_sign", () -> new WallSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noCollission().strength(1.0F).sound(SoundType.CHERRY_WOOD), BAOBABE_WOOD_TYPE));
+//    public static final RegistryObject<Block> BAOBABE_HANGING_SIGN = DEF_REG.register("baobabe_hanging_sign", () -> new CeilingHangingSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F), BAOBABE_WOOD_TYPE));
+//    public static final RegistryObject<Block> BAOBABE_WALL_HANGING_SIGN = DEF_REG.register("baobabe_wall_hanging_sign", () -> new WallHangingSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F), BAOBABE_WOOD_TYPE));
     public static final RegistryObject<Block> BAOBABE_LOG = registerBlockAndItem("baobabe_log", () -> new StrippableLogBlock(BAOBABE_LOG_PROPERTIES));
     public static final RegistryObject<Block> BAOBABE_WOOD = registerBlockAndItem("baobabe_wood", () -> new StrippableLogBlock(BAOBABE_LOG_PROPERTIES));
     public static final RegistryObject<Block> STRIPPED_BAOBABE_LOG = registerBlockAndItem("stripped_baobabe_log", () -> new RotatedPillarBlock(BAOBABE_LOG_PROPERTIES));
     public static final RegistryObject<Block> STRIPPED_BAOBABE_WOOD = registerBlockAndItem("stripped_baobabe_wood", () -> new RotatedPillarBlock(BAOBABE_LOG_PROPERTIES));
+    public static final RegistryObject<Block> BAOBABE_PRESSURE_PLATE = DEF_REG.register("baobabe_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(BAOBABE_PLANKS.get()).noCollission().strength(0.5F).sound(SoundType.CHERRY_WOOD), BlockSetType.CHERRY));
     public static final RegistryObject<Block> BAOBABE_DOOR = DEF_REG.register("baobabe_door", () -> new DoorBlock(BlockBehaviour.Properties.copy(BAOBABE_PLANKS.get()).strength(1.5F).sound(SoundType.CHERRY_WOOD).noOcclusion(), BlockSetType.CHERRY));
-    public static final RegistryObject<Block> BAOBABE_TRAPDOOR = registerBlockAndItem("baobabe_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(3.0F).sound(SoundType.CHERRY_WOOD).noOcclusion(), BlockSetType.CHERRY));
+    public static final RegistryObject<Block> BAOBABE_TRAPDOOR = DEF_REG.register("baobabe_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(3.0F).sound(SoundType.CHERRY_WOOD).noOcclusion(), BlockSetType.CHERRY));
     public static final RegistryObject<Block> ALPHABET_BLOCK_A = registerBlockAndItem("alphabet_block_a", () -> new Block(BAOBABE_PLANKS_PROPERTIES));
     public static final RegistryObject<Block> ALPHABET_BLOCK_B = registerBlockAndItem("alphabet_block_b", () -> new Block(BAOBABE_PLANKS_PROPERTIES));
     public static final RegistryObject<Block> ALPHABET_BLOCK_C = registerBlockAndItem("alphabet_block_c", () -> new Block(BAOBABE_PLANKS_PROPERTIES));

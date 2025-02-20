@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "halcyonhorizons:block/baobabe_slab"
+    },
+    "type=double": {
+      "model": "halcyonhorizons:block/baobabe_planks"
+    },
+    "type=top": {
+      "model": "halcyonhorizons:block/baobabe_slab_top"
+    }
+  }
+}
