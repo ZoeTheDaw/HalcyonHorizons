@@ -2,6 +2,7 @@ package com.internals.halcyonhorizons;
 
 import com.internals.halcyonhorizons.server.block.HorizonsBlockRegistry;
 //import com.internals.halcyonhorizons.server.block.ModBlocks;
+import com.internals.halcyonhorizons.server.block.blockentity.HorizonsBlockEntityRegistry;
 import com.internals.halcyonhorizons.server.config.BiomeGenerationConfig;
 import com.internals.halcyonhorizons.server.config.HorizonsServerConfig;
 import com.internals.halcyonhorizons.server.event.CommonEvents;
@@ -25,6 +26,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.config.ModConfigEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.commons.lang3.tuple.Pair;
 import org.slf4j.Logger;
@@ -52,6 +54,7 @@ public class HalcyonHorizons {
 
         modEventBus.addListener(this::loadConfig);
         modEventBus.addListener(this::reloadConfig);
+        modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(new CommonEvents());
         HorizonsBlockRegistry.DEF_REG.register(modEventBus);
@@ -60,6 +63,9 @@ public class HalcyonHorizons {
         HorizonsStructurePieceRegistry.DEF_REG.register(modEventBus);
         HorizonsSurfaceRuleRegistry.DEF_REG.register(modEventBus);
         HorizonsBiomeRegistry.init();
+    }
+    private void commonSetup(final FMLCommonSetupEvent event) {
+        HorizonsBlockEntityRegistry.expandVanillaDefinitions();
     }
 
     @SubscribeEvent

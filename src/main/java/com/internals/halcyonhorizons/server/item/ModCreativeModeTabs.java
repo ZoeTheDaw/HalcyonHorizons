@@ -22,11 +22,16 @@ public class ModCreativeModeTabs {
                         output.accept(HorizonsBlockRegistry.BAOBABE_PLANKS_STAIRS.get());
                         output.accept(HorizonsBlockRegistry.BAOBABE_PLANKS_SLAB.get());
                         output.accept(HorizonsItemRegistry.BAOBABE_PLANKS_FENCE.get());
+                        output.accept(HorizonsItemRegistry.BAOBABE_FENCE_GATE.get());
+                        output.accept(HorizonsItemRegistry.BAOBABE_SIGN.get());
+                        output.accept(HorizonsItemRegistry.BAOBABE_HANGING_SIGN.get());
+                        output.accept(HorizonsItemRegistry.BAOBABE_PLANKS_FENCE.get());
                         output.accept(HorizonsBlockRegistry.FLUFFPULP.get());
                         output.accept(HorizonsBlockRegistry.BAOBABE_LOG.get());
                         output.accept(HorizonsBlockRegistry.STRIPPED_BAOBABE_LOG.get());
                         output.accept(HorizonsBlockRegistry.BAOBABE_WOOD.get());
                         output.accept(HorizonsBlockRegistry.STRIPPED_BAOBABE_WOOD.get());
+                        output.accept(HorizonsBlockRegistry.BAOBABE_SAPLING.get());
                         output.accept(HorizonsItemRegistry.BAOBABE_DOOR.get());
                         output.accept(HorizonsItemRegistry.BAOBABE_TRAPDOOR.get());
                         output.accept(HorizonsItemRegistry.BAOBABE_PRESSURE_PLATE.get());

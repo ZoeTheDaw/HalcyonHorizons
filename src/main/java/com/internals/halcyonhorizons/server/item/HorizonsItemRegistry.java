@@ -45,6 +45,7 @@ public class HorizonsItemRegistry{
     public static final RegistryObject<Item> BAOBABE_TRAPDOOR = DEF_REG.register("baobabe_trapdoor", () -> new BlockItem(HorizonsBlockRegistry.BAOBABE_TRAPDOOR.get(), (new Item.Properties())));
     public static final RegistryObject<Item> BAOBABE_PRESSURE_PLATE = DEF_REG.register("baobabe_pressure_plate", () -> new BlockItem(HorizonsBlockRegistry.BAOBABE_PRESSURE_PLATE.get(), (new Item.Properties())));
     public static final RegistryObject<Item> BAOBABE_PLANKS_FENCE = DEF_REG.register("baobabe_fence", () -> new BlockItem(HorizonsBlockRegistry.BAOBABE_PLANKS_FENCE.get(), (new Item.Properties())));
-//    public static final RegistryObject<Item> BAOBABE_SIGN = DEF_REG.register("baobabe_sign", () -> new SignItem((new Item.Properties()).stacksTo(16), HorizonsBlockRegistry.BAOBABE_SIGN.get(), HorizonsBlockRegistry.BAOBABE_WALL_SIGN.get()));
-//    public static final RegistryObject<Item> BAOBABE_HANGING_SIGN = DEF_REG.register("baobabe_hanging_sign", () -> new HangingSignItem(HorizonsBlockRegistry.BAOBABE_HANGING_SIGN.get(), HorizonsBlockRegistry.BAOBABE_WALL_HANGING_SIGN.get(), (new Item.Properties()).stacksTo(16)));
+    public static final RegistryObject<Item> BAOBABE_FENCE_GATE = DEF_REG.register("baobabe_fence_gate", () -> new BlockItem(HorizonsBlockRegistry.BAOBABE_FENCE_GATE.get(), (new Item.Properties())));
+    public static final RegistryObject<Item> BAOBABE_SIGN = DEF_REG.register("baobabe_sign", () -> new SignItem((new Item.Properties()).stacksTo(16), HorizonsBlockRegistry.BAOBABE_SIGN.get(), HorizonsBlockRegistry.BAOBABE_WALL_SIGN.get()));
+    public static final RegistryObject<Item> BAOBABE_HANGING_SIGN = DEF_REG.register("baobabe_hanging_sign", () -> new HangingSignItem(HorizonsBlockRegistry.BAOBABE_HANGING_SIGN.get(), HorizonsBlockRegistry.BAOBABE_WALL_HANGING_SIGN.get(), (new Item.Properties()).stacksTo(16)));
 }

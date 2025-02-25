@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "halcyonhorizons:item/baobabe_hanging_sign"
+  }
+}
