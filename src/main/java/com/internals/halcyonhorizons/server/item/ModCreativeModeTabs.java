@@ -35,6 +35,7 @@ public class ModCreativeModeTabs {
                         output.accept(HorizonsItemRegistry.BAOBABE_DOOR.get());
                         output.accept(HorizonsItemRegistry.BAOBABE_TRAPDOOR.get());
                         output.accept(HorizonsItemRegistry.BAOBABE_PRESSURE_PLATE.get());
+                        output.accept(HorizonsBlockRegistry.BAOBABE_BUTTON.get());
                         output.accept(HorizonsBlockRegistry.FLUFFPULP.get());
                         output.accept(HorizonsBlockRegistry.ALPHABET_BLOCK_A.get());
                         output.accept(HorizonsBlockRegistry.ALPHABET_BLOCK_B.get());
