@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "halcyonhorizons:fluffpulp"
+          "name": "halcyonhorizons:lamppaper_block"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "halcyonhorizons:blocks/fluffpulp"
+  "random_sequence": "halcyonhorizons:blocks/lamppaper_block"
 }

@@ -21,12 +21,14 @@ public class ModCreativeModeTabs {
                         output.accept(HorizonsBlockRegistry.BAOBABE_PLANKS.get());
                         output.accept(HorizonsBlockRegistry.BAOBABE_PLANKS_STAIRS.get());
                         output.accept(HorizonsBlockRegistry.BAOBABE_PLANKS_SLAB.get());
-                        output.accept(HorizonsItemRegistry.BAOBABE_PLANKS_FENCE.get());
-                        output.accept(HorizonsItemRegistry.BAOBABE_FENCE_GATE.get());
+                        output.accept(HorizonsBlockRegistry.BAOBABE_PLANKS_FENCE.get());
+                        output.accept(HorizonsBlockRegistry.BAOBABE_FENCE_GATE.get());
                         output.accept(HorizonsItemRegistry.BAOBABE_SIGN.get());
                         output.accept(HorizonsItemRegistry.BAOBABE_HANGING_SIGN.get());
-                        output.accept(HorizonsItemRegistry.BAOBABE_PLANKS_FENCE.get());
-                        output.accept(HorizonsBlockRegistry.FLUFFPULP.get());
+                        output.accept(HorizonsBlockRegistry.FLUFFPULP_BLOCK.get());
+                        output.accept(HorizonsBlockRegistry.LAMPPAPER_BLOCK.get());
+                        output.accept(HorizonsItemRegistry.LAMPPAPER_SHEET.get());
+                        output.accept(HorizonsBlockRegistry.LAMPBOARD.get());
                         output.accept(HorizonsBlockRegistry.BAOBABE_LOG.get());
                         output.accept(HorizonsBlockRegistry.STRIPPED_BAOBABE_LOG.get());
                         output.accept(HorizonsBlockRegistry.BAOBABE_WOOD.get());
@@ -36,7 +38,8 @@ public class ModCreativeModeTabs {
                         output.accept(HorizonsItemRegistry.BAOBABE_TRAPDOOR.get());
                         output.accept(HorizonsItemRegistry.BAOBABE_PRESSURE_PLATE.get());
                         output.accept(HorizonsBlockRegistry.BAOBABE_BUTTON.get());
-                        output.accept(HorizonsBlockRegistry.FLUFFPULP.get());
+                        output.accept(HorizonsBlockRegistry.NIGHTLIGHT.get());
+                        output.accept(HorizonsItemRegistry.NIGHTLIGHT_GEL.get());
                         output.accept(HorizonsBlockRegistry.ALPHABET_BLOCK_A.get());
                         output.accept(HorizonsBlockRegistry.ALPHABET_BLOCK_B.get());
                         output.accept(HorizonsBlockRegistry.ALPHABET_BLOCK_C.get());

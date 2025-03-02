@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "halcyonhorizons:lamppaper_sheet"
+    },
+    {
+      "item": "halcyonhorizons:lamppaper_sheet"
+    },
+    {
+      "item": "halcyonhorizons:lamppaper_sheet"
+    },
+    {
+      "item": "halcyonhorizons:lamppaper_sheet"
+    },
+    {
+      "item": "halcyonhorizons:lamppaper_sheet"
+    },
+    {
+      "item": "halcyonhorizons:lamppaper_sheet"
+    },
+    {
+      "item": "halcyonhorizons:lamppaper_sheet"
+    },
+    {
+      "item": "halcyonhorizons:lamppaper_sheet"
+    },
+    {
+      "item": "halcyonhorizons:lamppaper_sheet"
+    }
+  ],
+  "result": {
+    "item": "halcyonhorizons:lamppaper_block"
+  }
+}

@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "halcyonhorizons:item/baobabe_fence_gate"
-  }
+  "parent": "halcyonhorizons:block/baobabe_fence_gate"
 }

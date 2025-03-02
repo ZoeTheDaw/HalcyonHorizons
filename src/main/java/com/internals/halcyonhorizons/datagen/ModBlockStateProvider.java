@@ -19,7 +19,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(HorizonsBlockRegistry.BAOBABE_DOOR);
         blockWithItem(HorizonsBlockRegistry.BAOBABE_TRAPDOOR);
         blockWithItem(HorizonsBlockRegistry.BAOBABE_PLANKS);
-        blockWithItem(HorizonsBlockRegistry.FLUFFPULP);
+        blockWithItem(HorizonsBlockRegistry.FLUFFPULP_BLOCK);
         blockWithItem(HorizonsBlockRegistry.BAOBABE_LOG);
         blockWithItem(HorizonsBlockRegistry.BAOBABE_WOOD);
         blockWithItem(HorizonsBlockRegistry.STRIPPED_BAOBABE_LOG);

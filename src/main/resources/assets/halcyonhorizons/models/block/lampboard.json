@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "side": "halcyonhorizons:block/lampboard_side",
+    "bottom": "halcyonhorizons:block/lampboard_bottom",
+    "top": "halcyonhorizons:block/lampboard_top"
+  }
+}

@@ -28,7 +28,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(HorizonsBlockRegistry.BAOBABE_PLANKS.get());
         this.dropSelf(HorizonsBlockRegistry.BAOBABE_DOOR.get());
         this.dropSelf(HorizonsBlockRegistry.BAOBABE_PLANKS.get());
-        this.dropSelf(HorizonsBlockRegistry.FLUFFPULP.get());
+        this.dropSelf(HorizonsBlockRegistry.FLUFFPULP_BLOCK.get());
         this.dropSelf(HorizonsBlockRegistry.BAOBABE_LOG.get());
         this.dropSelf(HorizonsBlockRegistry.BAOBABE_WOOD.get());
         this.dropSelf(HorizonsBlockRegistry.STRIPPED_BAOBABE_LOG.get());

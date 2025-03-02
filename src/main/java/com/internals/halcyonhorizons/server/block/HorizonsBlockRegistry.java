@@ -25,21 +25,26 @@ import java.util.function.Supplier;
 
 public class HorizonsBlockRegistry {
 
-    public static final BlockBehaviour.Properties FLUFFPULP_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).strength(0.5F, .6F).sound(SoundType.WOOL);
-    public static final BlockBehaviour.Properties BAOBABE_PLANKS_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.5F, 2.0F).sound(SoundType.CHERRY_WOOD).instrument(NoteBlockInstrument.BASS);
-    public static final BlockBehaviour.Properties BAOBABE_LOG_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.5F).sound(SoundType.CHERRY_WOOD).instrument(NoteBlockInstrument.BASS);
-
+    public static final BlockBehaviour.Properties FLUFFPULP_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.WOOL).strength(0.5F, .6F).sound(SoundType.WOOL);
+    public static final BlockBehaviour.Properties BAOBABE_PLANKS_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).strength(1.5F, 2.0F).sound(SoundType.CHERRY_WOOD).instrument(NoteBlockInstrument.BASS);
+    public static final BlockBehaviour.Properties BAOBABE_LOG_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).strength(1.5F).sound(SoundType.CHERRY_WOOD).instrument(NoteBlockInstrument.BASS);
+    public static final BlockBehaviour.Properties LAMPPAPER_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(0.5F, .6F).sound(SoundType.GRASS);
+    public static final BlockBehaviour.Properties NIGHTLIGHT_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).requiresCorrectToolForDrops().lightLevel(state -> 15).strength(2F, 11.0F).sound(SoundType.SHROOMLIGHT);
     public static final WoodType BAOBABE_WOOD_TYPE = WoodType.register(new WoodType("halcyonhorizons:baobabe", BlockSetType.CHERRY));
 
-    public static final DeferredRegister<Block> DEF_REG = DeferredRegister.create(ForgeRegistries.BLOCKS, HalcyonHorizons.MODID);
-    public static final RegistryObject<Block> FLUFFPULP = registerBlockAndItem("fluffpulp", () -> new Block(FLUFFPULP_PROPERTIES));
 
+    public static final DeferredRegister<Block> DEF_REG = DeferredRegister.create(ForgeRegistries.BLOCKS, HalcyonHorizons.MODID);
+    public static final RegistryObject<Block> FLUFFPULP_BLOCK = registerBlockAndItem("fluffpulp_block", () -> new FluffpulpBlock(FLUFFPULP_PROPERTIES));
+
+    public static final RegistryObject<Block> LAMPPAPER_BLOCK = registerBlockAndItem("lamppaper_block", () -> new Block(LAMPPAPER_PROPERTIES));
+
+    public static final RegistryObject<Block> NIGHTLIGHT = registerBlockAndItem("nightlight", () -> new Block(NIGHTLIGHT_PROPERTIES));
 
     public static final RegistryObject<Block> BAOBABE_PLANKS = registerBlockAndItem("baobabe_planks", () -> new Block(BAOBABE_PLANKS_PROPERTIES));
     public static final RegistryObject<Block> BAOBABE_PLANKS_STAIRS = registerBlockAndItem("baobabe_stairs", () -> new StairBlock(BAOBABE_PLANKS.get().defaultBlockState(), BAOBABE_PLANKS_PROPERTIES));
     public static final RegistryObject<Block> BAOBABE_PLANKS_SLAB = registerBlockAndItem("baobabe_slab", () -> new SlabBlock(BAOBABE_PLANKS_PROPERTIES));
-    public static final RegistryObject<Block> BAOBABE_PLANKS_FENCE = DEF_REG.register("baobabe_fence", () -> new FenceBlock(BAOBABE_PLANKS_PROPERTIES));
-    public static final RegistryObject<Block> BAOBABE_FENCE_GATE = DEF_REG.register("baobabe_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.copy(BAOBABE_PLANKS.get()).strength(2.0F, 3.0F).sound(SoundType.CHERRY_WOOD).forceSolidOn(), SoundEvents.CHERRY_WOOD_FENCE_GATE_CLOSE, SoundEvents.CHERRY_WOOD_FENCE_GATE_CLOSE));
+    public static final RegistryObject<Block> BAOBABE_PLANKS_FENCE = registerBlockAndItem("baobabe_fence", () -> new FenceBlock(BAOBABE_PLANKS_PROPERTIES));
+    public static final RegistryObject<Block> BAOBABE_FENCE_GATE = registerBlockAndItem("baobabe_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.copy(BAOBABE_PLANKS.get()).strength(2.0F, 3.0F).sound(SoundType.CHERRY_WOOD).forceSolidOn(), SoundEvents.CHERRY_WOOD_FENCE_GATE_CLOSE, SoundEvents.CHERRY_WOOD_FENCE_GATE_CLOSE));
     public static final RegistryObject<Block> BAOBABE_SIGN = DEF_REG.register("baobabe_sign", () -> new StandingSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noCollission().strength(1.0F).sound(SoundType.CHERRY_WOOD), BAOBABE_WOOD_TYPE));
     public static final RegistryObject<Block> BAOBABE_WALL_SIGN = DEF_REG.register("baobabe_wall_sign", () -> new WallSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noCollission().strength(1.0F).sound(SoundType.CHERRY_WOOD), BAOBABE_WOOD_TYPE));
     public static final RegistryObject<Block> BAOBABE_HANGING_SIGN = DEF_REG.register("baobabe_hanging_sign", () -> new CeilingHangingSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F), BAOBABE_WOOD_TYPE));
@@ -90,7 +95,7 @@ public class HorizonsBlockRegistry {
     public static final RegistryObject<Block> NUMBER_BLOCK_7 = registerBlockAndItem("number_block_7", () -> new Block(BAOBABE_PLANKS_PROPERTIES));
     public static final RegistryObject<Block> NUMBER_BLOCK_8 = registerBlockAndItem("number_block_8", () -> new Block(BAOBABE_PLANKS_PROPERTIES));
     public static final RegistryObject<Block> NUMBER_BLOCK_9 = registerBlockAndItem("number_block_9", () -> new Block(BAOBABE_PLANKS_PROPERTIES));
-
+    public static final RegistryObject<Block> LAMPBOARD = registerBlockAndItem("lampboard", () -> new Block(LAMPPAPER_PROPERTIES));
 
     private static RegistryObject<Block> registerBlockAndItem(String name, Supplier<Block> block, int itemType) {
         RegistryObject<Block> blockObj = DEF_REG.register(name, block);

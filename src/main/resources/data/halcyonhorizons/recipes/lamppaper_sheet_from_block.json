@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "halcyonhorizons:lamppaper_block"
+    }
+  ],
+  "result": {
+    "item": "halcyonhorizons:lamppaper_sheet",
+    "count": 9
+  }
+}

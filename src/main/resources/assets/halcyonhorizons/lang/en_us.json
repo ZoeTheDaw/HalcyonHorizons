@@ -2,7 +2,7 @@
   "itemGroup.halcyonhorizons": "Halcyon Horizons",
 
 
-  "block.halcyonhorizons.fluffpulp": "Fluffpulp",
+  "block.halcyonhorizons.fluffpulp_block": "Fluffpulp Block",
   "block.halcyonhorizons.baobabe_planks": "Baobabe Planks",
   "block.halcyonhorizons.baobabe_slab": "Baobabe Slab",
   "block.halcyonhorizons.baobabe_stairs": "Baobabe Stairs",
@@ -19,6 +19,7 @@
   "block.halcyonhorizons.baobabe_door": "Baobabe Door",
   "block.halcyonhorizons.baobabe_pressure_plate": "Baobabe Pressure Plate",
   "block.halcyonhorizons.baobabe_trapdoor": "Baobabe Trapdoor",
+  "block.halcyonhorizons.nightlight": "Nightlight",
   "block.halcyonhorizons.alphabet_block_a": "Alphabet Block A",
   "block.halcyonhorizons.alphabet_block_b": "Alphabet Block B",
   "block.halcyonhorizons.alphabet_block_c": "Alphabet Block C",
@@ -55,6 +56,10 @@
   "block.halcyonhorizons.number_block_7": "Number Block 7",
   "block.halcyonhorizons.number_block_8": "Number Block 8",
   "block.halcyonhorizons.number_block_9": "Number Block 9",
+  "block.halcyonhorizons.lamppaper_block": "Lamppaper Block",
+
+  "item.halcyonhorizons.lamppaper_sheet": "Lamppaper Sheet",
+  "item.halcyonhorizons.nightlight_gel": "Nightlight Gel",
 
 
 
