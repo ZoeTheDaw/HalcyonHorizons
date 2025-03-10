@@ -1,8 +1,12 @@
 {
-  "parent": "block/cube_bottom_top",
+  "parent": "minecraft:block/cube",
   "textures": {
-    "side": "halcyonhorizons:block/lampboard_side",
-    "bottom": "halcyonhorizons:block/lampboard_bottom",
-    "top": "halcyonhorizons:block/lampboard_top"
+    "down": "halcyonhorizons:block/lamppaper/lampboard_top",
+    "east": "halcyonhorizons:block/lamppaper/lampboard_side",
+    "north": "halcyonhorizons:block/lamppaper/lampboard_front",
+    "particle": "halcyonhorizons:block/lamppaper/lampboard_front",
+    "south": "halcyonhorizons:block/lamppaper/lampboard_front",
+    "up": "halcyonhorizons:block/lamppaper/lampboard_top",
+    "west": "halcyonhorizons:block/lamppaper/lampboard_side"
   }
 }

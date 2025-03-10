@@ -36,7 +36,7 @@ public class HorizonsBlockRegistry {
     public static final DeferredRegister<Block> DEF_REG = DeferredRegister.create(ForgeRegistries.BLOCKS, HalcyonHorizons.MODID);
     public static final RegistryObject<Block> FLUFFPULP_BLOCK = registerBlockAndItem("fluffpulp_block", () -> new FluffpulpBlock(FLUFFPULP_PROPERTIES));
 
-    public static final RegistryObject<Block> LAMPPAPER_BLOCK = registerBlockAndItem("lamppaper_block", () -> new Block(LAMPPAPER_PROPERTIES));
+    public static final RegistryObject<Block> LAMPPAPER_BLOCK = registerBlockAndItem("lamppaper_block", () -> new LampboardBlock(LAMPPAPER_PROPERTIES));
 
     public static final RegistryObject<Block> NIGHTLIGHT = registerBlockAndItem("nightlight", () -> new Block(NIGHTLIGHT_PROPERTIES));
 
@@ -53,7 +53,7 @@ public class HorizonsBlockRegistry {
     public static final RegistryObject<Block> BAOBABE_WOOD = registerBlockAndItem("baobabe_wood", () -> new StrippableLogBlock(BAOBABE_LOG_PROPERTIES));
     public static final RegistryObject<Block> STRIPPED_BAOBABE_LOG = registerBlockAndItem("stripped_baobabe_log", () -> new RotatedPillarBlock(BAOBABE_LOG_PROPERTIES));
     public static final RegistryObject<Block> STRIPPED_BAOBABE_WOOD = registerBlockAndItem("stripped_baobabe_wood", () -> new RotatedPillarBlock(BAOBABE_LOG_PROPERTIES));
-    public static final RegistryObject<Block> BAOBABE_SAPLING = registerBlockAndItem("baobabe_sapling", () -> new SkySaplingBlock(new BaobabeGrower(), BlockBehaviour.Properties.of().mapColor(MapColor.GRASS).lightLevel(state -> 15).noCollission().randomTicks().instabreak().noOcclusion().sound(SoundType.CHERRY_WOOD), true));
+    public static final RegistryObject<Block> BAOBABE_SAPLING = registerBlockAndItem("baobabe_sapling", () -> new BaobabeSaplingBlock(new BaobabeGrower(), BlockBehaviour.Properties.of().mapColor(MapColor.GRASS).lightLevel(state -> 15).noCollission().randomTicks().instabreak().noOcclusion().sound(SoundType.CHERRY_WOOD), true));
     public static final RegistryObject<Block> POTTED_BAOBABE_SAPLING = DEF_REG.register("potted_baobabe_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, BAOBABE_SAPLING, BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> BAOBABE_PRESSURE_PLATE = DEF_REG.register("baobabe_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(BAOBABE_PLANKS.get()).noCollission().strength(0.5F).sound(SoundType.CHERRY_WOOD), BlockSetType.CHERRY));
     public static final RegistryObject<Block> BAOBABE_DOOR = DEF_REG.register("baobabe_door", () -> new DoorBlock(BlockBehaviour.Properties.copy(BAOBABE_PLANKS.get()).strength(1.5F).sound(SoundType.CHERRY_WOOD).noOcclusion(), BlockSetType.CHERRY));
