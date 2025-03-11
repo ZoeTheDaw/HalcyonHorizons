@@ -10,6 +10,7 @@ import com.internals.halcyonhorizons.server.item.HorizonsItemRegistry;
 import com.internals.halcyonhorizons.server.item.ModCreativeModeTabs;
 //import com.internals.halcyonhorizons.server.item.ModItems;
 import com.internals.halcyonhorizons.server.level.biome.HorizonsBiomeRegistry;
+import com.internals.halcyonhorizons.server.level.feature.HorizonsFeatureRegistry;
 import com.internals.halcyonhorizons.server.level.structure.HorizonsStructureRegistry;
 import com.internals.halcyonhorizons.server.level.structure.piece.HorizonsStructurePieceRegistry;
 
@@ -59,6 +60,7 @@ public class HalcyonHorizons {
         MinecraftForge.EVENT_BUS.register(new CommonEvents());
         HorizonsBlockRegistry.DEF_REG.register(modEventBus);
         HorizonsItemRegistry.DEF_REG.register(modEventBus);
+        HorizonsFeatureRegistry.DEF_REG.register(modEventBus);
         HorizonsStructureRegistry.DEF_REG.register(modEventBus);
         HorizonsStructurePieceRegistry.DEF_REG.register(modEventBus);
         HorizonsSurfaceRuleRegistry.DEF_REG.register(modEventBus);
