@@ -33,6 +33,8 @@ public class ModCreativeModeTabs {
                         output.accept(HorizonsBlockRegistry.LAMPPAPER_BLOCK.get());
                         output.accept(HorizonsItemRegistry.LAMPPAPER_SHEET.get());
                         output.accept(HorizonsBlockRegistry.LAMPBOARD.get());
+                        output.accept(HorizonsItemRegistry.LAMPBOARD_DOOR.get());
+                        output.accept(HorizonsItemRegistry.LAMPBOARD_TRAPDOOR.get());
                         output.accept(HorizonsItemRegistry.BEAD_BERRIES.get());
                         output.accept(HorizonsBlockRegistry.BAOBABE_LOG.get());
                         output.accept(HorizonsBlockRegistry.STRIPPED_BAOBABE_LOG.get());

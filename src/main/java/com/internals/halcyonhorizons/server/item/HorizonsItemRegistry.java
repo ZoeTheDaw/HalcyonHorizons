@@ -42,7 +42,9 @@ public class HorizonsItemRegistry {
     public static final DeferredRegister<Item> DEF_REG = DeferredRegister.create(ForgeRegistries.ITEMS, HalcyonHorizons.MODID);
     public static final Rarity RARITY_DEMONIC = Rarity.create("halcyonhorizons:youthful", style -> style.withColor(16751342));
     public static final RegistryObject<Item> BAOBABE_DOOR = DEF_REG.register("baobabe_door", () -> new DoubleHighBlockItem(HorizonsBlockRegistry.BAOBABE_DOOR.get(), (new Item.Properties())));
+    public static final RegistryObject<Item> LAMPBOARD_DOOR = DEF_REG.register("lampboard_door", () -> new DoubleHighBlockItem(HorizonsBlockRegistry.LAMPBOARD_DOOR.get(), (new Item.Properties())));
     public static final RegistryObject<Item> BAOBABE_TRAPDOOR = DEF_REG.register("baobabe_trapdoor", () -> new BlockItem(HorizonsBlockRegistry.BAOBABE_TRAPDOOR.get(), (new Item.Properties())));
+    public static final RegistryObject<Item> LAMPBOARD_TRAPDOOR = DEF_REG.register("lampboard_trapdoor", () -> new BlockItem(HorizonsBlockRegistry.LAMPBOARD_TRAPDOOR.get(), (new Item.Properties())));
     public static final RegistryObject<Item> BAOBABE_PRESSURE_PLATE = DEF_REG.register("baobabe_pressure_plate", () -> new BlockItem(HorizonsBlockRegistry.BAOBABE_PRESSURE_PLATE.get(), (new Item.Properties())));
     public static final RegistryObject<Item> BAOBABE_SIGN = DEF_REG.register("baobabe_sign", () -> new SignItem((new Item.Properties()).stacksTo(16), HorizonsBlockRegistry.BAOBABE_SIGN.get(), HorizonsBlockRegistry.BAOBABE_WALL_SIGN.get()));
     public static final RegistryObject<Item> BAOBABE_HANGING_SIGN = DEF_REG.register("baobabe_hanging_sign", () -> new HangingSignItem(HorizonsBlockRegistry.BAOBABE_HANGING_SIGN.get(), HorizonsBlockRegistry.BAOBABE_WALL_HANGING_SIGN.get(), (new Item.Properties()).stacksTo(16)));

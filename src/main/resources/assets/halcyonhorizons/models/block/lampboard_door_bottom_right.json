@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "render_type": "cutout_mipped",
+  "textures": {
+    "bottom": "halcyonhorizons:block/lamppaper/lampboard_door_bottom",
+    "top": "halcyonhorizons:block/lamppaper/lampboard_door_top"
+  }
+}
