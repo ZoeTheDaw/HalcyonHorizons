@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "halcyonhorizons:alphabet_block_k"
+          "name": "halcyonhorizons:number_block_6"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "halcyonhorizons:blocks/alphabet_block_k"
+  "random_sequence": "halcyonhorizons:blocks/number_block_6"
 }

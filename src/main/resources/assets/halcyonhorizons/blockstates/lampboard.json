@@ -1,10 +1,9 @@
 {
   "variants": {
-    "facing=down": { "model": "halcyonhorizons:block/lampboard", "x": 180 },
-    "facing=east": { "model": "halcyonhorizons:block/lampboard", "x": 90, "y": 90 },
-    "facing=north": { "model": "halcyonhorizons:block/lampboard", "x": 90 },
-    "facing=south": { "model": "halcyonhorizons:block/lampboard", "x": 270 },
-    "facing=up": { "model": "halcyonhorizons:block/lampboard" },
-    "facing=west": { "model": "halcyonhorizons:block/lampboard", "x": 90, "y": 270 }
+    "": [
+      {
+        "model": "halcyonhorizons:block/lampboard"
+      }
+    ]
   }
 }

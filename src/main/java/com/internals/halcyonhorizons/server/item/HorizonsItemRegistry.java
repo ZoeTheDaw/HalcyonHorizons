@@ -48,5 +48,7 @@ public class HorizonsItemRegistry {
     public static final RegistryObject<Item> BAOBABE_HANGING_SIGN = DEF_REG.register("baobabe_hanging_sign", () -> new HangingSignItem(HorizonsBlockRegistry.BAOBABE_HANGING_SIGN.get(), HorizonsBlockRegistry.BAOBABE_WALL_HANGING_SIGN.get(), (new Item.Properties()).stacksTo(16)));
     public static final RegistryObject<Item> LAMPPAPER_SHEET = DEF_REG.register("lamppaper_sheet", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> NIGHTLIGHT_GEL = DEF_REG.register("nightlight_gel", () -> new Item(new Item.Properties()));
-
+    public static final RegistryObject<Item> BEAD_BERRIES = DEF_REG.register("bead_berries", () -> new ItemNameBlockItem(HorizonsBlockRegistry.BEAD_BERRY_BUSH.get(), (new Item.Properties().food(HorizonsFoodRegistry.BEAD_BERRIES))));
+    public static final RegistryObject<Item> FLUFFPULP_CHUNK = DEF_REG.register("fluffpulp_chunk", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> FLUFFPULP_STRAND = DEF_REG.register("fluffpulp_strand", () -> new Item(new Item.Properties()));
 }

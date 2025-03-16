@@ -6,6 +6,7 @@ import com.internals.halcyonhorizons.server.block.blockentity.HorizonsBlockEntit
 import com.internals.halcyonhorizons.server.config.BiomeGenerationConfig;
 import com.internals.halcyonhorizons.server.config.HorizonsServerConfig;
 import com.internals.halcyonhorizons.server.event.CommonEvents;
+import com.internals.halcyonhorizons.server.item.HorizonsFoodRegistry;
 import com.internals.halcyonhorizons.server.item.HorizonsItemRegistry;
 import com.internals.halcyonhorizons.server.item.ModCreativeModeTabs;
 //import com.internals.halcyonhorizons.server.item.ModItems;

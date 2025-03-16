@@ -26,9 +26,14 @@ public class ModCreativeModeTabs {
                         output.accept(HorizonsItemRegistry.BAOBABE_SIGN.get());
                         output.accept(HorizonsItemRegistry.BAOBABE_HANGING_SIGN.get());
                         output.accept(HorizonsBlockRegistry.FLUFFPULP_BLOCK.get());
+                        output.accept(HorizonsBlockRegistry.FLUFFPULP_STRANDS.get());
+                        output.accept(HorizonsBlockRegistry.FLUFFPULP_TUFT.get());
+                        output.accept(HorizonsItemRegistry.FLUFFPULP_STRAND.get());
+                        output.accept(HorizonsItemRegistry.FLUFFPULP_CHUNK.get());
                         output.accept(HorizonsBlockRegistry.LAMPPAPER_BLOCK.get());
                         output.accept(HorizonsItemRegistry.LAMPPAPER_SHEET.get());
                         output.accept(HorizonsBlockRegistry.LAMPBOARD.get());
+                        output.accept(HorizonsItemRegistry.BEAD_BERRIES.get());
                         output.accept(HorizonsBlockRegistry.BAOBABE_LOG.get());
                         output.accept(HorizonsBlockRegistry.STRIPPED_BAOBABE_LOG.get());
                         output.accept(HorizonsBlockRegistry.BAOBABE_WOOD.get());

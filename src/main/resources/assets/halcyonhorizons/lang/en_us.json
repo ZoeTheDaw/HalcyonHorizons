@@ -3,6 +3,8 @@
 
 
   "block.halcyonhorizons.fluffpulp_block": "Fluffpulp Block",
+  "block.halcyonhorizons.fluffpulp_strands": "Fluffpulp Strands",
+  "block.halcyonhorizons.fluffpulp_tuft": "Fluffpulp Tuft",
   "block.halcyonhorizons.baobabe_planks": "Baobabe Planks",
   "block.halcyonhorizons.baobabe_slab": "Baobabe Slab",
   "block.halcyonhorizons.baobabe_stairs": "Baobabe Stairs",
@@ -61,6 +63,9 @@
 
   "item.halcyonhorizons.lamppaper_sheet": "Lamppaper Sheet",
   "item.halcyonhorizons.nightlight_gel": "Nightlight Gel",
+  "item.halcyonhorizons.bead_berries": "Bead Berries",
+  "item.halcyonhorizons.fluffpulp_strand": "Fluffpulp Strand",
+  "item.halcyonhorizons.fluffpulp_chunk": "Fluffpulp Chunk",
 
 
 
