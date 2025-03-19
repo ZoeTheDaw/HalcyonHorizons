@@ -1,23 +1,18 @@
 package com.internals.halcyonhorizons.server.level.feature;
 
+import com.internals.halcyonhorizons.server.block.HorizonsBlockRegistry;
+import com.internals.halcyonhorizons.server.misc.HorizonsTagRegistry;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 
-public class BaobabeTreeFeature extends Feature<NoneFeatureConfiguration> {
 
-    private static final BlockState BAOBABE_WOOD = Blocks.OAK_WOOD.defaultBlockState(); // Change to your custom block
-    private static final BlockState BAOBABE_LOG = Blocks.OAK_LOG.defaultBlockState(); // Change to your custom block
-    private static final BlockState LAMPPAPER_BLOCK = Blocks.RED_MUSHROOM_BLOCK.defaultBlockState(); // Change to your custom block
-    private static final BlockState NIGHTLIGHT_BLOCK = Blocks.SHROOMLIGHT.defaultBlockState(); // Change to your custom block
+public class BaobabeTreeFeature extends Feature<NoneFeatureConfiguration> {
 
     public BaobabeTreeFeature(Codec<NoneFeatureConfiguration> codec) {
         super(codec);
@@ -25,71 +20,84 @@ public class BaobabeTreeFeature extends Feature<NoneFeatureConfiguration> {
 
     @Override
     public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
-        System.out.println("BaobabeTreeFeature: Attempting to place tree at " + context.origin());
-
-
-
+        RandomSource randomsource = context.random();
         WorldGenLevel level = context.level();
-        BlockPos origin = context.origin();
-        RandomSource random = context.random();
+        BlockPos treeBottom = context.origin();
+        int height = 5 + randomsource.nextInt(4);
 
-        // Ensure the tree is placed on valid ground
-        if (!level.getBlockState(origin.below()).isSolid()) {
+        if (!checkCanTreePlace(level, treeBottom, height)) {
             return false;
         }
+        for (int x = -1; x <= 1; x++) {
+            for (int z = -1; z <= 1; z++) {
+                BlockPos basePos = treeBottom.offset(x, 0, z);
+                level.setBlock(basePos, HorizonsBlockRegistry.BAOBABE_WOOD.get().defaultBlockState(), 3);
+            }
+        }
 
-        // Generate 3x3 base of Baobabe Wood
-        placeBase(level, origin);
+        // Generate the trunk as a single column above the 3x3 base
+        for (int i = 1; i <= height; i++) { // Start at 1 to avoid overwriting the base
+            BlockPos trunkPos = treeBottom.above(i);
+            level.setBlock(trunkPos, HorizonsBlockRegistry.BAOBABE_LOG.get().defaultBlockState(), 3);
+        }
 
-        // Generate trunk height (4-9 blocks tall)
-        int trunkHeight = 4 + random.nextInt(6);
-        BlockPos topPos = placeTrunk(level, origin.above(), trunkHeight);
+        BlockPos topOfTrunk = treeBottom.above(height);
+        level.setBlock(topOfTrunk, HorizonsBlockRegistry.NIGHTLIGHT.get().defaultBlockState(), 3);
 
-        // Place Nightlight Block at the top of the trunk
-        level.setBlock(topPos, NIGHTLIGHT_BLOCK, 3);
-
-        // Generate the mushroom-like foliage cap
-        placeFoliage(level, topPos.above(), random);
+        makeCap(level, treeBottom.above(height - (height - 1)), height, new BlockPos.MutableBlockPos());
 
         return true;
     }
 
-    // Places a 3x3 base of Baobabe Wood
-    private void placeBase(LevelAccessor level, BlockPos pos) {
-        for (int dx = -1; dx <= 1; dx++) {
-            for (int dz = -1; dz <= 1; dz++) {
-                BlockPos basePos = pos.offset(dx, 0, dz);
-                level.setBlock(basePos, BAOBABE_WOOD, 3);
+    private boolean checkCanTreePlace(WorldGenLevel level, BlockPos treeBottom, int height) {
+        BlockState below = level.getBlockState(treeBottom.below());
+        if (!below.is(HorizonsBlockRegistry.FLUFFPULP_BLOCK.get())) {
+            return false;
+        }
+        for (int i = 0; i < height; i++) {
+            if (!canReplace(level.getBlockState(treeBottom.above(i)))) {
+                return false;
             }
         }
-    }
-
-    // Generates the trunk upwards from the center of the base
-    private BlockPos placeTrunk(LevelAccessor level, BlockPos startPos, int height) {
-        BlockPos.MutableBlockPos pos = startPos.mutable();
-
-
-        for (int i = 0; i < height; i++) {
-            level.setBlock(pos, BAOBABE_LOG, 3);
-            pos.move(Direction.UP);
+        BlockPos treeTop = treeBottom.above(height);
+        for (BlockPos checkLeaf : BlockPos.betweenClosed(treeTop.offset(-3, -1, -3), treeTop.offset(3, 3, 3))) {
+            if (!canReplace(level.getBlockState(checkLeaf))) {
+                return false;
+            }
         }
-
-        return pos.immutable(); // Return final top position
+        return true;
     }
 
-    // Generates the mushroom-like foliage cap
-    private void placeFoliage(LevelAccessor level, BlockPos topPos, RandomSource random) {
-        BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
-        int radius = 2 + random.nextInt(2); // Randomize radius (2-3)
+    protected void makeCap(WorldGenLevel level, BlockPos center, int height, BlockPos.MutableBlockPos mutablePos) {
+        int foliageRadius = 2;
 
-        for (int dx = -radius; dx <= radius; dx++) {
-            for (int dz = -radius; dz <= radius; dz++) {
-                int distance = Math.abs(dx) + Math.abs(dz);
-                if (distance <= radius + random.nextInt(2)) { // Rounded shape like a mushroom cap
-                    pos.set(topPos.getX() + dx, topPos.getY(), topPos.getZ() + dz);
-                    level.setBlock(pos, LAMPPAPER_BLOCK, 3);
+        for (int i = height - 3; i <= height; ++i) {
+            int j = i < height ? foliageRadius : foliageRadius - 1;
+            int k = foliageRadius - 2;
+
+            for (int l = -j; l <= j; ++l) {
+                for (int i1 = -j; i1 <= j; ++i1) {
+                    boolean flag = l == -j;
+                    boolean flag1 = l == j;
+                    boolean flag2 = i1 == -j;
+                    boolean flag3 = i1 == j;
+                    boolean flag4 = flag || flag1;
+                    boolean flag5 = flag2 || flag3;
+
+                    if (i >= height || flag4 != flag5) {
+                        mutablePos.setWithOffset(center, l, i, i1);
+                        if (!level.getBlockState(mutablePos).isSolidRender(level, mutablePos)) {
+                            BlockState blockState = HorizonsBlockRegistry.LAMPPAPER_BLOCK.get().defaultBlockState();
+                            this.setBlock(level, mutablePos, blockState);
+                        }
+                    }
                 }
             }
         }
     }
+
+    public static boolean canReplace(BlockState state) {
+        return (state.isAir() || state.canBeReplaced() || state.is(HorizonsBlockRegistry.LAMPPAPER_BLOCK.get())) && !state.is(HorizonsTagRegistry.UNMOVEABLE) && state.getFluidState().isEmpty();
+    }
+
 }

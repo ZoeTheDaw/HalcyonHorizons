@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "halcyonhorizons:lamppaper_sheet"
+    },
+    "N": {
+      "item": "halcyonhorizons:nightlight_gel"
+    }
+  },
+  "pattern": [
+    "X",
+    "N",
+    "#"
+  ],
+  "result": {
+    "item": "halcyonhorizons:baobabe_sapling"
+  },
+  "show_notification": true
+}
