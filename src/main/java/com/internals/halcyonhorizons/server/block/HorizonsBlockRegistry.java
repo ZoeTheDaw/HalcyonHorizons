@@ -2,10 +2,6 @@ package com.internals.halcyonhorizons.server.block;
 
 import com.github.alexthe666.citadel.item.BlockItemWithSupplier;
 import com.internals.halcyonhorizons.HalcyonHorizons;
-//import com.internals.halcyonhorizons.server.block.custom.ModHangingSignBlock;
-//import com.internals.halcyonhorizons.server.block.custom.ModStandingSignBlock;
-//import com.internals.halcyonhorizons.server.block.custom.ModWallHangingSignBlock;
-//import com.internals.halcyonhorizons.server.block.custom.ModWallSignBlock;
 import com.internals.halcyonhorizons.server.block.grower.BaobabeGrower;
 import com.internals.halcyonhorizons.server.item.HorizonsItemRegistry;
 import net.minecraft.sounds.SoundEvents;
@@ -16,7 +12,6 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
-import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -35,7 +30,7 @@ public class HorizonsBlockRegistry {
     public static final DeferredRegister<Block> DEF_REG = DeferredRegister.create(ForgeRegistries.BLOCKS, HalcyonHorizons.MODID);
     public static final RegistryObject<Block> FLUFFPULP_BLOCK = registerBlockAndItem("fluffpulp_block", () -> new FluffpulpBlock(FLUFFPULP_PROPERTIES));
 
-    public static final RegistryObject<Block> LAMPPAPER_BLOCK = registerBlockAndItem("lamppaper_block", () -> new LampboardBlock(LAMPPAPER_PROPERTIES));
+    public static final RegistryObject<Block> LAMPPAPER_BLOCK = registerBlockAndItem("lamppaper_block", () -> new Block(LAMPPAPER_PROPERTIES));
 
     public static final RegistryObject<Block> NIGHTLIGHT = registerBlockAndItem("nightlight", () -> new Block(NIGHTLIGHT_PROPERTIES));
 
@@ -96,8 +91,8 @@ public class HorizonsBlockRegistry {
     public static final RegistryObject<Block> NUMBER_BLOCK_7 = registerBlockAndItem("number_block_7", () -> new Block(BAOBABE_PLANKS_PROPERTIES));
     public static final RegistryObject<Block> NUMBER_BLOCK_8 = registerBlockAndItem("number_block_8", () -> new Block(BAOBABE_PLANKS_PROPERTIES));
     public static final RegistryObject<Block> NUMBER_BLOCK_9 = registerBlockAndItem("number_block_9", () -> new Block(BAOBABE_PLANKS_PROPERTIES));
-    public static final RegistryObject<Block> LAMPBOARD = registerBlockAndItem("lampboard", () -> new Block(LAMPPAPER_PROPERTIES));
-    public static final RegistryObject<Block> LAMPBOARD_DOOR = DEF_REG.register("lampboard_door", () -> new DoorBlock(BlockBehaviour.Properties.copy(LAMPBOARD.get()).strength(1.5F).sound(SoundType.GRASS).noOcclusion(), BlockSetType.CHERRY));
+    public static final RegistryObject<Block> LAMPBOARD_BLOCK = registerBlockAndItem("lampboard_block", () -> new HorizontalRotationBlock(LAMPPAPER_PROPERTIES));
+    public static final RegistryObject<Block> LAMPBOARD_DOOR = DEF_REG.register("lampboard_door", () -> new DoorBlock(BlockBehaviour.Properties.copy(LAMPBOARD_BLOCK.get()).strength(1.5F).sound(SoundType.GRASS).noOcclusion(), BlockSetType.CHERRY));
     public static final RegistryObject<Block> LAMPBOARD_TRAPDOOR = DEF_REG.register("lampboard_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(3.0F).sound(SoundType.GRASS).noOcclusion(), BlockSetType.CHERRY));
 
 

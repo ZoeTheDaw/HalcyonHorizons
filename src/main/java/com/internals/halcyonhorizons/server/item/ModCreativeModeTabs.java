@@ -32,7 +32,7 @@ public class ModCreativeModeTabs {
                         output.accept(HorizonsItemRegistry.FLUFFPULP_CHUNK.get());
                         output.accept(HorizonsBlockRegistry.LAMPPAPER_BLOCK.get());
                         output.accept(HorizonsItemRegistry.LAMPPAPER_SHEET.get());
-                        output.accept(HorizonsBlockRegistry.LAMPBOARD.get());
+                        output.accept(HorizonsBlockRegistry.LAMPBOARD_BLOCK.get());
                         output.accept(HorizonsItemRegistry.LAMPBOARD_DOOR.get());
                         output.accept(HorizonsItemRegistry.LAMPBOARD_TRAPDOOR.get());
                         output.accept(HorizonsItemRegistry.BEAD_BERRIES.get());
