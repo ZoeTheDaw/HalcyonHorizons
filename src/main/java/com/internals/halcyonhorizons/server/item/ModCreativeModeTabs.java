@@ -14,7 +14,7 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, HalcyonHorizons.MODID);
 
-    public static final RegistryObject<CreativeModeTab> AVIAN_INFIRMARY_TAB = CREATIVE_MODE_TABS.register("avian_infirmary_tab",
+    public static final RegistryObject<CreativeModeTab> AVIAN_INFIRMARY = CREATIVE_MODE_TABS.register("avian_infirmary",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(HorizonsBlockRegistry.BAOBABE_PLANKS.get()))
                     .title(Component.translatable("creativetab.avian_infirmary"))
                     .displayItems((itemDisplayParameters, output) -> {
