@@ -46,6 +46,7 @@ public class ModCreativeModeTabs {
                         output.accept(HorizonsItemRegistry.BAOBABE_PRESSURE_PLATE.get());
                         output.accept(HorizonsBlockRegistry.BAOBABE_BUTTON.get());
                         output.accept(HorizonsBlockRegistry.NIGHTLIGHT.get());
+                        output.accept(HorizonsItemRegistry.NIGHT_TORCH.get());
                         output.accept(HorizonsItemRegistry.NIGHTLIGHT_GEL.get());
                         output.accept(HorizonsBlockRegistry.ALPHABET_BLOCK_A.get());
                         output.accept(HorizonsBlockRegistry.ALPHABET_BLOCK_B.get());

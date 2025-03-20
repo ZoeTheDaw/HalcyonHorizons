@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "halcyonhorizons:block/night_wall_torch"
+    },
+    "facing=north": {
+      "model": "halcyonhorizons:block/night_wall_torch",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "halcyonhorizons:block/night_wall_torch",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "halcyonhorizons:block/night_wall_torch",
+      "y": 180
+    }
+  }
+}
