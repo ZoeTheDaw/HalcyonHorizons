@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "halcyonhorizons:block/fluffpillow"
+    },
+    "type=double": {
+      "model": "halcyonhorizons:block/fluffpillow_double"
+    },
+    "type=top": {
+      "model": "halcyonhorizons:block/fluffpillow_top"
+    }
+  }
+}

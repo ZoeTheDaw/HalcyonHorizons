@@ -1,0 +1,12 @@
+{
+  "parent": "halcyonhorizons:block/cube_orientable_column",
+  "textures": {
+    "particle": "halcyonhorizons:block/lamppaper/lampboard_box_side",
+    "down": "halcyonhorizons:block/lamppaper/lampboard_box_bottom",
+    "up": "halcyonhorizons:block/lamppaper/lampboard_box_top_open",
+    "north": "halcyonhorizons:block/lamppaper/lampboard_box_front",
+    "east": "halcyonhorizons:block/lamppaper/lampboard_box_side",
+    "south": "halcyonhorizons:block/lamppaper/lampboard_box_front",
+    "west": "halcyonhorizons:block/lamppaper/lampboard_box_side"
+  }
+}

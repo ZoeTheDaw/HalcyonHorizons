@@ -60,6 +60,7 @@ public class HalcyonHorizons {
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(new CommonEvents());
         HorizonsBlockRegistry.DEF_REG.register(modEventBus);
+        HorizonsBlockEntityRegistry.DEF_REG.register(modEventBus);
         HorizonsItemRegistry.DEF_REG.register(modEventBus);
         HorizonsFeatureRegistry.DEF_REG.register(modEventBus);
         HorizonsStructureRegistry.DEF_REG.register(modEventBus);

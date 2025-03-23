@@ -49,10 +49,12 @@
   "block.halcyonhorizons.fluffpulp_block": "Fluffpulp Block",
   "block.halcyonhorizons.fluffpulp_strands": "Fluffpulp Strands",
   "block.halcyonhorizons.fluffpulp_tuft": "Fluffpulp Tuft",
+  "block.halcyonhorizons.fluffpillow": "Fluffpillow",
   "item.halcyonhorizons.fluffpulp_strand": "Fluffpulp Strand",
   "item.halcyonhorizons.fluffpulp_chunk": "Fluffpulp Chunk",
 
   "block.halcyonhorizons.lampboard_block": "Lampboard Block",
+  "block.halcyonhorizons.lampboard_box": "Lampboard Box",
   "block.halcyonhorizons.lampboard_door": "Lampboard Door",
   "block.halcyonhorizons.lampboard_trapdoor": "Lampboard Trapdoor",
   "block.halcyonhorizons.lamppaper_block": "Lamppaper Block",

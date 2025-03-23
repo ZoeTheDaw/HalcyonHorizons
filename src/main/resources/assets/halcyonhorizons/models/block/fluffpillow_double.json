@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "halcyonhorizons:block/fluffpillow",
+    "side": "halcyonhorizons:block/fluffpillow_side"
+  }
+}

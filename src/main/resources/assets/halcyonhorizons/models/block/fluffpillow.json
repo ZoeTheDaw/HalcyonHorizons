@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "halcyonhorizons:block/fluffpillow",
+    "side": "halcyonhorizons:block/fluffpillow_side",
+    "top": "halcyonhorizons:block/fluffpillow"
+  }
+}
