@@ -3,7 +3,7 @@
   "group": "wooden_trapdoor",
   "key": {
     "#": {
-      "item": "halcyonhorizons:lampboard"
+      "item": "halcyonhorizons:lampboard_block"
     }
   },
   "pattern": [

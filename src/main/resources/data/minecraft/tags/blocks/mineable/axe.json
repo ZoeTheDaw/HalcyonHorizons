@@ -1,22 +1,22 @@
 {
   "replace": false,
   "values" : [
+    "halcyonhorizons:baobabe_button",
+    "halcyonhorizons:baobabe_door",
+    "halcyonhorizons:baobabe_fence",
+    "halcyonhorizons:baobabe_fence_gate",
+    "halcyonhorizons:baobabe_hanging_sign",
     "halcyonhorizons:baobabe_log",
+    "halcyonhorizons:baobabe_planks",
+    "halcyonhorizons:baobabe_pressure_plate",
+    "halcyonhorizons:baobabe_sign",
+    "halcyonhorizons:baobabe_slab",
+    "halcyonhorizons:baobabe_stairs",
+    "halcyonhorizons:baobabe_trapdoor",
+    "halcyonhorizons:baobabe_wall_hanging_sign",
+    "halcyonhorizons:baobabe_wall_sign",
     "halcyonhorizons:baobabe_wood",
     "halcyonhorizons:stripped_baobabe_log",
-    "halcyonhorizons:stripped_baobabe_wood",
-    "halcyonhorizons:baobabe_planks",
-    "halcyonhorizons:baobabe_stairs",
-    "halcyonhorizons:baobabe_button",
-    "halcyonhorizons:baobabe_slab",
-    "halcyonhorizons:baobabe_fence",
-    "halcyonhorizons:baobabe_sign",
-    "halcyonhorizons:baobabe_wall_sign",
-    "halcyonhorizons:baobabe_hanging_sign",
-    "halcyonhorizons:baobabe_wall_hanging_sign",
-    "halcyonhorizons:baobabe_pressure_plate",
-    "halcyonhorizons:baobabe_trapdoor",
-    "halcyonhorizons:baobabe_fence_gate",
-    "halcyonhorizons:baobabe_door"
+    "halcyonhorizons:stripped_baobabe_wood"
   ]
 }

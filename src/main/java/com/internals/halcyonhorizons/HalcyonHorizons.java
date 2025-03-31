@@ -6,9 +6,8 @@ import com.internals.halcyonhorizons.server.block.blockentity.HorizonsBlockEntit
 import com.internals.halcyonhorizons.server.config.BiomeGenerationConfig;
 import com.internals.halcyonhorizons.server.config.HorizonsServerConfig;
 import com.internals.halcyonhorizons.server.event.CommonEvents;
-import com.internals.halcyonhorizons.server.item.HorizonsFoodRegistry;
 import com.internals.halcyonhorizons.server.item.HorizonsItemRegistry;
-import com.internals.halcyonhorizons.server.item.ModCreativeModeTabs;
+import com.internals.halcyonhorizons.server.item.HorizonsCreativeModeTabRegistry;
 //import com.internals.halcyonhorizons.server.item.ModItems;
 import com.internals.halcyonhorizons.server.level.biome.HorizonsBiomeRegistry;
 import com.internals.halcyonhorizons.server.level.feature.HorizonsFeatureRegistry;
@@ -50,7 +49,7 @@ public class HalcyonHorizons {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, COMMON_CONFIG_SPEC, "halcyonhorizons-general.toml");
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModCreativeModeTabs.register(modEventBus);
+        HorizonsCreativeModeTabRegistry.register(modEventBus);
 //        ModBlocks.register(modEventBus);
 //        ModItems.register(modEventBus);
 

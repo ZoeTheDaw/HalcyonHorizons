@@ -11,4 +11,7 @@ public class HorizonsFeatureRegistry {
     public static final DeferredRegister<Feature<?>> DEF_REG = DeferredRegister.create(ForgeRegistries.FEATURES, HalcyonHorizons.MODID);
 
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> BAOBABE_TREE = DEF_REG.register("baobabe_tree", () -> new BaobabeTreeFeature(NoneFeatureConfiguration.CODEC));
+
+    public static final RegistryObject<Feature<NoneFeatureConfiguration>> CROLIVE_TREE = DEF_REG.register("crolive_tree", () -> new CroliveTreeFeature(NoneFeatureConfiguration.CODEC));
+
 }

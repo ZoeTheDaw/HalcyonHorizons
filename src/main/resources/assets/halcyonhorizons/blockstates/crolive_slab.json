@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "halcyonhorizons:block/crolive_slab"
+    },
+    "type=double": {
+      "model": "halcyonhorizons:block/crolive_planks"
+    },
+    "type=top": {
+      "model": "halcyonhorizons:block/crolive_slab_top"
+    }
+  }
+}

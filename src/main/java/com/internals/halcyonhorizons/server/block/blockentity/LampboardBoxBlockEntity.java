@@ -126,6 +126,6 @@ public class LampboardBoxBlockEntity extends RandomizableContainerBlockEntity {
         double vec3i2 = (double) this.worldPosition.getX() + (double) 0.5F + (double) vec3i.getX() / (double) 2.0F;
         double vec3i3 = (double)this.worldPosition.getY() + (double)0.5F + (double)vec3i.getY() / (double)2.0F;
         double vec3i4 = (double)this.worldPosition.getZ() + (double)0.5F + (double)vec3i.getZ() / (double)2.0F;
-        this.level.playSound((Player)null, vec3i2, vec3i3, vec3i4, soundEvent, SoundSource.BLOCKS, 0.5F, this.level.random.nextFloat() * 0.1F + 0.9F);
+        this.level.playSound((Player) null, vec3i2, vec3i3, vec3i4, soundEvent, SoundSource.BLOCKS, 0.5F, this.level.random.nextFloat() * 0.1F + 0.9F);
     }
 }

@@ -10,7 +10,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
-public class ModCreativeModeTabs {
+public class HorizonsCreativeModeTabRegistry {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, HalcyonHorizons.MODID);
 
@@ -30,6 +30,9 @@ public class ModCreativeModeTabs {
                         output.accept(HorizonsBlockRegistry.FLUFFPULP_TUFT.get());
                         output.accept(HorizonsItemRegistry.FLUFFPULP_STRAND.get());
                         output.accept(HorizonsItemRegistry.FLUFFPULP_CHUNK.get());
+                        output.accept(HorizonsItemRegistry.FLUFFPULP_DIAPER.get());
+                        output.accept(HorizonsItemRegistry.FLUFFPULP_FEATHER.get());
+                        output.accept(HorizonsItemRegistry.BABY_FORMULA.get());
                         output.accept(HorizonsBlockRegistry.FLUFFPILLOW.get());
                         output.accept(HorizonsBlockRegistry.LAMPPAPER_BLOCK.get());
                         output.accept(HorizonsItemRegistry.LAMPPAPER_SHEET.get());
@@ -86,7 +89,34 @@ public class ModCreativeModeTabs {
                         output.accept(HorizonsBlockRegistry.NUMBER_BLOCK_7.get());
                         output.accept(HorizonsBlockRegistry.NUMBER_BLOCK_8.get());
                         output.accept(HorizonsBlockRegistry.NUMBER_BLOCK_9.get());
+
+
                     }).build());
+
+    public static final RegistryObject<CreativeModeTab> ANTIQUE_ARCHIVES = CREATIVE_MODE_TABS.register("antique_archives",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(HorizonsBlockRegistry.CROLIVE_PLANKS.get()))
+                    .title(Component.translatable("creativetab.antique_archives"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(HorizonsBlockRegistry.CROLIVE_PLANKS.get());
+                        output.accept(HorizonsBlockRegistry.CROLIVE_PLANKS_STAIRS.get());
+                        output.accept(HorizonsBlockRegistry.CROLIVE_PLANKS_SLAB.get());
+                        output.accept(HorizonsBlockRegistry.CROLIVE_PLANKS_FENCE.get());
+                        output.accept(HorizonsBlockRegistry.CROLIVE_WOOD_WALL.get());
+                        output.accept(HorizonsBlockRegistry.CROLIVE_FENCE_GATE.get());
+                        output.accept(HorizonsBlockRegistry.CROLIVE_LOG.get());
+                        output.accept(HorizonsBlockRegistry.STRIPPED_CROLIVE_LOG.get());
+                        output.accept(HorizonsBlockRegistry.CROLIVE_WOOD.get());
+                        output.accept(HorizonsBlockRegistry.STRIPPED_CROLIVE_WOOD.get());
+                        output.accept(HorizonsBlockRegistry.CROLIVE_SAPLING.get());
+                        output.accept(HorizonsBlockRegistry.CROLIVE_BUTTON.get());
+                        output.accept(HorizonsItemRegistry.CROLIVE_DOOR.get());
+                        output.accept(HorizonsItemRegistry.CROLIVE_TRAPDOOR.get());
+                        output.accept(HorizonsItemRegistry.CROLIVE_PRESSURE_PLATE.get());
+                        output.accept(HorizonsItemRegistry.CROLIVE_SIGN.get());
+                        output.accept(HorizonsItemRegistry.CROLIVE_HANGING_SIGN.get());
+                        output.accept(HorizonsBlockRegistry.TRAVERTINE.get());
+                    }).build());
+
 
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);

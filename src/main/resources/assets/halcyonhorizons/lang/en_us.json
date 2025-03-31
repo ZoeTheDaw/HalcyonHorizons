@@ -46,12 +46,33 @@
   "block.halcyonhorizons.stripped_baobabe_log": "Stripped Baobabe Log",
   "block.halcyonhorizons.stripped_baobabe_wood": "Stripped Baobabe Wood",
 
+  "block.halcyonhorizons.crolive_planks": "Crolive Planks",
+  "block.halcyonhorizons.crolive_fence": "Crolive Fence",
+  "block.halcyonhorizons.crolive_fence_gate": "Crolive Fence Gate",
+  "block.halcyonhorizons.crolive_slab": "Crolive Slab",
+  "block.halcyonhorizons.crolive_stairs": "Crolive Stairs",
+  "block.halcyonhorizons.crolive_wall": "Crolive Wall",
+  "block.halcyonhorizons.crolive_button": "Crolive Button",
+  "block.halcyonhorizons.crolive_log": "Crolive Log",
+  "block.halcyonhorizons.crolive_wood": "Crolive Wood",
+  "block.halcyonhorizons.stripped_crolive_log": "Stripped Crolive Log",
+  "block.halcyonhorizons.stripped_crolive_wood": "Stripped Crolive Wood",
+  "block.halcyonhorizons.crolive_door": "Crolive Door",
+  "block.halcyonhorizons.crolive_trapdoor": "Crolive Trapdoor",
+  "block.halcyonhorizons.crolive_pressure_plate": "Crolive Pressure Plate",
+  "block.halcyonhorizons.crolive_hanging_sign": "Crolive Hanging Sign",
+  "block.halcyonhorizons.crolive_sign": "Crolive Sign",
+  "block.halcyonhorizons.crolive_sapling": "Crolive Sapling",
+
+
+  "block.halcyonhorizons.fluffpillow": "Fluffpillow",
   "block.halcyonhorizons.fluffpulp_block": "Fluffpulp Block",
   "block.halcyonhorizons.fluffpulp_strands": "Fluffpulp Strands",
   "block.halcyonhorizons.fluffpulp_tuft": "Fluffpulp Tuft",
-  "block.halcyonhorizons.fluffpillow": "Fluffpillow",
-  "item.halcyonhorizons.fluffpulp_strand": "Fluffpulp Strand",
   "item.halcyonhorizons.fluffpulp_chunk": "Fluffpulp Chunk",
+  "item.halcyonhorizons.fluffpulp_diaper": "Fluffpulp Diaper",
+  "item.halcyonhorizons.fluffpulp_feather": "Fluffpulp Feather",
+  "item.halcyonhorizons.fluffpulp_strand": "Fluffpulp Strand",
 
   "block.halcyonhorizons.lampboard_block": "Lampboard Block",
   "block.halcyonhorizons.lampboard_box": "Lampboard Box",
@@ -77,8 +98,11 @@
 
   "item.halcyonhorizons.bead_berries": "Bead Berries",
 
+  "item.halcyonhorizons.baby_formula": "Baby Formula",
+
+  "block.halcyonhorizons.travertine": "Travertine",
 
 
-
-  "creativetab.avian_infirmary": "Avian Infirmary"
+  "creativetab.avian_infirmary": "Avian Infirmary",
+  "creativetab.antique_archives": "Antique Archives"
 }

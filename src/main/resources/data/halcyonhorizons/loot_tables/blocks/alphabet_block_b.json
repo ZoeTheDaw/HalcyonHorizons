@@ -1,23 +1,21 @@
 {
-"type": "minecraft:block",
-"pools": [
-{
-"bonus_rolls": 0.0,
-"conditions": [
-{
-"condition": "minecraft:survives_explosion"
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "halcyonhorizons:alphabet_block_b"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "halcyonhorizons:blocks/alphabet_block_b"
 }
-],
-"entries": [
-{
-"type": "minecraft:item",
-"name": "halcyonhorizons:alphabet_block_b”
-}
-],
-"rolls": 1.0
-}
-],
-"random_sequence": "halcyonhorizons:blocks/alphabet_block_b”
-}
-
-

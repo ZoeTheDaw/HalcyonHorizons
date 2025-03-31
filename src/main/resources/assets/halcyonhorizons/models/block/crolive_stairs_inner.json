@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "halcyonhorizons:block/crolive/crolive_planks",
+    "side": "halcyonhorizons:block/crolive/crolive_planks",
+    "top": "halcyonhorizons:block/crolive/crolive_planks"
+  }
+}

@@ -6,4 +6,6 @@ import net.minecraft.world.food.FoodProperties;
 
 public class HorizonsFoodRegistry {
     public static final FoodProperties BEAD_BERRIES = new FoodProperties.Builder().nutrition(4).saturationMod(0.2F).build();
+
+    public static final FoodProperties BABY_FORMULA = new FoodProperties.Builder().nutrition(4).saturationMod(0.2F).build();
 }

@@ -31,7 +31,6 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.storage.loot.LootParams;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParam;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
@@ -99,6 +98,7 @@ public class LampboardBoxBlock extends BaseEntityBlock {
         return AbstractContainerMenu.getRedstoneSignalFromBlockEntity(level.getBlockEntity(blockPos));
     }
 
+    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
         pBuilder.add(new Property[]{FACING, OPEN});
     }
@@ -110,19 +110,19 @@ public class LampboardBoxBlock extends BaseEntityBlock {
 
     public void playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
         BlockEntity blockEntity = level.getBlockEntity(pos);
-        if (blockEntity instanceof LampboardBoxBlockEntity lampboardBox) {
-            if (!level.isClientSide && player.isCreative() && !lampboardBox.isEmpty()) {
+        if (blockEntity instanceof LampboardBoxBlockEntity lampboardBoxBlockEntity) {
+            if (!level.isClientSide && player.isCreative() && !lampboardBoxBlockEntity.isEmpty()) {
                 // Create an item stack from the block itself
                 ItemStack stack = new ItemStack(this);
                 blockEntity.saveToItem(stack);  // Save the block's contents to the item stack
-                if (lampboardBox.hasCustomName()) {
-                    stack.setHoverName(lampboardBox.getCustomName());  // Preserve the name if it has one
+                if (lampboardBoxBlockEntity.hasCustomName()) {
+                    stack.setHoverName(lampboardBoxBlockEntity.getCustomName());  // Preserve the name if it has one
                 }
                 ItemEntity itemEntity = new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, stack);
                 itemEntity.setDefaultPickUpDelay();
                 level.addFreshEntity(itemEntity);  // Drop the block with its contents
             } else {
-                lampboardBox.unpackLootTable(player);  // Drop individual contents if not in Creative mode
+                lampboardBoxBlockEntity.unpackLootTable(player);  // Drop individual contents if not in Creative mode
             }
         }
         super.playerWillDestroy(level, pos, state, player);
@@ -131,21 +131,21 @@ public class LampboardBoxBlock extends BaseEntityBlock {
 
     // Modify the Rotation and Mirroring Behavior
     @Override
-    public BlockState rotate(BlockState state, Rotation rotation) {
-        return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
+    public BlockState rotate(BlockState blockState, Rotation rotation) {
+        return (BlockState) blockState.setValue(FACING, rotation.rotate((Direction) blockState.getValue(FACING)));
     }
 
     @Override
-    public BlockState mirror(BlockState state, Mirror mirror) {
-        return state.rotate(mirror.getRotation(state.getValue(FACING)));
+    public BlockState mirror(BlockState blockState, Mirror mirror) {
+        return blockState.rotate(mirror.getRotation((Direction) blockState.getValue(FACING)));
     }
 
     public List<ItemStack> getDrops(BlockState state, LootParams.Builder builder) {
-        BlockEntity $$2 = (BlockEntity) builder.getOptionalParameter(LootContextParams.BLOCK_ENTITY);
-        if ($$2 instanceof LampboardBoxBlockEntity lampboardBox) {
-            builder = builder.withDynamicDrop(CONTENTS, (p_56219_) -> {
-                for (int i = 0; i < lampboardBox.getContainerSize(); ++i) {
-                    p_56219_.accept(lampboardBox.getItem(i));
+        BlockEntity parameter = (BlockEntity) builder.getOptionalParameter(LootContextParams.BLOCK_ENTITY);
+        if (parameter instanceof LampboardBoxBlockEntity lampboardBoxBlockEntity) {
+            builder = builder.withDynamicDrop(CONTENTS, (stackConsumer) -> {
+                for (int i = 0; i < lampboardBoxBlockEntity.getContainerSize(); ++i) {
+                    stackConsumer.accept(lampboardBoxBlockEntity.getItem(i));
                 }
 
             });
@@ -155,13 +155,13 @@ public class LampboardBoxBlock extends BaseEntityBlock {
     }
 
     public ItemStack getCloneItemStack(BlockGetter blockGetter, BlockPos blockPos, BlockState blockState) {
-        ItemStack $$3 = super.getCloneItemStack(blockGetter, blockPos, blockState);
-        blockGetter.getBlockEntity(blockPos, HorizonsBlockEntityRegistry.LAMPBOARD_BOX.get()).ifPresent((lampboardBox) -> lampboardBox.saveToItem($$3));
-        return $$3;
+        ItemStack itemStack = super.getCloneItemStack(blockGetter, blockPos, blockState);
+        blockGetter.getBlockEntity(blockPos, HorizonsBlockEntityRegistry.LAMPBOARD_BOX.get()).ifPresent((lampboardBoxBlockEntity) -> lampboardBoxBlockEntity.saveToItem(itemStack));
+        return itemStack;
     }
 
     static {
-        FACING = BlockStateProperties.FACING;
+        FACING = BlockStateProperties.HORIZONTAL_FACING;
         OPEN = BooleanProperty.create("open");
         CONTENTS = new ResourceLocation("contents");
     }

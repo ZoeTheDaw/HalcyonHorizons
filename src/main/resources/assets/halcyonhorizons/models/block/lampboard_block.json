@@ -2,7 +2,7 @@
   "parent": "halcyonhorizons:block/cube_orientable_column",
   "textures": {
     "particle": "halcyonhorizons:block/lamppaper/lampboard_side",
-    "down": "halcyonhorizons:block/lamppaper/lampboard_box_bottom",
+    "down": "halcyonhorizons:block/lamppaper/lampboard_top",
     "up": "halcyonhorizons:block/lamppaper/lampboard_top",
     "north": "halcyonhorizons:block/lamppaper/lampboard_front",
     "east": "halcyonhorizons:block/lamppaper/lampboard_side",

@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "halcyonhorizons:baobabe_fence_gate"
+    "halcyonhorizons:baobabe_fence_gate",
+    "halcyonhorizons:crolive_fence_gate"
+
   ]
 }

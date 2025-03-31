@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "halcyonhorizons:block/crolive/crolive_log_top",
+    "side": "halcyonhorizons:block/crolive/crolive_log"
+  }
+}

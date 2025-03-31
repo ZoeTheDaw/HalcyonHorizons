@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "halcyonhorizons:block/crolive/crolive_planks"
+  }
+}

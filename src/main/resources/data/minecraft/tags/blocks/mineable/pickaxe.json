@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values" : [
+    "halcyonhorizons:crolive_button",
+    "halcyonhorizons:crolive_door",
+    "halcyonhorizons:crolive_fence",
+    "halcyonhorizons:crolive_fence_gate",
+    "halcyonhorizons:crolive_wall",
+    "halcyonhorizons:crolive_hanging_sign",
+    "halcyonhorizons:crolive_log",
+    "halcyonhorizons:crolive_planks",
+    "halcyonhorizons:crolive_pressure_plate",
+    "halcyonhorizons:crolive_sign",
+    "halcyonhorizons:crolive_slab",
+    "halcyonhorizons:crolive_stairs",
+    "halcyonhorizons:crolive_trapdoor",
+    "halcyonhorizons:crolive_wall_hanging_sign",
+    "halcyonhorizons:crolive_wall_sign",
+    "halcyonhorizons:crolive_wood",
+    "halcyonhorizons:stripped_crolive_log",
+    "halcyonhorizons:stripped_crolive_wood"
+  ]
+}

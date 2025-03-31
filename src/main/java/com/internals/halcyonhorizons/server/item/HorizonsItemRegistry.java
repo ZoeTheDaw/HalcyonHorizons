@@ -48,10 +48,20 @@ public class HorizonsItemRegistry {
     public static final RegistryObject<Item> BAOBABE_SIGN = DEF_REG.register("baobabe_sign", () -> new SignItem((new Item.Properties()).stacksTo(16), HorizonsBlockRegistry.BAOBABE_SIGN.get(), HorizonsBlockRegistry.BAOBABE_WALL_SIGN.get()));
     public static final RegistryObject<Item> BAOBABE_TRAPDOOR = DEF_REG.register("baobabe_trapdoor", () -> new BlockItem(HorizonsBlockRegistry.BAOBABE_TRAPDOOR.get(), (new Item.Properties())));
 
+    public static final RegistryObject<Item> CROLIVE_DOOR = DEF_REG.register("crolive_door", () -> new DoubleHighBlockItem(HorizonsBlockRegistry.CROLIVE_DOOR.get(), (new Item.Properties())));
+    public static final RegistryObject<Item> CROLIVE_HANGING_SIGN = DEF_REG.register("crolive_hanging_sign", () -> new HangingSignItem(HorizonsBlockRegistry.CROLIVE_HANGING_SIGN.get(), HorizonsBlockRegistry.CROLIVE_WALL_HANGING_SIGN.get(), (new Item.Properties()).stacksTo(16)));
+    public static final RegistryObject<Item> CROLIVE_PRESSURE_PLATE = DEF_REG.register("crolive_pressure_plate", () -> new BlockItem(HorizonsBlockRegistry.CROLIVE_PRESSURE_PLATE.get(), (new Item.Properties())));
+    public static final RegistryObject<Item> CROLIVE_SIGN = DEF_REG.register("crolive_sign", () -> new SignItem((new Item.Properties()).stacksTo(16), HorizonsBlockRegistry.CROLIVE_SIGN.get(), HorizonsBlockRegistry.CROLIVE_WALL_SIGN.get()));
+    public static final RegistryObject<Item> CROLIVE_TRAPDOOR = DEF_REG.register("crolive_trapdoor", () -> new BlockItem(HorizonsBlockRegistry.CROLIVE_TRAPDOOR.get(), (new Item.Properties())));
+
     public static final RegistryObject<Item> BEAD_BERRIES = DEF_REG.register("bead_berries", () -> new ItemNameBlockItem(HorizonsBlockRegistry.BEAD_BERRY_BUSH.get(), (new Item.Properties().food(HorizonsFoodRegistry.BEAD_BERRIES))));
+
+    public static final RegistryObject<Item> BABY_FORMULA = DEF_REG.register("baby_formula", () -> new Item(new Item.Properties().food(HorizonsFoodRegistry.BABY_FORMULA)));
 
     public static final RegistryObject<Item> FLUFFPULP_CHUNK = DEF_REG.register("fluffpulp_chunk", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> FLUFFPULP_STRAND = DEF_REG.register("fluffpulp_strand", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> FLUFFPULP_DIAPER = DEF_REG.register("fluffpulp_diaper", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> FLUFFPULP_FEATHER = DEF_REG.register("fluffpulp_feather", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> LAMPBOARD_DOOR = DEF_REG.register("lampboard_door", () -> new DoubleHighBlockItem(HorizonsBlockRegistry.LAMPBOARD_DOOR.get(), (new Item.Properties())));
     public static final RegistryObject<Item> LAMPBOARD_TRAPDOOR = DEF_REG.register("lampboard_trapdoor", () -> new BlockItem(HorizonsBlockRegistry.LAMPBOARD_TRAPDOOR.get(), (new Item.Properties())));

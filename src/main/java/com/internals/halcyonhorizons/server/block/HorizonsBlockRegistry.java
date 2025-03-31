@@ -3,6 +3,7 @@ package com.internals.halcyonhorizons.server.block;
 import com.github.alexthe666.citadel.item.BlockItemWithSupplier;
 import com.internals.halcyonhorizons.HalcyonHorizons;
 import com.internals.halcyonhorizons.server.block.grower.BaobabeGrower;
+import com.internals.halcyonhorizons.server.block.grower.CroliveGrower;
 import com.internals.halcyonhorizons.server.item.HorizonsItemRegistry;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
@@ -27,9 +28,15 @@ public class HorizonsBlockRegistry {
     public static final BlockBehaviour.Properties LAMPPAPER_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(0.5F, .6F).sound(SoundType.GRASS);
     public static final BlockBehaviour.Properties NIGHTLIGHT_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).requiresCorrectToolForDrops().lightLevel(state -> 15).strength(2F, 11.0F).sound(SoundType.SHROOMLIGHT);
 
+    public static final BlockBehaviour.Properties CROLIVE_PLANKS_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.5F, 2.0F).sound(SoundType.STONE).instrument(NoteBlockInstrument.BASS);
+    public static final BlockBehaviour.Properties CROLIVE_LOG_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.5F).sound(SoundType.STONE).instrument(NoteBlockInstrument.BASS);
+public static final BlockBehaviour.Properties TRAVERTINE_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).strength(1.2F, 4.5F).sound(SoundType.DRIPSTONE_BLOCK);
+
     public static final WoodType BAOBABE_WOOD_TYPE = WoodType.register(new WoodType("halcyonhorizons:baobabe", BlockSetType.CHERRY));
+    public static final WoodType CROLIVE_WOOD_TYPE = WoodType.register(new WoodType("halcyonhorizons:crolive", BlockSetType.DARK_OAK));
 
     public static final DeferredRegister<Block> DEF_REG = DeferredRegister.create(ForgeRegistries.BLOCKS, HalcyonHorizons.MODID);
+
     public static final RegistryObject<Block> FLUFFPULP_BLOCK = registerBlockAndItem("fluffpulp_block", () -> new FluffpulpBlock(FLUFFPULP_PROPERTIES));
     public static final RegistryObject<Block> FLUFFPULP_STRANDS = registerBlockAndItem("fluffpulp_strands", () -> new FluffpulpPlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOL).strength(0.5F, .6F).sound(SoundType.WOOL).noOcclusion().noCollission().offsetType(BlockBehaviour.OffsetType.XZ)));
     public static final RegistryObject<Block> FLUFFPULP_TUFT = registerBlockAndItem("fluffpulp_tuft", () -> new FluffpulpPlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOL).strength(0.5F, .6F).sound(SoundType.WOOL).noOcclusion().noCollission().offsetType(BlockBehaviour.OffsetType.XZ)));
@@ -40,7 +47,6 @@ public class HorizonsBlockRegistry {
     public static final RegistryObject<Block> LAMPBOARD_BOX = registerBlockAndItem("lampboard_box", () -> new LampboardBoxBlock());
     public static final RegistryObject<Block> LAMPBOARD_DOOR = DEF_REG.register("lampboard_door", () -> new DoorBlock(BlockBehaviour.Properties.copy(LAMPBOARD_BLOCK.get()).strength(1.5F).sound(SoundType.GRASS).noOcclusion(), BlockSetType.CHERRY));
     public static final RegistryObject<Block> LAMPBOARD_TRAPDOOR = DEF_REG.register("lampboard_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(3.0F).sound(SoundType.GRASS).noOcclusion(), BlockSetType.CHERRY));
-
 
     public static final RegistryObject<Block> NIGHTLIGHT = registerBlockAndItem("nightlight", () -> new Block(NIGHTLIGHT_PROPERTIES));
     public static final RegistryObject<Block> NIGHT_TORCH = DEF_REG.register("night_torch", () -> new TorchBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noCollission().strength(1.0F).sound(SoundType.WOOD).noCollission().lightLevel(state -> 15).instabreak().noOcclusion(), ParticleTypes.SMOKE));
@@ -104,6 +110,29 @@ public class HorizonsBlockRegistry {
     public static final RegistryObject<Block> NUMBER_BLOCK_7 = registerBlockAndItem("number_block_7", () -> new Block(BAOBABE_PLANKS_PROPERTIES));
     public static final RegistryObject<Block> NUMBER_BLOCK_8 = registerBlockAndItem("number_block_8", () -> new Block(BAOBABE_PLANKS_PROPERTIES));
     public static final RegistryObject<Block> NUMBER_BLOCK_9 = registerBlockAndItem("number_block_9", () -> new Block(BAOBABE_PLANKS_PROPERTIES));
+
+    public static final RegistryObject<Block> CROLIVE_PLANKS = registerBlockAndItem("crolive_planks", () -> new Block(CROLIVE_PLANKS_PROPERTIES));
+    public static final RegistryObject<Block> CROLIVE_PLANKS_STAIRS = registerBlockAndItem("crolive_stairs", () -> new StairBlock(CROLIVE_PLANKS.get().defaultBlockState(), CROLIVE_PLANKS_PROPERTIES));
+    public static final RegistryObject<Block> CROLIVE_PLANKS_SLAB = registerBlockAndItem("crolive_slab", () -> new SlabBlock(CROLIVE_PLANKS_PROPERTIES));
+    public static final RegistryObject<Block> CROLIVE_PLANKS_FENCE = registerBlockAndItem("crolive_fence", () -> new FenceBlock(CROLIVE_PLANKS_PROPERTIES));
+    public static final RegistryObject<Block> CROLIVE_FENCE_GATE = registerBlockAndItem("crolive_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.copy(CROLIVE_PLANKS.get()).strength(2.0F, 3.0F).sound(SoundType.STONE).forceSolidOn(), SoundEvents.CHERRY_WOOD_FENCE_GATE_CLOSE, SoundEvents.CHERRY_WOOD_FENCE_GATE_CLOSE));
+    public static final RegistryObject<Block> CROLIVE_WOOD_WALL = registerBlockAndItem("crolive_wall", () -> new WallBlock(CROLIVE_PLANKS_PROPERTIES));
+    public static final RegistryObject<Block> CROLIVE_SIGN = DEF_REG.register("crolive_sign", () -> new StandingSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noCollission().strength(1.0F).sound(SoundType.STONE), CROLIVE_WOOD_TYPE));
+    public static final RegistryObject<Block> CROLIVE_WALL_SIGN = DEF_REG.register("crolive_wall_sign", () -> new WallSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noCollission().strength(1.0F).sound(SoundType.STONE), CROLIVE_WOOD_TYPE));
+    public static final RegistryObject<Block> CROLIVE_HANGING_SIGN = DEF_REG.register("crolive_hanging_sign", () -> new CeilingHangingSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F), CROLIVE_WOOD_TYPE));
+    public static final RegistryObject<Block> CROLIVE_WALL_HANGING_SIGN = DEF_REG.register("crolive_wall_hanging_sign", () -> new WallHangingSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).dropsLike(CROLIVE_HANGING_SIGN.get()), CROLIVE_WOOD_TYPE));
+    public static final RegistryObject<Block> CROLIVE_LOG = registerBlockAndItem("crolive_log", () -> new StrippableLogBlock(CROLIVE_LOG_PROPERTIES));
+    public static final RegistryObject<Block> CROLIVE_WOOD = registerBlockAndItem("crolive_wood", () -> new StrippableLogBlock(CROLIVE_LOG_PROPERTIES));
+    public static final RegistryObject<Block> STRIPPED_CROLIVE_LOG = registerBlockAndItem("stripped_crolive_log", () -> new RotatedPillarBlock(CROLIVE_LOG_PROPERTIES));
+    public static final RegistryObject<Block> STRIPPED_CROLIVE_WOOD = registerBlockAndItem("stripped_crolive_wood", () -> new RotatedPillarBlock(CROLIVE_LOG_PROPERTIES));
+    public static final RegistryObject<Block> CROLIVE_SAPLING = registerBlockAndItem("crolive_sapling", () -> new CroliveSaplingBlock(new CroliveGrower(), BlockBehaviour.Properties.of().mapColor(MapColor.GRASS).noCollission().randomTicks().instabreak().noOcclusion().sound(SoundType.WOOD), true));
+    public static final RegistryObject<Block> CROLIVE_PRESSURE_PLATE = DEF_REG.register("crolive_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(CROLIVE_PLANKS.get()).noCollission().strength(0.5F).sound(SoundType.STONE), BlockSetType.DARK_OAK));
+    public static final RegistryObject<Block> CROLIVE_DOOR = DEF_REG.register("crolive_door", () -> new DoorBlock(BlockBehaviour.Properties.copy(CROLIVE_PLANKS.get()).strength(1.5F).sound(SoundType.STONE).noOcclusion(), BlockSetType.DARK_OAK));
+    public static final RegistryObject<Block> CROLIVE_TRAPDOOR = DEF_REG.register("crolive_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(3.0F).sound(SoundType.STONE).noOcclusion(), BlockSetType.DARK_OAK));
+    public static final RegistryObject<Block> CROLIVE_BUTTON = registerBlockAndItem("crolive_button", () -> new ButtonBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noCollission().strength(0.5F).sound(SoundType.STONE), BlockSetType.DARK_OAK, 30, true));
+
+    public static final RegistryObject<Block> TRAVERTINE = registerBlockAndItem("travertine", ()-> new Block(TRAVERTINE_PROPERTIES));
+
 
     private static RegistryObject<Block> registerBlockAndItem(String name, Supplier<Block> block, int itemType) {
         RegistryObject<Block> blockObj = DEF_REG.register(name, block);
