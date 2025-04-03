@@ -63,7 +63,7 @@
   "block.halcyonhorizons.crolive_hanging_sign": "Crolive Hanging Sign",
   "block.halcyonhorizons.crolive_sign": "Crolive Sign",
   "block.halcyonhorizons.crolive_sapling": "Crolive Sapling",
-
+  "block.halcyonhorizons.crolive_branch": "Crolive Branch",
 
   "block.halcyonhorizons.fluffpillow": "Fluffpillow",
   "block.halcyonhorizons.fluffpulp_block": "Fluffpulp Block",
@@ -101,6 +101,9 @@
   "item.halcyonhorizons.baby_formula": "Baby Formula",
 
   "block.halcyonhorizons.travertine": "Travertine",
+  "block.halcyonhorizons.travertine_slab": "Travertine Slab",
+  "block.halcyonhorizons.travertine_stairs": "Travertine Stairs",
+  "block.halcyonhorizons.travertine_wall": "Travertine Wall",
 
 
   "creativetab.avian_infirmary": "Avian Infirmary",

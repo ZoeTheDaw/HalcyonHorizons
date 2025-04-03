@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "halcyonhorizons:block/travertine_slab"
+    },
+    "type=double": {
+      "model": "halcyonhorizons:block/travertine"
+    },
+    "type=top": {
+      "model": "halcyonhorizons:block/travertine_slab_top"
+    }
+  }
+}

@@ -13,5 +13,7 @@ public class HorizonsFeatureRegistry {
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> BAOBABE_TREE = DEF_REG.register("baobabe_tree", () -> new BaobabeTreeFeature(NoneFeatureConfiguration.CODEC));
 
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> CROLIVE_TREE = DEF_REG.register("crolive_tree", () -> new CroliveTreeFeature(NoneFeatureConfiguration.CODEC));
+    public static final RegistryObject<Feature<NoneFeatureConfiguration>> CROLIVE_TREE_WITH_BRANCHES = DEF_REG.register("crolive_tree_with_branches", () -> new CroliveTreeWithBranchesFeature(NoneFeatureConfiguration.CODEC));
+    public static final RegistryObject<Feature<NoneFeatureConfiguration>> CROLIVE_ROOTS = DEF_REG.register("crolive_roots", () -> new CroliveRootsFeature(NoneFeatureConfiguration.CODEC));
 
 }

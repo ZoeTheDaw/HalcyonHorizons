@@ -30,7 +30,7 @@ public class HorizonsBlockRegistry {
 
     public static final BlockBehaviour.Properties CROLIVE_PLANKS_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.5F, 2.0F).sound(SoundType.STONE).instrument(NoteBlockInstrument.BASS);
     public static final BlockBehaviour.Properties CROLIVE_LOG_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.5F).sound(SoundType.STONE).instrument(NoteBlockInstrument.BASS);
-public static final BlockBehaviour.Properties TRAVERTINE_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).strength(1.2F, 4.5F).sound(SoundType.DRIPSTONE_BLOCK);
+    public static final BlockBehaviour.Properties TRAVERTINE_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).strength(1.2F, 4.5F).sound(SoundType.DRIPSTONE_BLOCK);
 
     public static final WoodType BAOBABE_WOOD_TYPE = WoodType.register(new WoodType("halcyonhorizons:baobabe", BlockSetType.CHERRY));
     public static final WoodType CROLIVE_WOOD_TYPE = WoodType.register(new WoodType("halcyonhorizons:crolive", BlockSetType.DARK_OAK));
@@ -126,12 +126,17 @@ public static final BlockBehaviour.Properties TRAVERTINE_PROPERTIES = BlockBehav
     public static final RegistryObject<Block> STRIPPED_CROLIVE_LOG = registerBlockAndItem("stripped_crolive_log", () -> new RotatedPillarBlock(CROLIVE_LOG_PROPERTIES));
     public static final RegistryObject<Block> STRIPPED_CROLIVE_WOOD = registerBlockAndItem("stripped_crolive_wood", () -> new RotatedPillarBlock(CROLIVE_LOG_PROPERTIES));
     public static final RegistryObject<Block> CROLIVE_SAPLING = registerBlockAndItem("crolive_sapling", () -> new CroliveSaplingBlock(new CroliveGrower(), BlockBehaviour.Properties.of().mapColor(MapColor.GRASS).noCollission().randomTicks().instabreak().noOcclusion().sound(SoundType.WOOD), true));
+    public static final RegistryObject<Block> CROLIVE_BRANCH = registerBlockAndItem("crolive_branch", () -> new CroliveBranchBlock());
     public static final RegistryObject<Block> CROLIVE_PRESSURE_PLATE = DEF_REG.register("crolive_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(CROLIVE_PLANKS.get()).noCollission().strength(0.5F).sound(SoundType.STONE), BlockSetType.DARK_OAK));
     public static final RegistryObject<Block> CROLIVE_DOOR = DEF_REG.register("crolive_door", () -> new DoorBlock(BlockBehaviour.Properties.copy(CROLIVE_PLANKS.get()).strength(1.5F).sound(SoundType.STONE).noOcclusion(), BlockSetType.DARK_OAK));
     public static final RegistryObject<Block> CROLIVE_TRAPDOOR = DEF_REG.register("crolive_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(3.0F).sound(SoundType.STONE).noOcclusion(), BlockSetType.DARK_OAK));
     public static final RegistryObject<Block> CROLIVE_BUTTON = registerBlockAndItem("crolive_button", () -> new ButtonBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noCollission().strength(0.5F).sound(SoundType.STONE), BlockSetType.DARK_OAK, 30, true));
 
-    public static final RegistryObject<Block> TRAVERTINE = registerBlockAndItem("travertine", ()-> new Block(TRAVERTINE_PROPERTIES));
+    public static final RegistryObject<Block> TRAVERTINE = registerBlockAndItem("travertine", () -> new Block(TRAVERTINE_PROPERTIES));
+    public static final RegistryObject<Block> TRAVERTINE_STAIRS = registerBlockAndItem("travertine_stairs", () -> new StairBlock(TRAVERTINE.get().defaultBlockState(), TRAVERTINE_PROPERTIES));
+    public static final RegistryObject<Block> TRAVERTINE_SLAB = registerBlockAndItem("travertine_slab", () -> new SlabBlock(TRAVERTINE_PROPERTIES));
+    public static final RegistryObject<Block> TRAVERTINE_WALL = registerBlockAndItem("travertine_wall", () -> new WallBlock(TRAVERTINE_PROPERTIES));
+    public static final RegistryObject<Block> COBBLED_TRAVERTINE = registerBlockAndItem("cobbled_travertine", () -> new Block(TRAVERTINE_PROPERTIES));
 
 
     private static RegistryObject<Block> registerBlockAndItem(String name, Supplier<Block> block, int itemType) {

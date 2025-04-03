@@ -1,16 +1,22 @@
 package com.internals.halcyonhorizons.server.level.feature;
 
+import com.internals.halcyonhorizons.server.block.CroliveBranchBlock;
 import com.internals.halcyonhorizons.server.block.HorizonsBlockRegistry;
+import com.internals.halcyonhorizons.server.misc.HorizonsMath;
 import com.internals.halcyonhorizons.server.misc.HorizonsTagRegistry;
 import com.mojang.serialization.Codec;
+import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
+import net.minecraft.world.level.material.Fluids;
 
 public class CroliveTreeFeature extends Feature<NoneFeatureConfiguration> {
 
@@ -22,66 +28,62 @@ public class CroliveTreeFeature extends Feature<NoneFeatureConfiguration> {
     public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
         RandomSource randomsource = context.random();
         WorldGenLevel level = context.level();
-        BlockPos treeBottom = context.origin();
-        int height = 7 + randomsource.nextInt(4);
-
-        if (!checkCanTreePlace(level, treeBottom, height)) {
+        BlockPos treeGround = context.origin();
+        int centerAboveGround = randomsource.nextInt(5);
+        int height = centerAboveGround + 4 + randomsource.nextInt(5);
+        if (!checkCanTreePlace(level, treeGround, height)) {
             return false;
         }
-        for (int x = -1; x <= 1; x++) {
-            for (int z = -1; z <= 1; z++) {
-                BlockPos basePos = treeBottom.offset(x, 0, z);
-                level.setBlock(basePos, HorizonsBlockRegistry.CROLIVE_WOOD.get().defaultBlockState(), 3);
-
-                // Check if the position is north, south, east, or west (not diagonal or center)
-                if ((x == 0 && Math.abs(z) == 1) || (z == 0 && Math.abs(x) == 1)) {
-                    int height1 = 1 + level.getRandom().nextInt(2);  // Random height of 1 or 2 blocks
-                    for (int y = 1; y <= height1; y++) {
-                        BlockPos extendedPos = basePos.above(y);
-                        level.setBlock(extendedPos, HorizonsBlockRegistry.CROLIVE_WOOD.get().defaultBlockState(), 3);
-                    }
+        BlockPos centerPos = treeGround.above(centerAboveGround);
+        if (centerAboveGround > 0) {
+            int rootCount = 0;
+            for (Direction direction : HorizonsMath.HORIZONTAL_DIRECTIONS) {
+                if (rootCount <= 3 + randomsource.nextInt(1)) {
+                    generateRoot(level, centerPos.relative(direction), 0.25F, randomsource, direction, centerAboveGround + 1 + randomsource.nextInt(6));
+                    rootCount++;
                 }
             }
         }
-
-        // Generate the trunk as a single column above the 3x3 base
-        for (int i = 1; i < height; i++) {  // Use '< height' to stop before the top block
-            // Trunk generation
-            BlockPos trunkPos = treeBottom.above(i);
-            level.setBlock(trunkPos, HorizonsBlockRegistry.CROLIVE_LOG.get().defaultBlockState(), 3);
-
-            // Branch generation from the 4th block upwards
-            if (i >= 4 && level.getRandom().nextFloat() < 0.5f) {  // 50% chance to generate a branch at this height
-                int branchLength = 2 + level.getRandom().nextInt(1);  // Branch length of 2-3
-                Direction branchDirection = Direction.Plane.HORIZONTAL.getRandomDirection(level.getRandom());  // Random horizontal direction
-
-                // Generate the branch
-                BlockPos branchStart = trunkPos.relative(branchDirection);
-                for (int j = 0; j < branchLength; j++) {
-                    BlockPos branchPos = branchStart.relative(branchDirection, j);
-
-                    // Check if the block directly below is not air, and change direction if needed
-                    if (!level.getBlockState(branchPos.below()).isAir()) {
-                        // Try a new direction to avoid overlapping with existing branches
-                        branchDirection = Direction.Plane.HORIZONTAL.getRandomDirection(level.getRandom());
-                        branchPos = branchStart.relative(branchDirection, j);
-                    }
-
-                    level.setBlock(branchPos, HorizonsBlockRegistry.CROLIVE_WOOD.get().defaultBlockState(), 3);
-
-                    // Optional upward curve at the end of the branch
-                    if (j == branchLength - 1 && level.getRandom().nextFloat() < 0.4f) {  // 20% chance to curve up
-                        BlockPos curvedBranchPos = branchPos.above();
-                        level.setBlock(curvedBranchPos, HorizonsBlockRegistry.CROLIVE_WOOD.get().defaultBlockState(), 3);
-                    }
+        BlockPos.MutableBlockPos trunkPos = new BlockPos.MutableBlockPos();
+        int i = 0;
+        trunkPos.set(centerPos);
+        trunkPos.move(0, -1, 0);
+        int tallPart = height - centerAboveGround;
+        while (i < tallPart) {
+            i++;
+            trunkPos.move(0, 1, 0);
+            if (randomsource.nextInt(5) == 0) {
+                level.setBlock(trunkPos, HorizonsBlockRegistry.CROLIVE_WOOD.get().defaultBlockState(), 3);
+                trunkPos.move(Util.getRandom(HorizonsMath.HORIZONTAL_DIRECTIONS, randomsource));
+                level.setBlock(trunkPos, HorizonsBlockRegistry.CROLIVE_WOOD.get().defaultBlockState(), 3);
+            } else {
+                level.setBlock(trunkPos, i == tallPart ? HorizonsBlockRegistry.CROLIVE_WOOD.get().defaultBlockState() : HorizonsBlockRegistry.CROLIVE_LOG.get().defaultBlockState(), 3);
+            }
+            decorateLog(level, trunkPos, randomsource, true);
+        }
+        BlockPos canopy = trunkPos.immutable();
+        BlockPos.MutableBlockPos canopyLogPos = new BlockPos.MutableBlockPos();
+        for (Direction direction : HorizonsMath.HORIZONTAL_DIRECTIONS) {
+            canopyLogPos.set(canopy);
+            int canopyLength = 1 + randomsource.nextInt(3);
+            for (int j = 1; j <= canopyLength; j++) {
+                boolean upFlag = false;
+                canopyLogPos.move(direction);
+                if (randomsource.nextInt(2) != 0) {
+                    upFlag = true;
+                    level.setBlock(canopyLogPos, HorizonsBlockRegistry.CROLIVE_WOOD.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, direction.getAxis()), 3);
+                    canopyLogPos.move(0, 1, 0);
                 }
+                if (j == canopyLength && level.getBlockState(canopyLogPos).canBeReplaced()) {
+                    level.setBlock(canopyLogPos, HorizonsBlockRegistry.CROLIVE_BRANCH.get().defaultBlockState().setValue(CroliveBranchBlock.FACING, upFlag ? Direction.UP : direction).setValue(CroliveBranchBlock.WATERLOGGED, level.getFluidState(canopyLogPos).is(Fluids.WATER)), 3);
+                } else {
+                    Block wood = j == canopyLength - 1 || upFlag ? HorizonsBlockRegistry.CROLIVE_WOOD.get() : HorizonsBlockRegistry.CROLIVE_LOG.get();
+                    level.setBlock(canopyLogPos, wood.defaultBlockState().setValue(RotatedPillarBlock.AXIS, direction.getAxis()), 3);
+                    decorateLog(level, trunkPos, randomsource, true);
+                }
+
             }
         }
-
-
-        BlockPos topOfTrunk = treeBottom.above(height);
-        level.setBlock(topOfTrunk, HorizonsBlockRegistry.CROLIVE_WOOD.get().defaultBlockState(), 3);
-
         return true;
     }
 
@@ -95,13 +97,59 @@ public class CroliveTreeFeature extends Feature<NoneFeatureConfiguration> {
                 return false;
             }
         }
-        BlockPos treeTop = treeBottom.above(height);
-        for (BlockPos checkLeaf : BlockPos.betweenClosed(treeTop.offset(-3, -1, -3), treeTop.offset(3, 3, 3))) {
+        BlockPos treeTop = treeBottom.above(height).immutable();
+        for (BlockPos checkLeaf : BlockPos.betweenClosed(treeTop.offset(-2, -1, -2), treeTop.offset(2, 1, 2))) {
             if (!canReplace(level.getBlockState(checkLeaf))) {
                 return false;
             }
         }
         return true;
+    }
+
+    protected static void decorateLog(WorldGenLevel level, BlockPos from, RandomSource random, boolean logBranches) {
+        if (random.nextFloat() < 0.65F) {
+            Direction ranDir = Util.getRandom(Direction.values(), random);
+            BlockPos branchPos = from.immutable().relative(ranDir);
+            if (level.getBlockState(branchPos).canBeReplaced()) {
+                if (logBranches && random.nextFloat() < 0.4F) {
+                    int bigBranchLength = 1 + random.nextInt(1);
+                    for (int i = 0; i < bigBranchLength; i++) {
+                        Block wood = i == bigBranchLength - 1 ? HorizonsBlockRegistry.CROLIVE_WOOD.get() : HorizonsBlockRegistry.CROLIVE_LOG.get();
+                        level.setBlock(branchPos, wood.defaultBlockState().setValue(RotatedPillarBlock.AXIS, ranDir.getAxis()), 3);
+                        branchPos = branchPos.relative(ranDir);
+                    }
+                }
+                level.setBlock(branchPos, HorizonsBlockRegistry.CROLIVE_BRANCH.get().defaultBlockState().setValue(CroliveBranchBlock.FACING, ranDir).setValue(CroliveBranchBlock.WATERLOGGED, level.getFluidState(branchPos).is(Fluids.WATER)), 3);
+            }
+        }
+    }
+
+    public static void generateRoot(WorldGenLevel level, BlockPos from, float bendChance, RandomSource random, Direction direction, int length) {
+        BlockPos.MutableBlockPos at = new BlockPos.MutableBlockPos();
+        at.set(from);
+        int i = 0;
+        while (i < length) {
+            if (level.getBlockState(at).is(HorizonsTagRegistry.UNMOVEABLE)) {
+                return;
+            }
+            if (random.nextFloat() < bendChance) {
+                if (!level.getBlockState(at).is(HorizonsBlockRegistry.CROLIVE_WOOD.get())) {
+                    level.setBlock(at, HorizonsBlockRegistry.CROLIVE_WOOD.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, direction.getAxis()), 3);
+                }
+                at.move(0, -1, 0);
+                at.move(direction);
+                level.setBlock(at, HorizonsBlockRegistry.CROLIVE_WOOD.get().defaultBlockState(), 3);
+            } else {
+                at.move(0, -1, 0);
+                level.setBlock(at, i == 0 ? HorizonsBlockRegistry.CROLIVE_WOOD.get().defaultBlockState() : HorizonsBlockRegistry.CROLIVE_LOG.get().defaultBlockState(), 3);
+            }
+            decorateLog(level, at, random, false);
+            i++;
+        }
+        BlockPos rootPos = at.immutable().below();
+        if (level.getBlockState(rootPos).canBeReplaced()) {
+            level.setBlock(rootPos, HorizonsBlockRegistry.CROLIVE_BRANCH.get().defaultBlockState().setValue(CroliveBranchBlock.FACING, Direction.DOWN).setValue(CroliveBranchBlock.WATERLOGGED, level.getFluidState(rootPos).is(Fluids.WATER)), 3);
+        }
     }
 
     public static boolean canReplace(BlockState state) {

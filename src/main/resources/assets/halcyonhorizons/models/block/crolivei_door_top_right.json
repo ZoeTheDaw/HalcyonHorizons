@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/door_top_right",
-  "render_type": "cutout_mipped",
-  "textures": {
-    "bottom": "halcyonhorizons:block/crolive/crolive_door_bottom",
-    "top": "halcyonhorizons:block/crolive/crolive_door_top"
-  }
-}

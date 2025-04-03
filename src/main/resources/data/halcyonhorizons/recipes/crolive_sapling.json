@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "B",
+    "B",
+    "F"
+  ],
+  "key": {
+    "F": {
+      "item": "minecraft:bone_meal"
+    },
+    "B": {
+      "item": "halcyonhorizons:crolive_branch"
+    }
+  },
+  "result": {
+    "item": "halcyonhorizons:crolive_sapling"
+  }
+}

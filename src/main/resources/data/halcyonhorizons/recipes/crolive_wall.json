@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "CCC"
+  ],
+  "key": {
+    "C": {
+      "tag": "halcyonhorizons:crolive_logs"
+    }
+  },
+  "result": {
+    "item": "halcyonhorizons:crolive_wall",
+    "count": 6
+  }
+}

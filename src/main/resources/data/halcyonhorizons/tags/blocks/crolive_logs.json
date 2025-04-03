@@ -1,10 +1,5 @@
 {
-  "replace": false,
   "values": [
-    "halcyonhorizons:baobabe_log",
-    "halcyonhorizons:baobabe_wood",
-    "halcyonhorizons:stripped_baobabe_log",
-    "halcyonhorizons:stripped_baobabe_wood",
     "halcyonhorizons:crolive_log",
     "halcyonhorizons:stripped_crolive_log",
     "halcyonhorizons:crolive_wood",

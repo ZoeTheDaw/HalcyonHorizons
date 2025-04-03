@@ -108,6 +108,7 @@ public class HorizonsCreativeModeTabRegistry {
                         output.accept(HorizonsBlockRegistry.CROLIVE_WOOD.get());
                         output.accept(HorizonsBlockRegistry.STRIPPED_CROLIVE_WOOD.get());
                         output.accept(HorizonsBlockRegistry.CROLIVE_SAPLING.get());
+                        output.accept(HorizonsBlockRegistry.CROLIVE_BRANCH.get());
                         output.accept(HorizonsBlockRegistry.CROLIVE_BUTTON.get());
                         output.accept(HorizonsItemRegistry.CROLIVE_DOOR.get());
                         output.accept(HorizonsItemRegistry.CROLIVE_TRAPDOOR.get());
@@ -115,6 +116,10 @@ public class HorizonsCreativeModeTabRegistry {
                         output.accept(HorizonsItemRegistry.CROLIVE_SIGN.get());
                         output.accept(HorizonsItemRegistry.CROLIVE_HANGING_SIGN.get());
                         output.accept(HorizonsBlockRegistry.TRAVERTINE.get());
+                        output.accept(HorizonsBlockRegistry.TRAVERTINE_STAIRS.get());
+                        output.accept(HorizonsBlockRegistry.TRAVERTINE_SLAB.get());
+                        output.accept(HorizonsBlockRegistry.TRAVERTINE_WALL.get());
+                        output.accept(HorizonsBlockRegistry.COBBLED_TRAVERTINE.get());
                     }).build());
 
 

@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "facing=up": [
+      { "model": "halcyonhorizons:block/crolive_branch_top" }
+    ],
+    "facing=down": [
+      { "model": "halcyonhorizons:block/crolive_branch_top", "x": 180 }
+    ],
+    "facing=east": [
+      { "model": "halcyonhorizons:block/crolive_branch", "y": 90 }
+    ],
+    "facing=north": [
+      { "model": "halcyonhorizons:block/crolive_branch" }
+    ],
+    "facing=south": [
+      { "model": "halcyonhorizons:block/crolive_branch", "y": 180 }
+    ],
+    "facing=west": [
+      { "model": "halcyonhorizons:block/crolive_branch", "y": 270 }
+    ]
+  }
+}
