@@ -26,11 +26,12 @@ public class HorizonsBlockRegistry {
     public static final BlockBehaviour.Properties BAOBABE_PLANKS_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).strength(1.5F, 2.0F).sound(SoundType.CHERRY_WOOD).instrument(NoteBlockInstrument.BASS);
     public static final BlockBehaviour.Properties BAOBABE_LOG_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).strength(1.5F).sound(SoundType.CHERRY_WOOD).instrument(NoteBlockInstrument.BASS);
     public static final BlockBehaviour.Properties LAMPPAPER_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(0.5F, .6F).sound(SoundType.GRASS);
-    public static final BlockBehaviour.Properties NIGHTLIGHT_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).requiresCorrectToolForDrops().lightLevel(state -> 15).strength(2F, 11.0F).sound(SoundType.SHROOMLIGHT);
+    public static final BlockBehaviour.Properties NIGHTLIGHT_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).requiresCorrectToolForDrops().lightLevel(state -> 15).strength(2F, 11.0F).sound(SoundType.AMETHYST);
 
     public static final BlockBehaviour.Properties CROLIVE_PLANKS_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.5F, 2.0F).sound(SoundType.STONE).instrument(NoteBlockInstrument.BASS);
     public static final BlockBehaviour.Properties CROLIVE_LOG_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.5F).sound(SoundType.STONE).instrument(NoteBlockInstrument.BASS);
     public static final BlockBehaviour.Properties TRAVERTINE_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).strength(1.2F, 4.5F).sound(SoundType.DRIPSTONE_BLOCK);
+    public static final BlockBehaviour.Properties MARBLE_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.SNOW).strength(1.2F, 4.5F).sound(SoundType.DEEPSLATE_BRICKS);
 
     public static final WoodType BAOBABE_WOOD_TYPE = WoodType.register(new WoodType("halcyonhorizons:baobabe", BlockSetType.CHERRY));
     public static final WoodType CROLIVE_WOOD_TYPE = WoodType.register(new WoodType("halcyonhorizons:crolive", BlockSetType.DARK_OAK));
@@ -137,6 +138,43 @@ public class HorizonsBlockRegistry {
     public static final RegistryObject<Block> TRAVERTINE_SLAB = registerBlockAndItem("travertine_slab", () -> new SlabBlock(TRAVERTINE_PROPERTIES));
     public static final RegistryObject<Block> TRAVERTINE_WALL = registerBlockAndItem("travertine_wall", () -> new WallBlock(TRAVERTINE_PROPERTIES));
     public static final RegistryObject<Block> COBBLED_TRAVERTINE = registerBlockAndItem("cobbled_travertine", () -> new Block(TRAVERTINE_PROPERTIES));
+    public static final RegistryObject<Block> COBBLED_TRAVERTINE_STAIRS = registerBlockAndItem("cobbled_travertine_stairs", () -> new StairBlock(TRAVERTINE.get().defaultBlockState(), TRAVERTINE_PROPERTIES));
+    public static final RegistryObject<Block> COBBLED_TRAVERTINE_SLAB = registerBlockAndItem("cobbled_travertine_slab", () -> new SlabBlock(TRAVERTINE_PROPERTIES));
+    public static final RegistryObject<Block> COBBLED_TRAVERTINE_WALL = registerBlockAndItem("cobbled_travertine_wall", () -> new WallBlock(TRAVERTINE_PROPERTIES));
+    public static final RegistryObject<Block> IVY_COBBLED_TRAVERTINE = registerBlockAndItem("ivy_cobbled_travertine", () -> new Block(TRAVERTINE_PROPERTIES));
+    public static final RegistryObject<Block> IVY_COBBLED_TRAVERTINE_STAIRS = registerBlockAndItem("ivy_cobbled_travertine_stairs", () -> new StairBlock(TRAVERTINE.get().defaultBlockState(), TRAVERTINE_PROPERTIES));
+    public static final RegistryObject<Block> IVY_COBBLED_TRAVERTINE_SLAB = registerBlockAndItem("ivy_cobbled_travertine_slab", () -> new SlabBlock(TRAVERTINE_PROPERTIES));
+    public static final RegistryObject<Block> IVY_COBBLED_TRAVERTINE_WALL = registerBlockAndItem("ivy_cobbled_travertine_wall", () -> new WallBlock(TRAVERTINE_PROPERTIES));
+    public static final RegistryObject<Block> TRAVERTINE_BRICKS = registerBlockAndItem("travertine_bricks", () -> new Block(TRAVERTINE_PROPERTIES));
+    public static final RegistryObject<Block> TRAVERTINE_BRICK_STAIRS = registerBlockAndItem("travertine_brick_stairs", () -> new StairBlock(TRAVERTINE.get().defaultBlockState(), TRAVERTINE_PROPERTIES));
+    public static final RegistryObject<Block> TRAVERTINE_BRICK_SLAB = registerBlockAndItem("travertine_brick_slab", () -> new SlabBlock(TRAVERTINE_PROPERTIES));
+    public static final RegistryObject<Block> TRAVERTINE_BRICK_WALL = registerBlockAndItem("travertine_brick_wall", () -> new WallBlock(TRAVERTINE_PROPERTIES));
+    public static final RegistryObject<Block> CRACKED_TRAVERTINE_BRICKS = registerBlockAndItem("cracked_travertine_bricks", () -> new Block(TRAVERTINE_PROPERTIES));
+    public static final RegistryObject<Block> CHISELED_TRAVERTINE_BRICKS = registerBlockAndItem("chiseled_travertine_bricks", () -> new Block(TRAVERTINE_PROPERTIES));
+    public static final RegistryObject<Block> IVY_TRAVERTINE_BRICKS = registerBlockAndItem("ivy_travertine_bricks", () -> new Block(TRAVERTINE_PROPERTIES));
+    public static final RegistryObject<Block> IVY_TRAVERTINE_BRICK_STAIRS = registerBlockAndItem("ivy_travertine_brick_stairs", () -> new StairBlock(TRAVERTINE.get().defaultBlockState(), TRAVERTINE_PROPERTIES));
+    public static final RegistryObject<Block> IVY_TRAVERTINE_BRICK_SLAB = registerBlockAndItem("ivy_travertine_brick_slab", () -> new SlabBlock(TRAVERTINE_PROPERTIES));
+    public static final RegistryObject<Block> IVY_TRAVERTINE_BRICK_WALL = registerBlockAndItem("ivy_travertine_brick_wall", () -> new WallBlock(TRAVERTINE_PROPERTIES));
+
+    public static final RegistryObject<Block> MARBLE = registerBlockAndItem("marble", () -> new Block(MARBLE_PROPERTIES));
+    public static final RegistryObject<Block> MARBLE_STAIRS = registerBlockAndItem("marble_stairs", () -> new StairBlock(MARBLE.get().defaultBlockState(), MARBLE_PROPERTIES));
+    public static final RegistryObject<Block> MARBLE_SLAB = registerBlockAndItem("marble_slab", () -> new SlabBlock(MARBLE_PROPERTIES));
+    public static final RegistryObject<Block> MARBLE_WALL = registerBlockAndItem("marble_wall", () -> new WallBlock(MARBLE_PROPERTIES));
+    public static final RegistryObject<Block> MARBLE_BRICKS = registerBlockAndItem("marble_bricks", () -> new Block(MARBLE_PROPERTIES));
+    public static final RegistryObject<Block> MARBLE_BRICK_STAIRS = registerBlockAndItem("marble_brick_stairs", () -> new StairBlock(MARBLE.get().defaultBlockState(), MARBLE_PROPERTIES));
+    public static final RegistryObject<Block> MARBLE_BRICK_SLAB = registerBlockAndItem("marble_brick_slab", () -> new SlabBlock(MARBLE_PROPERTIES));
+    public static final RegistryObject<Block> MARBLE_BRICK_WALL = registerBlockAndItem("marble_brick_wall", () -> new WallBlock(MARBLE_PROPERTIES));
+    public static final RegistryObject<Block> CRACKED_MARBLE_BRICKS = registerBlockAndItem("cracked_marble_bricks", () -> new Block(MARBLE_PROPERTIES));
+    public static final RegistryObject<Block> CHISELED_MARBLE_BRICKS = registerBlockAndItem("chiseled_marble_bricks", () -> new Block(MARBLE_PROPERTIES));
+    public static final RegistryObject<Block> IVY_MARBLE_BRICKS = registerBlockAndItem("ivy_marble_bricks", () -> new Block(MARBLE_PROPERTIES));
+    public static final RegistryObject<Block> IVY_MARBLE_BRICK_STAIRS = registerBlockAndItem("ivy_marble_brick_stairs", () -> new StairBlock(MARBLE.get().defaultBlockState(), MARBLE_PROPERTIES));
+    public static final RegistryObject<Block> IVY_MARBLE_BRICK_SLAB = registerBlockAndItem("ivy_marble_brick_slab", () -> new SlabBlock(MARBLE_PROPERTIES));
+    public static final RegistryObject<Block> IVY_MARBLE_BRICK_WALL = registerBlockAndItem("ivy_marble_brick_wall", () -> new WallBlock(MARBLE_PROPERTIES));
+    public static final RegistryObject<Block> SMOOTH_MARBLE = registerBlockAndItem("smooth_marble", () -> new Block(MARBLE_PROPERTIES));
+    public static final RegistryObject<Block> SMOOTH_MARBLE_STAIRS = registerBlockAndItem("smooth_marble_stairs", () -> new StairBlock(MARBLE.get().defaultBlockState(), MARBLE_PROPERTIES));
+    public static final RegistryObject<Block> SMOOTH_MARBLE_SLAB = registerBlockAndItem("smooth_marble_slab", () -> new SlabBlock(MARBLE_PROPERTIES));
+
+    public static final RegistryObject<Block> IVY = registerBlockAndItem("ivy", () -> new VineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.GRASS).strength(0.5F, .6F).noCollission().noOcclusion().sound(SoundType.GRASS)));
 
 
     private static RegistryObject<Block> registerBlockAndItem(String name, Supplier<Block> block, int itemType) {

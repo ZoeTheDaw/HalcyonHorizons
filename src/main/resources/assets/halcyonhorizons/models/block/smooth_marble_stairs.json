@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "halcyonhorizons:block/marble/smooth_marble",
+    "side": "halcyonhorizons:block/marble/smooth_marble",
+    "top": "halcyonhorizons:block/marble/smooth_marble"
+  }
+}

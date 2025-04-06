@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "CCC"
+  ],
+  "key": {
+    "#": {
+      "item": "halcyonhorizons:travertine_bricks"
+    }
+  },
+  "result": {
+    "item": "halcyonhorizons:travertine_brick_wall",
+    "count": 6
+  }
+}

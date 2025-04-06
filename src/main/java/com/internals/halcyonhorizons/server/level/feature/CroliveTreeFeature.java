@@ -30,7 +30,7 @@ public class CroliveTreeFeature extends Feature<NoneFeatureConfiguration> {
         WorldGenLevel level = context.level();
         BlockPos treeGround = context.origin();
         int centerAboveGround = randomsource.nextInt(5);
-        int height = centerAboveGround + 4 + randomsource.nextInt(5);
+        int height = centerAboveGround + 6 + randomsource.nextInt(7);
         if (!checkCanTreePlace(level, treeGround, height)) {
             return false;
         }

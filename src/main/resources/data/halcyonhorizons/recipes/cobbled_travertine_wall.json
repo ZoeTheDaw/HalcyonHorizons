@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "CCC"
+  ],
+  "key": {
+    "#": {
+      "item": "halcyonhorizons:cobbled_travertine"
+    }
+  },
+  "result": {
+    "item": "halcyonhorizons:cobbled_travertine_wall",
+    "count": 6
+  }
+}

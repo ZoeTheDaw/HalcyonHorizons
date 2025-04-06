@@ -1,0 +1,7 @@
+{
+  "parent": "halcyonhorizons:block/wall_inventory",
+  "textures": {
+    "wall": "halcyonhorizons:block/travertine/cobbled_travertine",
+    "top" : "halcyonhorizons:block/travertine/cobbled_travertine"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "halcyonhorizons:block/travertine/cobbled_travertine",
+    "side": "halcyonhorizons:block/travertine/cobbled_travertine",
+    "top": "halcyonhorizons:block/travertine/cobbled_travertine"
+  }
+}

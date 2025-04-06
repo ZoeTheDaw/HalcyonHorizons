@@ -18,41 +18,33 @@ public class HorizonsCreativeModeTabRegistry {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(HorizonsBlockRegistry.BAOBABE_PLANKS.get()))
                     .title(Component.translatable("creativetab.avian_infirmary"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(HorizonsBlockRegistry.BAOBABE_LOG.get());
+                        output.accept(HorizonsBlockRegistry.BAOBABE_WOOD.get());
+                        output.accept(HorizonsBlockRegistry.STRIPPED_BAOBABE_LOG.get());
+                        output.accept(HorizonsBlockRegistry.STRIPPED_BAOBABE_WOOD.get());
                         output.accept(HorizonsBlockRegistry.BAOBABE_PLANKS.get());
                         output.accept(HorizonsBlockRegistry.BAOBABE_PLANKS_STAIRS.get());
                         output.accept(HorizonsBlockRegistry.BAOBABE_PLANKS_SLAB.get());
                         output.accept(HorizonsBlockRegistry.BAOBABE_PLANKS_FENCE.get());
                         output.accept(HorizonsBlockRegistry.BAOBABE_FENCE_GATE.get());
-                        output.accept(HorizonsItemRegistry.BAOBABE_SIGN.get());
-                        output.accept(HorizonsItemRegistry.BAOBABE_HANGING_SIGN.get());
-                        output.accept(HorizonsBlockRegistry.FLUFFPULP_BLOCK.get());
-                        output.accept(HorizonsBlockRegistry.FLUFFPULP_STRANDS.get());
-                        output.accept(HorizonsBlockRegistry.FLUFFPULP_TUFT.get());
-                        output.accept(HorizonsItemRegistry.FLUFFPULP_STRAND.get());
-                        output.accept(HorizonsItemRegistry.FLUFFPULP_CHUNK.get());
-                        output.accept(HorizonsItemRegistry.FLUFFPULP_DIAPER.get());
-                        output.accept(HorizonsItemRegistry.FLUFFPULP_FEATHER.get());
-                        output.accept(HorizonsItemRegistry.BABY_FORMULA.get());
-                        output.accept(HorizonsBlockRegistry.FLUFFPILLOW.get());
-                        output.accept(HorizonsBlockRegistry.LAMPPAPER_BLOCK.get());
-                        output.accept(HorizonsItemRegistry.LAMPPAPER_SHEET.get());
-                        output.accept(HorizonsBlockRegistry.LAMPBOARD_BLOCK.get());
-                        output.accept(HorizonsBlockRegistry.LAMPBOARD_BOX.get());
-                        output.accept(HorizonsItemRegistry.LAMPBOARD_DOOR.get());
-                        output.accept(HorizonsItemRegistry.LAMPBOARD_TRAPDOOR.get());
-                        output.accept(HorizonsItemRegistry.BEAD_BERRIES.get());
-                        output.accept(HorizonsBlockRegistry.BAOBABE_LOG.get());
-                        output.accept(HorizonsBlockRegistry.STRIPPED_BAOBABE_LOG.get());
-                        output.accept(HorizonsBlockRegistry.BAOBABE_WOOD.get());
-                        output.accept(HorizonsBlockRegistry.STRIPPED_BAOBABE_WOOD.get());
-                        output.accept(HorizonsBlockRegistry.BAOBABE_SAPLING.get());
                         output.accept(HorizonsItemRegistry.BAOBABE_DOOR.get());
                         output.accept(HorizonsItemRegistry.BAOBABE_TRAPDOOR.get());
                         output.accept(HorizonsItemRegistry.BAOBABE_PRESSURE_PLATE.get());
                         output.accept(HorizonsBlockRegistry.BAOBABE_BUTTON.get());
+                        output.accept(HorizonsItemRegistry.BAOBABE_SIGN.get());
+                        output.accept(HorizonsItemRegistry.BAOBABE_HANGING_SIGN.get());
+                        output.accept(HorizonsBlockRegistry.BAOBABE_SAPLING.get());
+                        output.accept(HorizonsBlockRegistry.FLUFFPULP_BLOCK.get());
+                        output.accept(HorizonsBlockRegistry.FLUFFPULP_STRANDS.get());
+                        output.accept(HorizonsBlockRegistry.FLUFFPULP_TUFT.get());
+                        output.accept(HorizonsBlockRegistry.FLUFFPILLOW.get());
+                        output.accept(HorizonsBlockRegistry.LAMPPAPER_BLOCK.get());
+                        output.accept(HorizonsBlockRegistry.LAMPBOARD_BLOCK.get());
+                        output.accept(HorizonsBlockRegistry.LAMPBOARD_BOX.get());
+                        output.accept(HorizonsItemRegistry.LAMPBOARD_DOOR.get());
+                        output.accept(HorizonsItemRegistry.LAMPBOARD_TRAPDOOR.get());
                         output.accept(HorizonsBlockRegistry.NIGHTLIGHT.get());
                         output.accept(HorizonsItemRegistry.NIGHT_TORCH.get());
-                        output.accept(HorizonsItemRegistry.NIGHTLIGHT_GEL.get());
                         output.accept(HorizonsBlockRegistry.ALPHABET_BLOCK_A.get());
                         output.accept(HorizonsBlockRegistry.ALPHABET_BLOCK_B.get());
                         output.accept(HorizonsBlockRegistry.ALPHABET_BLOCK_C.get());
@@ -89,6 +81,14 @@ public class HorizonsCreativeModeTabRegistry {
                         output.accept(HorizonsBlockRegistry.NUMBER_BLOCK_7.get());
                         output.accept(HorizonsBlockRegistry.NUMBER_BLOCK_8.get());
                         output.accept(HorizonsBlockRegistry.NUMBER_BLOCK_9.get());
+                        output.accept(HorizonsItemRegistry.FLUFFPULP_STRAND.get());
+                        output.accept(HorizonsItemRegistry.FLUFFPULP_CHUNK.get());
+                        output.accept(HorizonsItemRegistry.FLUFFPULP_DIAPER.get());
+                        output.accept(HorizonsItemRegistry.FLUFFPULP_FEATHER.get());
+                        output.accept(HorizonsItemRegistry.LAMPPAPER_SHEET.get());
+                        output.accept(HorizonsItemRegistry.NIGHTLIGHT_GEL.get());
+                        output.accept(HorizonsItemRegistry.BABY_FORMULA.get());
+                        output.accept(HorizonsItemRegistry.BEAD_BERRIES.get());
 
 
                     }).build());
@@ -97,29 +97,65 @@ public class HorizonsCreativeModeTabRegistry {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(HorizonsBlockRegistry.CROLIVE_PLANKS.get()))
                     .title(Component.translatable("creativetab.antique_archives"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(HorizonsBlockRegistry.CROLIVE_LOG.get());
+                        output.accept(HorizonsBlockRegistry.CROLIVE_WOOD.get());
+                        output.accept(HorizonsBlockRegistry.STRIPPED_CROLIVE_LOG.get());
+                        output.accept(HorizonsBlockRegistry.STRIPPED_CROLIVE_WOOD.get());
                         output.accept(HorizonsBlockRegistry.CROLIVE_PLANKS.get());
                         output.accept(HorizonsBlockRegistry.CROLIVE_PLANKS_STAIRS.get());
                         output.accept(HorizonsBlockRegistry.CROLIVE_PLANKS_SLAB.get());
                         output.accept(HorizonsBlockRegistry.CROLIVE_PLANKS_FENCE.get());
-                        output.accept(HorizonsBlockRegistry.CROLIVE_WOOD_WALL.get());
                         output.accept(HorizonsBlockRegistry.CROLIVE_FENCE_GATE.get());
-                        output.accept(HorizonsBlockRegistry.CROLIVE_LOG.get());
-                        output.accept(HorizonsBlockRegistry.STRIPPED_CROLIVE_LOG.get());
-                        output.accept(HorizonsBlockRegistry.CROLIVE_WOOD.get());
-                        output.accept(HorizonsBlockRegistry.STRIPPED_CROLIVE_WOOD.get());
-                        output.accept(HorizonsBlockRegistry.CROLIVE_SAPLING.get());
-                        output.accept(HorizonsBlockRegistry.CROLIVE_BRANCH.get());
-                        output.accept(HorizonsBlockRegistry.CROLIVE_BUTTON.get());
+                        output.accept(HorizonsBlockRegistry.CROLIVE_WOOD_WALL.get());
                         output.accept(HorizonsItemRegistry.CROLIVE_DOOR.get());
                         output.accept(HorizonsItemRegistry.CROLIVE_TRAPDOOR.get());
                         output.accept(HorizonsItemRegistry.CROLIVE_PRESSURE_PLATE.get());
+                        output.accept(HorizonsBlockRegistry.CROLIVE_BUTTON.get());
                         output.accept(HorizonsItemRegistry.CROLIVE_SIGN.get());
                         output.accept(HorizonsItemRegistry.CROLIVE_HANGING_SIGN.get());
+                        output.accept(HorizonsBlockRegistry.CROLIVE_SAPLING.get());
+                        output.accept(HorizonsBlockRegistry.CROLIVE_BRANCH.get());
                         output.accept(HorizonsBlockRegistry.TRAVERTINE.get());
                         output.accept(HorizonsBlockRegistry.TRAVERTINE_STAIRS.get());
                         output.accept(HorizonsBlockRegistry.TRAVERTINE_SLAB.get());
                         output.accept(HorizonsBlockRegistry.TRAVERTINE_WALL.get());
                         output.accept(HorizonsBlockRegistry.COBBLED_TRAVERTINE.get());
+                        output.accept(HorizonsBlockRegistry.COBBLED_TRAVERTINE_STAIRS.get());
+                        output.accept(HorizonsBlockRegistry.COBBLED_TRAVERTINE_SLAB.get());
+                        output.accept(HorizonsBlockRegistry.COBBLED_TRAVERTINE_WALL.get());
+                        output.accept(HorizonsBlockRegistry.IVY_COBBLED_TRAVERTINE.get());
+                        output.accept(HorizonsBlockRegistry.IVY_COBBLED_TRAVERTINE_STAIRS.get());
+                        output.accept(HorizonsBlockRegistry.IVY_COBBLED_TRAVERTINE_SLAB.get());
+                        output.accept(HorizonsBlockRegistry.IVY_COBBLED_TRAVERTINE_WALL.get());
+                        output.accept(HorizonsBlockRegistry.TRAVERTINE_BRICKS.get());
+                        output.accept(HorizonsBlockRegistry.CRACKED_TRAVERTINE_BRICKS.get());
+                        output.accept(HorizonsBlockRegistry.TRAVERTINE_BRICK_STAIRS.get());
+                        output.accept(HorizonsBlockRegistry.TRAVERTINE_BRICK_SLAB.get());
+                        output.accept(HorizonsBlockRegistry.TRAVERTINE_BRICK_WALL.get());
+                        output.accept(HorizonsBlockRegistry.CHISELED_TRAVERTINE_BRICKS.get());
+                        output.accept(HorizonsBlockRegistry.IVY_TRAVERTINE_BRICKS.get());
+                        output.accept(HorizonsBlockRegistry.IVY_TRAVERTINE_BRICK_STAIRS.get());
+                        output.accept(HorizonsBlockRegistry.IVY_TRAVERTINE_BRICK_SLAB.get());
+                        output.accept(HorizonsBlockRegistry.IVY_TRAVERTINE_BRICK_WALL.get());
+                        output.accept(HorizonsBlockRegistry.MARBLE.get());
+                        output.accept(HorizonsBlockRegistry.MARBLE_STAIRS.get());
+                        output.accept(HorizonsBlockRegistry.MARBLE_SLAB.get());
+                        output.accept(HorizonsBlockRegistry.MARBLE_WALL.get());
+                        output.accept(HorizonsBlockRegistry.SMOOTH_MARBLE.get());
+                        output.accept(HorizonsBlockRegistry.SMOOTH_MARBLE_STAIRS.get());
+                        output.accept(HorizonsBlockRegistry.SMOOTH_MARBLE_SLAB.get());
+                        output.accept(HorizonsBlockRegistry.MARBLE_BRICKS.get());
+                        output.accept(HorizonsBlockRegistry.CRACKED_MARBLE_BRICKS.get());
+                        output.accept(HorizonsBlockRegistry.MARBLE_BRICK_STAIRS.get());
+                        output.accept(HorizonsBlockRegistry.MARBLE_BRICK_SLAB.get());
+                        output.accept(HorizonsBlockRegistry.MARBLE_BRICK_WALL.get());
+                        output.accept(HorizonsBlockRegistry.CHISELED_MARBLE_BRICKS.get());
+                        output.accept(HorizonsBlockRegistry.IVY_MARBLE_BRICKS.get());
+                        output.accept(HorizonsBlockRegistry.IVY_MARBLE_BRICK_STAIRS.get());
+                        output.accept(HorizonsBlockRegistry.IVY_MARBLE_BRICK_SLAB.get());
+                        output.accept(HorizonsBlockRegistry.IVY_MARBLE_BRICK_WALL.get());
+                        output.accept(HorizonsBlockRegistry.IVY.get());
+
                     }).build());
 
 

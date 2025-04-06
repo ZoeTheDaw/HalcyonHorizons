@@ -1,0 +1,7 @@
+{
+  "parent": "halcyonhorizons:block/wall_inventory",
+  "textures": {
+    "wall": "halcyonhorizons:block/marble/ivy_marble_bricks",
+    "top" : "halcyonhorizons:block/marble/ivy_marble_bricks"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "CCC"
+  ],
+  "key": {
+    "#": {
+      "item": "halcyonhorizons:marble"
+    }
+  },
+  "result": {
+    "item": "halcyonhorizons:marble_wall",
+    "count": 6
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_wall_side_tall",
+  "textures": {
+    "wall": "halcyonhorizons:block/travertine/ivy_travertine_bricks",
+    "top" : "halcyonhorizons:block/travertine/ivy_travertine_bricks"
+  }
+}

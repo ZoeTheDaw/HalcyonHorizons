@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "halcyonhorizons:block/marble_slab"
+    },
+    "type=double": {
+      "model": "halcyonhorizons:block/marble"
+    },
+    "type=top": {
+      "model": "halcyonhorizons:block/marble_slab_top"
+    }
+  }
+}

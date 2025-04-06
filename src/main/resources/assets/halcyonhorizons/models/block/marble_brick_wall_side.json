@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_wall_side",
+  "textures": {
+    "wall": "halcyonhorizons:block/marble/marble_bricks",
+    "top" : "halcyonhorizons:block/marble/marble_bricks"
+  }
+}

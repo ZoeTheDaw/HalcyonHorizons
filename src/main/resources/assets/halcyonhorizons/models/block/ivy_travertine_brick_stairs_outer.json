@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "halcyonhorizons:block/travertine/ivy_travertine_bricks",
+    "side": "halcyonhorizons:block/travertine/ivy_travertine_bricks",
+    "top": "halcyonhorizons:block/travertine/ivy_travertine_bricks"
+  }
+}
