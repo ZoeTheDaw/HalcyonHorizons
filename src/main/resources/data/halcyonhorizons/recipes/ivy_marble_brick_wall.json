@@ -6,11 +6,11 @@
   ],
   "key": {
     "#": {
-      "item": "halcyonhorizons:marble_bricks"
+      "item": "halcyonhorizons:ivy_marble_bricks"
     }
   },
   "result": {
-    "item": "halcyonhorizons:marble_brick_wall",
+    "item": "halcyonhorizons:ivy_marble_brick_wall",
     "count": 6
   }
 }

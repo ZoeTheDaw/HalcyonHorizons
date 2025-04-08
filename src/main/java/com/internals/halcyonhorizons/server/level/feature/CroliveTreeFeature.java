@@ -129,7 +129,7 @@ public class CroliveTreeFeature extends Feature<NoneFeatureConfiguration> {
         at.set(from);
         int i = 0;
         while (i < length) {
-            if (level.getBlockState(at).is(HorizonsTagRegistry.UNMOVEABLE)) {
+            if (level.getBlockState(at).is(HorizonsTagRegistry.UNMOVABLE)) {
                 return;
             }
             if (random.nextFloat() < bendChance) {
@@ -153,6 +153,6 @@ public class CroliveTreeFeature extends Feature<NoneFeatureConfiguration> {
     }
 
     public static boolean canReplace(BlockState state) {
-        return (state.isAir() || state.canBeReplaced() || state.is(HorizonsBlockRegistry.LAMPPAPER_BLOCK.get())) && !state.is(HorizonsTagRegistry.UNMOVEABLE) && state.getFluidState().isEmpty();
+        return (state.isAir() || state.canBeReplaced() || state.is(HorizonsBlockRegistry.LAMPPAPER_BLOCK.get())) && !state.is(HorizonsTagRegistry.UNMOVABLE) && state.getFluidState().isEmpty();
     }
 }

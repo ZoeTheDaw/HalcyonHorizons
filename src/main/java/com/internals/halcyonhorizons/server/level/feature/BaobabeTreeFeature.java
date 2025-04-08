@@ -97,7 +97,7 @@ public class BaobabeTreeFeature extends Feature<NoneFeatureConfiguration> {
     }
 
     public static boolean canReplace(BlockState state) {
-        return (state.isAir() || state.canBeReplaced() || state.is(HorizonsBlockRegistry.LAMPPAPER_BLOCK.get())) && !state.is(HorizonsTagRegistry.UNMOVEABLE) && state.getFluidState().isEmpty();
+        return (state.isAir() || state.canBeReplaced() || state.is(HorizonsBlockRegistry.LAMPPAPER_BLOCK.get())) && !state.is(HorizonsTagRegistry.UNMOVABLE) && state.getFluidState().isEmpty();
     }
 
 }

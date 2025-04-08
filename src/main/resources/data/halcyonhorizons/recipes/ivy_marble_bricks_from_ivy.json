@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "halcyonhorizons:marble_bricks"
+    },
+    {
+      "item": "halcyonhorizons:ivy"
+    }
+  ],
+  "result": {
+    "item": "halcyonhorizons:ivy_marble_bricks"
+  }
+}

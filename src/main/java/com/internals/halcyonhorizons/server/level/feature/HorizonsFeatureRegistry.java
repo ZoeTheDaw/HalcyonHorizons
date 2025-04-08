@@ -16,4 +16,6 @@ public class HorizonsFeatureRegistry {
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> CROLIVE_TREE_WITH_BRANCHES = DEF_REG.register("crolive_tree_with_branches", () -> new CroliveTreeWithBranchesFeature(NoneFeatureConfiguration.CODEC));
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> CROLIVE_ROOTS = DEF_REG.register("crolive_roots", () -> new CroliveRootsFeature(NoneFeatureConfiguration.CODEC));
 
+    public static final RegistryObject<Feature<NoneFeatureConfiguration>> IVY = DEF_REG.register("ivy", () -> new IvyFeature(NoneFeatureConfiguration.CODEC));
+
 }
