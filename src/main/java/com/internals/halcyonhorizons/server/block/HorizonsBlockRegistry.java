@@ -39,8 +39,8 @@ public class HorizonsBlockRegistry {
     public static final DeferredRegister<Block> DEF_REG = DeferredRegister.create(ForgeRegistries.BLOCKS, HalcyonHorizons.MODID);
 
     public static final RegistryObject<Block> FLUFFPULP_BLOCK = registerBlockAndItem("fluffpulp_block", () -> new FluffpulpBlock(FLUFFPULP_PROPERTIES));
-    public static final RegistryObject<Block> FLUFFPULP_STRANDS = registerBlockAndItem("fluffpulp_strands", () -> new FluffpulpPlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOL).strength(0.5F, .6F).sound(SoundType.WOOL).noOcclusion().noCollission().offsetType(BlockBehaviour.OffsetType.XZ)));
-    public static final RegistryObject<Block> FLUFFPULP_TUFT = registerBlockAndItem("fluffpulp_tuft", () -> new FluffpulpPlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOL).strength(0.5F, .6F).sound(SoundType.WOOL).noOcclusion().noCollission().offsetType(BlockBehaviour.OffsetType.XZ)));
+    public static final RegistryObject<Block> FLUFFPULP_STRANDS = registerBlockAndItem("fluffpulp_strands", () -> new FluffpulpPlantBlock(FLUFFPULP_PROPERTIES.noOcclusion().noCollission().offsetType(BlockBehaviour.OffsetType.XZ)));
+    public static final RegistryObject<Block> FLUFFPULP_TUFT = registerBlockAndItem("fluffpulp_tuft", () -> new FluffpulpPlantBlock(FLUFFPULP_PROPERTIES.noOcclusion().noCollission().offsetType(BlockBehaviour.OffsetType.XZ)));
     public static final RegistryObject<Block> FLUFFPILLOW = registerBlockAndItem("fluffpillow", () -> new FluffPillowBlock(FLUFFPULP_PROPERTIES));
 
     public static final RegistryObject<Block> LAMPPAPER_BLOCK = registerBlockAndItem("lamppaper_block", () -> new Block(LAMPPAPER_PROPERTIES));
@@ -174,7 +174,7 @@ public class HorizonsBlockRegistry {
     public static final RegistryObject<Block> SMOOTH_MARBLE_STAIRS = registerBlockAndItem("smooth_marble_stairs", () -> new StairBlock(MARBLE.get().defaultBlockState(), MARBLE_PROPERTIES));
     public static final RegistryObject<Block> SMOOTH_MARBLE_SLAB = registerBlockAndItem("smooth_marble_slab", () -> new SlabBlock(MARBLE_PROPERTIES));
 
-    public static final RegistryObject<Block> IVY = registerBlockAndItem("ivy", () -> new VineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.GRASS).strength(0.5F, .6F).noCollission().noOcclusion().sound(SoundType.GRASS)));
+    public static final RegistryObject<Block> IVY = registerBlockAndItem("ivy", () -> new VineBlock(BlockBehaviour.Properties.of().mapColor(MapColor.GRASS).strength(0.5F, .6F).noCollission().noOcclusion().sound(SoundType.VINE)));
 
 
     private static RegistryObject<Block> registerBlockAndItem(String name, Supplier<Block> block, int itemType) {
