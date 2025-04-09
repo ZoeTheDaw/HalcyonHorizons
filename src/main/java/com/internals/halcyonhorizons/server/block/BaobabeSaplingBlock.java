@@ -33,19 +33,13 @@ public class BaobabeSaplingBlock extends SaplingBlock {
         return blockState.isFaceSturdy(getter, pos, Direction.UP, SupportType.FULL);
     }
 
-    public void advanceTree(ServerLevel p_222001_, BlockPos p_222002_, BlockState p_222003_, RandomSource p_222004_) {
-        System.out.println("Attempting to advance tree at " + p_222002_); // Log position
+    public void advanceTree(ServerLevel serverLevel, BlockPos blockPos, BlockState blockState, RandomSource randomSource) {
 
-        if (p_222003_.getValue(STAGE) == 0) {
-            System.out.println("Sapling is at stage 0, advancing to next stage.");
-            p_222001_.setBlock(p_222002_, p_222003_.cycle(STAGE), 4);
+        if (blockState.getValue(STAGE) == 0) {
+            serverLevel.setBlock(blockPos, blockState.cycle(STAGE), 4);
         } else {
-            System.out.println("Sapling is at stage 1, checking block below...");
-            if (p_222001_.getBlockState(p_222002_.below()).is(HorizonsBlockRegistry.FLUFFPULP_BLOCK.get())) {
-                System.out.println("Correct block detected! Growing tree...");
-                this.treeGrower.growTree(p_222001_, p_222001_.getChunkSource().getGenerator(), p_222002_, p_222003_, p_222004_);
-            } else {
-                System.out.println("Tree growth blocked. Block below: " + p_222001_.getBlockState(p_222002_.below()).getBlock());
+            if (serverLevel.getBlockState(blockPos.below()).is(HorizonsBlockRegistry.FLUFFPULP_BLOCK.get())) {
+                this.treeGrower.growTree(serverLevel, serverLevel.getChunkSource().getGenerator(), blockPos, blockState, randomSource);
             }
         }
     }

@@ -39,8 +39,8 @@ public class HorizonsBlockRegistry {
     public static final DeferredRegister<Block> DEF_REG = DeferredRegister.create(ForgeRegistries.BLOCKS, HalcyonHorizons.MODID);
 
     public static final RegistryObject<Block> FLUFFPULP_BLOCK = registerBlockAndItem("fluffpulp_block", () -> new FluffpulpBlock(FLUFFPULP_PROPERTIES));
-    public static final RegistryObject<Block> FLUFFPULP_STRANDS = registerBlockAndItem("fluffpulp_strands", () -> new FluffpulpPlantBlock(FLUFFPULP_PROPERTIES.noOcclusion().noCollission().offsetType(BlockBehaviour.OffsetType.XZ)));
-    public static final RegistryObject<Block> FLUFFPULP_TUFT = registerBlockAndItem("fluffpulp_tuft", () -> new FluffpulpPlantBlock(FLUFFPULP_PROPERTIES.noOcclusion().noCollission().offsetType(BlockBehaviour.OffsetType.XZ)));
+    public static final RegistryObject<Block> FLUFFPULP_STRANDS = registerBlockAndItem("fluffpulp_strands", () -> new FluffpulpPlantBlock());
+    public static final RegistryObject<Block> FLUFFPULP_TUFT = registerBlockAndItem("fluffpulp_tuft", () -> new FluffpulpPlantBlock());
     public static final RegistryObject<Block> FLUFFPILLOW = registerBlockAndItem("fluffpillow", () -> new FluffPillowBlock(FLUFFPULP_PROPERTIES));
 
     public static final RegistryObject<Block> LAMPPAPER_BLOCK = registerBlockAndItem("lamppaper_block", () -> new Block(LAMPPAPER_PROPERTIES));
@@ -53,7 +53,7 @@ public class HorizonsBlockRegistry {
     public static final RegistryObject<Block> NIGHT_TORCH = DEF_REG.register("night_torch", () -> new TorchBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noCollission().strength(1.0F).sound(SoundType.WOOD).noCollission().lightLevel(state -> 15).instabreak().noOcclusion(), ParticleTypes.SMOKE));
     public static final RegistryObject<Block> NIGHT_WALL_TORCH = DEF_REG.register("night_wall_torch", () -> new WallTorchBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noCollission().strength(1.0F).sound(SoundType.WOOD).noCollission().lightLevel(state -> 15).instabreak().noOcclusion(), ParticleTypes.SMOKE));
 
-    public static final RegistryObject<Block> BEAD_BERRY_BUSH = DEF_REG.register("bead_berry_bush", () -> new BeadBerryBushBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noCollission().instabreak().sound(SoundType.CHERRY_WOOD)));
+    public static final RegistryObject<Block> BEAD_BERRY_BUSH = DEF_REG.register("bead_berry_bush", () -> new BeadBerryBushBlock());
 
     public static final RegistryObject<Block> BAOBABE_PLANKS = registerBlockAndItem("baobabe_planks", () -> new Block(BAOBABE_PLANKS_PROPERTIES));
     public static final RegistryObject<Block> BAOBABE_PLANKS_STAIRS = registerBlockAndItem("baobabe_stairs", () -> new StairBlock(BAOBABE_PLANKS.get().defaultBlockState(), BAOBABE_PLANKS_PROPERTIES));
