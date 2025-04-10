@@ -18,4 +18,6 @@ public class HorizonsFeatureRegistry {
 
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> IVY = DEF_REG.register("ivy", () -> new IvyFeature(NoneFeatureConfiguration.CODEC));
 
+    public static final RegistryObject<Feature<NoneFeatureConfiguration>> GLOWPINE_TREE = DEF_REG.register("glowpine_tree", () -> new GlowpineTreeFeature(NoneFeatureConfiguration.CODEC));
+
 }

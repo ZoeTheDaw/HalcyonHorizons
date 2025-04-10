@@ -4,6 +4,7 @@ import com.github.alexthe666.citadel.item.BlockItemWithSupplier;
 import com.internals.halcyonhorizons.HalcyonHorizons;
 import com.internals.halcyonhorizons.server.block.grower.BaobabeGrower;
 import com.internals.halcyonhorizons.server.block.grower.CroliveGrower;
+import com.internals.halcyonhorizons.server.block.grower.GlowpineGrower;
 import com.internals.halcyonhorizons.server.item.HorizonsItemRegistry;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
@@ -33,8 +34,12 @@ public class HorizonsBlockRegistry {
     public static final BlockBehaviour.Properties TRAVERTINE_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).strength(1.2F, 4.5F).sound(SoundType.DRIPSTONE_BLOCK);
     public static final BlockBehaviour.Properties MARBLE_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.SNOW).strength(1.2F, 4.5F).sound(SoundType.DEEPSLATE_BRICKS);
 
+    public static final BlockBehaviour.Properties GLOWPINE_PLANKS_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.5F, 2.0F).sound(SoundType.WOOD).instrument(NoteBlockInstrument.BASS);
+    public static final BlockBehaviour.Properties GLOWPINE_LOG_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.5F).sound(SoundType.WOOD).lightLevel(state -> 5).instrument(NoteBlockInstrument.BASS);
+
     public static final WoodType BAOBABE_WOOD_TYPE = WoodType.register(new WoodType("halcyonhorizons:baobabe", BlockSetType.CHERRY));
     public static final WoodType CROLIVE_WOOD_TYPE = WoodType.register(new WoodType("halcyonhorizons:crolive", BlockSetType.DARK_OAK));
+    public static final WoodType GLOWPINE_WOOD_TYPE = WoodType.register(new WoodType("halcyonhorizons:glowpine", BlockSetType.SPRUCE));
 
     public static final DeferredRegister<Block> DEF_REG = DeferredRegister.create(ForgeRegistries.BLOCKS, HalcyonHorizons.MODID);
 
@@ -174,7 +179,12 @@ public class HorizonsBlockRegistry {
     public static final RegistryObject<Block> SMOOTH_MARBLE_STAIRS = registerBlockAndItem("smooth_marble_stairs", () -> new StairBlock(MARBLE.get().defaultBlockState(), MARBLE_PROPERTIES));
     public static final RegistryObject<Block> SMOOTH_MARBLE_SLAB = registerBlockAndItem("smooth_marble_slab", () -> new SlabBlock(MARBLE_PROPERTIES));
 
-    public static final RegistryObject<Block> IVY = registerBlockAndItem("ivy", () -> new IvyBlock(BlockBehaviour.Properties.of().mapColor(MapColor.GRASS).strength(0.5F, .6F).noCollission().noOcclusion().sound(SoundType.VINE)));
+    public static final RegistryObject<Block> IVY = registerBlockAndItem("ivy", () -> new IvyBlock());
+
+    public static final RegistryObject<Block> GLOWPINE_LOG = registerBlockAndItem("glowpine_log", () -> new StrippableLogBlock(GLOWPINE_LOG_PROPERTIES));
+    public static final RegistryObject<Block> GLOWPINE_LEAVES = registerBlockAndItem("glowpine_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(0.2F).randomTicks().lightLevel(state -> 10).sound(SoundType.GRASS).noOcclusion().isSuffocating((blockState, getter, pos) -> false)));
+    public static final RegistryObject<Block> GLOWPINE_SAPLING = registerBlockAndItem("glowpine_sapling", () -> new GlowpineSaplingBlock(new GlowpineGrower(), BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).lightLevel(state -> 5).noCollission().randomTicks().instabreak().noOcclusion().sound(SoundType.GRASS), true));
+
 
 
     private static RegistryObject<Block> registerBlockAndItem(String name, Supplier<Block> block, int itemType) {
