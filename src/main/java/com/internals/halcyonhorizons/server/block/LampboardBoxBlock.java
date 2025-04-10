@@ -31,6 +31,7 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParam;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
@@ -38,12 +39,13 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class LampboardBoxBlock extends BaseEntityBlock {
+    public static final DirectionProperty FACING;
     public static final BooleanProperty OPEN;
     public static final ResourceLocation CONTENTS;
 
     public LampboardBoxBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(0.5F, .6F).sound(SoundType.GRASS).noOcclusion());
-        this.registerDefaultState(this.stateDefinition.any().setValue(OPEN, false));
+        super(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(0.5F, .6F).sound(SoundType.GRASS));
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(OPEN, false));
     }
 
     public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
@@ -97,49 +99,74 @@ public class LampboardBoxBlock extends BaseEntityBlock {
         return AbstractContainerMenu.getRedstoneSignalFromBlockEntity(level.getBlockEntity(blockPos));
     }
 
-    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(OPEN);
+        pBuilder.add(new Property[]{FACING, OPEN});
+    }
+
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext pContext) {
+        return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
     }
 
     public void playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
         BlockEntity blockEntity = level.getBlockEntity(pos);
-        if (blockEntity instanceof LampboardBoxBlockEntity lampboardBoxBlockEntity) {
-            if (!level.isClientSide && player.isCreative() && !lampboardBoxBlockEntity.isEmpty()) {
+        if (blockEntity instanceof LampboardBoxBlockEntity lampboardBox) {
+            if (!level.isClientSide && player.isCreative() && !lampboardBox.isEmpty()) {
+                // Create an item stack from the block itself
                 ItemStack stack = new ItemStack(this);
-                blockEntity.saveToItem(stack);
-                if (lampboardBoxBlockEntity.hasCustomName()) {
-                    stack.setHoverName(lampboardBoxBlockEntity.getCustomName());
+                blockEntity.saveToItem(stack);  // Save the block's contents to the item stack
+                if (lampboardBox.hasCustomName()) {
+                    stack.setHoverName(lampboardBox.getCustomName());  // Preserve the name if it has one
                 }
                 ItemEntity itemEntity = new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, stack);
                 itemEntity.setDefaultPickUpDelay();
-                level.addFreshEntity(itemEntity);
+                level.addFreshEntity(itemEntity);  // Drop the block with its contents
             } else {
-                lampboardBoxBlockEntity.unpackLootTable(player);
+                lampboardBox.unpackLootTable(player);  // Drop individual contents if not in Creative mode
             }
         }
         super.playerWillDestroy(level, pos, state, player);
     }
 
+
+    // Modify the Rotation and Mirroring Behavior
+    @Override
+    public BlockState rotate(BlockState state, Rotation rotation) {
+        return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
+    }
+
+    @Override
+    public BlockState mirror(BlockState state, Mirror mirror) {
+        return state.rotate(mirror.getRotation(state.getValue(FACING)));
+    }
+
     public List<ItemStack> getDrops(BlockState state, LootParams.Builder builder) {
-        BlockEntity parameter = (BlockEntity) builder.getOptionalParameter(LootContextParams.BLOCK_ENTITY);
-        if (parameter instanceof LampboardBoxBlockEntity lampboardBoxBlockEntity) {
-            builder = builder.withDynamicDrop(CONTENTS, (stackConsumer) -> {
-                for (int i = 0; i < lampboardBoxBlockEntity.getContainerSize(); ++i) {
-                    stackConsumer.accept(lampboardBoxBlockEntity.getItem(i));
+        BlockEntity $$2 = (BlockEntity) builder.getOptionalParameter(LootContextParams.BLOCK_ENTITY);
+        if ($$2 instanceof LampboardBoxBlockEntity lampboardBox) {
+            builder = builder.withDynamicDrop(CONTENTS, (p_56219_) -> {
+                for (int i = 0; i < lampboardBox.getContainerSize(); ++i) {
+                    p_56219_.accept(lampboardBox.getItem(i));
                 }
+
             });
         }
+
         return super.getDrops(state, builder);
     }
 
     public ItemStack getCloneItemStack(BlockGetter blockGetter, BlockPos blockPos, BlockState blockState) {
-        ItemStack itemStack = super.getCloneItemStack(blockGetter, blockPos, blockState);
-        blockGetter.getBlockEntity(blockPos, HorizonsBlockEntityRegistry.LAMPBOARD_BOX.get()).ifPresent((lampboardBoxBlockEntity) -> lampboardBoxBlockEntity.saveToItem(itemStack));
-        return itemStack;
+        ItemStack $$3 = super.getCloneItemStack(blockGetter, blockPos, blockState);
+        blockGetter.getBlockEntity(blockPos, HorizonsBlockEntityRegistry.LAMPBOARD_BOX.get()).ifPresent((lampboardBox) -> lampboardBox.saveToItem($$3));
+        return $$3;
+    }
+
+    @Override
+    public RenderShape getRenderShape(BlockState state){
+        return RenderShape.MODEL;
     }
 
     static {
+        FACING = BlockStateProperties.FACING;
         OPEN = BooleanProperty.create("open");
         CONTENTS = new ResourceLocation("contents");
     }
