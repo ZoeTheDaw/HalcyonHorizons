@@ -179,6 +179,8 @@ public class HorizonsBlockRegistry {
     public static final RegistryObject<Block> SMOOTH_MARBLE_STAIRS = registerBlockAndItem("smooth_marble_stairs", () -> new StairBlock(MARBLE.get().defaultBlockState(), MARBLE_PROPERTIES));
     public static final RegistryObject<Block> SMOOTH_MARBLE_SLAB = registerBlockAndItem("smooth_marble_slab", () -> new SlabBlock(MARBLE_PROPERTIES));
 
+    public static final RegistryObject<Block> GOLD_BARS = registerBlockAndItem("gold_bars", () -> new IronBarsBlock(BlockBehaviour.Properties.of().mapColor(MapColor.GOLD).strength(0.3F, 0.6F).sound(SoundType.METAL).noOcclusion()));
+
     public static final RegistryObject<Block> IVY = registerBlockAndItem("ivy", () -> new IvyBlock());
 
     public static final RegistryObject<Block> GLOWPINE_LOG = registerBlockAndItem("glowpine_log", () -> new StrippableLogBlock(GLOWPINE_LOG_PROPERTIES));

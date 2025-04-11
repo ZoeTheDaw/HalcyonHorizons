@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -42,8 +43,8 @@ public class IvyBlock extends Block implements IForgeShearable {
     private static final VoxelShape SOUTH_AABB;
     private final Map<BlockState, VoxelShape> shapesCache;
 
-    public IvyBlock(BlockBehaviour.Properties properties) {
-        super(properties);
+    public IvyBlock() {
+        super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).strength(0.5F, .6F).randomTicks().noOcclusion().sound(SoundType.VINE));
         this.registerDefaultState((BlockState) ((BlockState) ((BlockState) ((BlockState) ((BlockState) ((BlockState) this.stateDefinition.any()).setValue(UP, false)).setValue(NORTH, false)).setValue(EAST, false)).setValue(SOUTH, false)).setValue(WEST, false));
         this.shapesCache = ImmutableMap.copyOf((Map) this.stateDefinition.getPossibleStates().stream().collect(Collectors.toMap(Function.identity(), IvyBlock::calculateShape)));
     }
