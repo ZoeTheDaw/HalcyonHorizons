@@ -63,6 +63,7 @@
   "block.halcyonhorizons.crolive_hanging_sign": "Crolive Hanging Sign",
   "block.halcyonhorizons.crolive_sign": "Crolive Sign",
   "block.halcyonhorizons.crolive_sapling": "Crolive Sapling",
+  "block.halcyonhorizons.potted_crolive_sapling": "Potted Crolive Sapling",
   "block.halcyonhorizons.crolive_branch": "Crolive Branch",
 
   "block.halcyonhorizons.fluffpillow": "Fluffpillow",
@@ -143,7 +144,17 @@
 
   "block.halcyonhorizons.ivy": "Ivy",
 
+  "block.halcyonhorizons.glowpine_log": "Glowpine Log",
+  "block.halcyonhorizons.glowpine_leaves": "Glowpine Leaves",
+  "block.halcyonhorizons.glowpine_sapling": "Glowpine Sapling",
+  "block.halcyonhorizons.potted_glowpine_sapling": "Potted Glowpine Sapling",
+
 
   "creativetab.avian_infirmary": "Avian Infirmary",
-  "creativetab.antique_archives": "Antique Archives"
+  "creativetab.antique_archives": "Antique Archives",
+
+  "halcyonhorizons.sound.subtitle.lamppaper_step": "Footsteps",
+  "halcyonhorizons.sound.subtitle.lamppaper_place": "Block placed",
+  "halcyonhorizons.sound.subtitle.lamppaper_break": "Block broken",
+  "halcyonhorizons.sound.subtitle.lamppaper_breaking": "Block breaking"
 }

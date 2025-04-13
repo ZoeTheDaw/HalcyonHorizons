@@ -57,26 +57,24 @@ public class LampboardBoxBlockEntity extends RandomizableContainerBlockEntity {
                     return false;
                 }
             }
-
-
         };
     }
 
-    public void load (CompoundTag compoundTag) {
+    public void load(CompoundTag compoundTag) {
         super.load(compoundTag);
         this.loadFromTag(compoundTag);
     }
 
     protected void saveAdditional(CompoundTag compoundTag) {
         super.saveAdditional(compoundTag);
-        if(!this.trySaveLootTable(compoundTag)) {
+        if (!this.trySaveLootTable(compoundTag)) {
             ContainerHelper.saveAllItems(compoundTag, this.items, false);
         }
     }
 
     public void loadFromTag(CompoundTag compoundTag) {
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
-        if(!this.tryLoadLootTable(compoundTag) && compoundTag.contains("Items", 9)) {
+        if (!this.tryLoadLootTable(compoundTag) && compoundTag.contains("Items", 9)) {
             ContainerHelper.loadAllItems(compoundTag, this.items);
         }
     }
@@ -127,9 +125,9 @@ public class LampboardBoxBlockEntity extends RandomizableContainerBlockEntity {
     void playSound(BlockState blockState, SoundEvent soundEvent) {
         Vec3i vec3i = ((Direction) blockState.getValue(LampboardBoxBlock.FACING)).getNormal();
         double vec3i2 = (double) this.worldPosition.getX() + (double) 0.5F + (double) vec3i.getX() / (double) 2.0F;
-        double vec3i3 = (double)this.worldPosition.getY() + (double)0.5F + (double)vec3i.getY() / (double)2.0F;
-        double vec3i4 = (double)this.worldPosition.getZ() + (double)0.5F + (double)vec3i.getZ() / (double)2.0F;
-        this.level.playSound((Player)null, vec3i2, vec3i3, vec3i4, soundEvent, SoundSource.BLOCKS, 0.5F, this.level.random.nextFloat() * 0.1F + 0.9F);
+        double vec3i3 = (double) this.worldPosition.getY() + (double) 0.5F + (double) vec3i.getY() / (double) 2.0F;
+        double vec3i4 = (double) this.worldPosition.getZ() + (double) 0.5F + (double) vec3i.getZ() / (double) 2.0F;
+        this.level.playSound((Player) null, vec3i2, vec3i3, vec3i4, soundEvent, SoundSource.BLOCKS, 0.5F, this.level.random.nextFloat() * 0.1F + 0.9F);
     }
 
 

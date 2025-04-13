@@ -156,6 +156,7 @@ public class HorizonsCreativeModeTabRegistry {
                         output.accept(HorizonsBlockRegistry.IVY_MARBLE_BRICK_WALL.get());
                         output.accept(HorizonsBlockRegistry.IVY.get());
                         output.accept(HorizonsBlockRegistry.GOLD_BARS.get());
+                        output.accept(HorizonsBlockRegistry.GOLD_BAR_GATE.get());
                         output.accept(HorizonsBlockRegistry.GLOWPINE_LOG.get());
                         output.accept(HorizonsBlockRegistry.GLOWPINE_LEAVES.get());
                         output.accept(HorizonsBlockRegistry.GLOWPINE_SAPLING.get());

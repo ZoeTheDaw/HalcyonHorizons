@@ -1,0 +1,45 @@
+{
+  "variants": {
+    "facing=north,open=false": {
+      "model": "halcyonhorizons:block/gold_bar_gate",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,open=true": {
+      "model": "halcyonhorizons:block/gold_bar_gate_open",
+      "uvlock": true,
+      "y": 180
+    },
+
+    "facing=south,open=false": {
+      "model": "halcyonhorizons:block/gold_bar_gate",
+      "uvlock": true
+    },
+    "facing=south,open=true": {
+      "model": "halcyonhorizons:block/gold_bar_gate_open",
+      "uvlock": true
+    },
+
+    "facing=west,open=false": {
+      "model": "halcyonhorizons:block/gold_bar_gate",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,open=true": {
+      "model": "halcyonhorizons:block/gold_bar_gate_open",
+      "uvlock": true,
+      "y": 90
+    },
+
+    "facing=east,open=false": {
+      "model": "halcyonhorizons:block/gold_bar_gate",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,open=true": {
+      "model": "halcyonhorizons:block/gold_bar_gate_open",
+      "uvlock": true,
+      "y": 270
+    }
+  }
+}

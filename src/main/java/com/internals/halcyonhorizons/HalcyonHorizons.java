@@ -15,6 +15,7 @@ import com.internals.halcyonhorizons.server.level.structure.HorizonsStructureReg
 import com.internals.halcyonhorizons.server.level.structure.piece.HorizonsStructurePieceRegistry;
 
 import com.internals.halcyonhorizons.server.level.surface.HorizonsSurfaceRuleRegistry;
+import com.internals.halcyonhorizons.server.misc.HorizonsSoundRegistry;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.ForgeConfigSpec;
@@ -62,11 +63,13 @@ public class HalcyonHorizons {
         HorizonsBlockEntityRegistry.DEF_REG.register(modEventBus);
         HorizonsItemRegistry.DEF_REG.register(modEventBus);
         HorizonsFeatureRegistry.DEF_REG.register(modEventBus);
+        HorizonsSoundRegistry.DEF_REG.register(modEventBus);
         HorizonsStructureRegistry.DEF_REG.register(modEventBus);
         HorizonsStructurePieceRegistry.DEF_REG.register(modEventBus);
         HorizonsSurfaceRuleRegistry.DEF_REG.register(modEventBus);
         HorizonsBiomeRegistry.init();
     }
+
     private void commonSetup(final FMLCommonSetupEvent event) {
         HorizonsBlockEntityRegistry.expandVanillaDefinitions();
     }

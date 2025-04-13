@@ -12,6 +12,7 @@ public class HorizonsTagRegistry {
     public static final TagKey<Block> TRAVERTINE_BRICKS = registerBlockTag("travertine_bricks");
     public static final TagKey<Block> ALPHABET_BLOCKS = registerBlockTag("alphabet_blocks");
     public static final TagKey<Block> NUMBER_BLOCKS = registerBlockTag("number_blocks");
+    public static final TagKey<Block> BARS = registerBlockTag("bars");
 
 
     private static TagKey<Block> registerBlockTag(String name) {

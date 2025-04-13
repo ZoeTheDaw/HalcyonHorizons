@@ -1,0 +1,38 @@
+{
+  "lamppaper_step": {
+    "sounds": [
+      "halcyonhorizons:block/lamppaper/lamppaper_step_0",
+      "halcyonhorizons:block/lamppaper/lamppaper_step_1",
+      "halcyonhorizons:block/lamppaper/lamppaper_step_2",
+      "halcyonhorizons:block/lamppaper/lamppaper_step_3"
+    ],
+    "subtitle": "halcyonhorizons.sound.subtitle.lamppaper_step"
+  },
+  "lamppaper_place": {
+    "sounds": [
+      "halcyonhorizons:block/lamppaper/lamppaper_place_0",
+      "halcyonhorizons:block/lamppaper/lamppaper_place_1",
+      "halcyonhorizons:block/lamppaper/lamppaper_place_2",
+      "halcyonhorizons:block/lamppaper/lamppaper_place_3"
+    ],
+    "subtitle": "halcyonhorizons.sound.subtitle.lamppaper_place"
+  },
+  "lamppaper_break": {
+    "sounds": [
+      "halcyonhorizons:block/lamppaper/lamppaper_break_0",
+      "halcyonhorizons:block/lamppaper/lamppaper_break_1",
+      "halcyonhorizons:block/lamppaper/lamppaper_break_2",
+      "halcyonhorizons:block/lamppaper/lamppaper_break_3"
+    ],
+    "subtitle": "halcyonhorizons.sound.subtitle.lamppaper_break"
+  },
+  "lamppaper_breaking": {
+    "sounds": [
+      "halcyonhorizons:block/lamppaper/lamppaper_breaking_0",
+      "halcyonhorizons:block/lamppaper/lamppaper_breaking_1",
+      "halcyonhorizons:block/lamppaper/lamppaper_breaking_2",
+      "halcyonhorizons:block/lamppaper/lamppaper_breaking_3"
+    ],
+    "subtitle": "halcyonhorizons.sound.subtitle.lamppaper_breaking"
+  }
+}

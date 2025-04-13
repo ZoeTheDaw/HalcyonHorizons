@@ -155,9 +155,9 @@ public class LampboardBoxBlock extends BaseEntityBlock {
     }
 
     public ItemStack getCloneItemStack(BlockGetter blockGetter, BlockPos blockPos, BlockState blockState) {
-        ItemStack $$3 = super.getCloneItemStack(blockGetter, blockPos, blockState);
-        blockGetter.getBlockEntity(blockPos, HorizonsBlockEntityRegistry.LAMPBOARD_BOX.get()).ifPresent((lampboardBox) -> lampboardBox.saveToItem($$3));
-        return $$3;
+        ItemStack cloneItemStack = super.getCloneItemStack(blockGetter, blockPos, blockState);
+        blockGetter.getBlockEntity(blockPos, HorizonsBlockEntityRegistry.LAMPBOARD_BOX.get()).ifPresent((lampboardBox) -> lampboardBox.saveToItem(cloneItemStack));
+        return cloneItemStack;
     }
 
     @Override

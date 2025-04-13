@@ -44,7 +44,7 @@ public class IvyBlock extends Block implements IForgeShearable {
     private final Map<BlockState, VoxelShape> shapesCache;
 
     public IvyBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).strength(0.5F, .6F).randomTicks().noOcclusion().sound(SoundType.VINE));
+        super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).strength(0.5F, .6F).randomTicks().noOcclusion().noCollission().sound(SoundType.VINE));
         this.registerDefaultState((BlockState) ((BlockState) ((BlockState) ((BlockState) ((BlockState) ((BlockState) this.stateDefinition.any()).setValue(UP, false)).setValue(NORTH, false)).setValue(EAST, false)).setValue(SOUTH, false)).setValue(WEST, false));
         this.shapesCache = ImmutableMap.copyOf((Map) this.stateDefinition.getPossibleStates().stream().collect(Collectors.toMap(Function.identity(), IvyBlock::calculateShape)));
     }
