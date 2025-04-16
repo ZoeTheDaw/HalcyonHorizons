@@ -53,25 +53,37 @@ public class GlowpineTreeFeature extends Feature<NoneFeatureConfiguration> {
             placeLeafCircle(level, layerPos, radius);
         }
 
-        // Tiny leaf tip at the top
-        level.setBlock(top.above(), HorizonsBlockRegistry.GLOWPINE_LEAVES.get().defaultBlockState(), 2);
-
         return true;
     }
 
     private void placeLeafCircle(WorldGenLevel level, BlockPos center, int radius) {
         for (int dx = -radius; dx <= radius; dx++) {
             for (int dz = -radius; dz <= radius; dz++) {
-                if (Math.abs(dx) + Math.abs(dz) <= radius + 1) { // Diamond/circle shape
-                    BlockPos pos = center.offset(dx, 0, dz);
-                    if (level.getBlockState(pos).isAir()) {
-                        level.setBlock(pos, HorizonsBlockRegistry.GLOWPINE_LEAVES.get().defaultBlockState(), 2);
-                    }
+                BlockPos pos = center.offset(dx, 0, dz);
+                if (level.getBlockState(pos).isAir()) {
+                    level.setBlock(pos, HorizonsBlockRegistry.GLOWPINE_LEAVES.get().defaultBlockState(), 2);
+                }
+            }
+        }
+        int r = Math.max(1, radius);
+        for (int i = 0; i < radius; i++) {
+            BlockPos[] outerEdges = {
+                    center.west(r + 1).north(i),
+                    center.west(r + 1).south(i),
+                    center.north(r + 1).west(i),
+                    center.north(r + 1).east(i),
+                    center.east(r + 1).north(i),
+                    center.east(r + 1).south(i),
+                    center.south(r + 1).west(i),
+                    center.south(r + 1).east(i)
+            };
+
+            for (BlockPos pos : outerEdges) {
+                if (level.getBlockState(pos).isAir()) {
+                    level.setBlock(pos, HorizonsBlockRegistry.GLOWPINE_LEAVES.get().defaultBlockState(), 2);
                 }
             }
         }
     }
-
-
 }
 

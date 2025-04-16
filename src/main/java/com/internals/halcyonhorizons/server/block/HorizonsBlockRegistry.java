@@ -36,7 +36,7 @@ public class HorizonsBlockRegistry {
     public static final BlockBehaviour.Properties MARBLE_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.SNOW).strength(1.2F, 4.5F).sound(SoundType.DEEPSLATE_BRICKS);
 
     public static final BlockBehaviour.Properties GLOWPINE_PLANKS_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.5F, 2.0F).sound(SoundType.WOOD).instrument(NoteBlockInstrument.BASS);
-    public static final BlockBehaviour.Properties GLOWPINE_LOG_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.5F).sound(SoundType.WOOD).lightLevel(state -> 5).instrument(NoteBlockInstrument.BASS);
+    public static final BlockBehaviour.Properties GLOWPINE_LOG_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.5F).sound(SoundType.WOOD).instrument(NoteBlockInstrument.BASS);
 
     public static final WoodType BAOBABE_WOOD_TYPE = WoodType.register(new WoodType("halcyonhorizons:baobabe", BlockSetType.CHERRY));
     public static final WoodType CROLIVE_WOOD_TYPE = WoodType.register(new WoodType("halcyonhorizons:crolive", BlockSetType.DARK_OAK));
@@ -187,8 +187,11 @@ public class HorizonsBlockRegistry {
 
     public static final RegistryObject<Block> IVY = registerBlockAndItem("ivy", () -> new IvyBlock());
 
-    public static final RegistryObject<Block> GLOWPINE_LOG = registerBlockAndItem("glowpine_log", () -> new StrippableLogBlock(GLOWPINE_LOG_PROPERTIES));
-    public static final RegistryObject<Block> GLOWPINE_LEAVES = registerBlockAndItem("glowpine_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(0.2F).randomTicks().lightLevel(state -> 10).sound(SoundType.GRASS).noOcclusion().isSuffocating((blockState, getter, pos) -> false)));
+    public static final RegistryObject<Block> GLOWPINE_LOG = registerBlockAndItem("glowpine_log", () -> new StrippableLogBlock(GLOWPINE_LOG_PROPERTIES.lightLevel(state -> 5)));
+    public static final RegistryObject<Block> GLOWPINE_WOOD = registerBlockAndItem("glowpine_wood", () -> new StrippableLogBlock(GLOWPINE_LOG_PROPERTIES.lightLevel(state -> 5)));
+    public static final RegistryObject<Block> STRIPPED_GLOWPINE_LOG = registerBlockAndItem("stripped_glowpine_log", () -> new RotatedPillarBlock(GLOWPINE_LOG_PROPERTIES.lightLevel(state -> 10)));
+    public static final RegistryObject<Block> STRIPPED_GLOWPINE_WOOD = registerBlockAndItem("stripped_glowpine_wood", () -> new RotatedPillarBlock(GLOWPINE_LOG_PROPERTIES.lightLevel(state -> 10)));
+    public static final RegistryObject<Block> GLOWPINE_LEAVES = registerBlockAndItem("glowpine_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(0.2F).randomTicks().sound(SoundType.CHERRY_LEAVES).noOcclusion().isSuffocating((blockState, getter, pos) -> false)));
     public static final RegistryObject<Block> GLOWPINE_SAPLING = registerBlockAndItem("glowpine_sapling", () -> new GlowpineSaplingBlock(new GlowpineGrower(), BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).lightLevel(state -> 5).noCollission().randomTicks().instabreak().noOcclusion().sound(SoundType.GRASS), true));
     public static final RegistryObject<Block> POTTED_GLOWPINE_SAPLING = DEF_REG.register("potted_glowpine_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, GLOWPINE_SAPLING, BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY)));
 

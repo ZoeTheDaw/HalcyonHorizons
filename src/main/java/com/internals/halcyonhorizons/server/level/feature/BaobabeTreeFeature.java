@@ -35,8 +35,7 @@ public class BaobabeTreeFeature extends Feature<NoneFeatureConfiguration> {
             }
         }
 
-        // Generate the trunk as a single column above the 3x3 base
-        for (int i = 1; i <= height; i++) { // Start at 1 to avoid overwriting the base
+        for (int i = 1; i <= height; i++) {
             BlockPos trunkPos = treeBottom.above(i);
             level.setBlock(trunkPos, HorizonsBlockRegistry.BAOBABE_LOG.get().defaultBlockState(), 3);
         }

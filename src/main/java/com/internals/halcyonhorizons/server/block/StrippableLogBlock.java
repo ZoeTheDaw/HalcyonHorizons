@@ -25,6 +25,18 @@ public class StrippableLogBlock extends RotatedPillarBlock {
             if(this == HorizonsBlockRegistry.BAOBABE_WOOD.get()){
                 return HorizonsBlockRegistry.STRIPPED_BAOBABE_WOOD.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS));
             }
+            if(this == HorizonsBlockRegistry.CROLIVE_LOG.get()){
+                return HorizonsBlockRegistry.STRIPPED_CROLIVE_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS));
+            }
+            if(this == HorizonsBlockRegistry.CROLIVE_WOOD.get()){
+                return HorizonsBlockRegistry.STRIPPED_CROLIVE_WOOD.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS));
+            }
+            if(this == HorizonsBlockRegistry.GLOWPINE_LOG.get()){
+                return HorizonsBlockRegistry.STRIPPED_GLOWPINE_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS));
+            }
+            if(this == HorizonsBlockRegistry.GLOWPINE_WOOD.get()){
+                return HorizonsBlockRegistry.STRIPPED_GLOWPINE_WOOD.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS));
+            }
         }
         return super.getToolModifiedState(state, context, toolAction, simulate);
     }

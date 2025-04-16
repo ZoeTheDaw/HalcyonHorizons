@@ -145,6 +145,9 @@
   "block.halcyonhorizons.ivy": "Ivy",
 
   "block.halcyonhorizons.glowpine_log": "Glowpine Log",
+  "block.halcyonhorizons.glowpine_wood": "Glowpine Wood",
+  "block.halcyonhorizons.stripped_glowpine_log": "Stripped Glowpine Log",
+  "block.halcyonhorizons.stripped_glowpine_wood": "Stripped Glowpine Wood",
   "block.halcyonhorizons.glowpine_leaves": "Glowpine Leaves",
   "block.halcyonhorizons.glowpine_sapling": "Glowpine Sapling",
   "block.halcyonhorizons.potted_glowpine_sapling": "Potted Glowpine Sapling",

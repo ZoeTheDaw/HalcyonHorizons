@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "halcyonhorizons:block/glowpine/stripped_glowpine_log_top",
+    "side": "halcyonhorizons:block/glowpine/stripped_glowpine_log"
+  }
+}

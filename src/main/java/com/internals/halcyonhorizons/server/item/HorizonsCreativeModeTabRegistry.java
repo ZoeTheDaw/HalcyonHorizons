@@ -158,6 +158,9 @@ public class HorizonsCreativeModeTabRegistry {
                         output.accept(HorizonsBlockRegistry.GOLD_BARS.get());
                         output.accept(HorizonsBlockRegistry.GOLD_BAR_GATE.get());
                         output.accept(HorizonsBlockRegistry.GLOWPINE_LOG.get());
+                        output.accept(HorizonsBlockRegistry.GLOWPINE_WOOD.get());
+                        output.accept(HorizonsBlockRegistry.STRIPPED_GLOWPINE_LOG.get());
+                        output.accept(HorizonsBlockRegistry.STRIPPED_GLOWPINE_WOOD.get());
                         output.accept(HorizonsBlockRegistry.GLOWPINE_LEAVES.get());
                         output.accept(HorizonsBlockRegistry.GLOWPINE_SAPLING.get());
 
