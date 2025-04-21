@@ -14,7 +14,6 @@ public class BaobabeGrower extends AbstractTreeGrower {
 
     @Override
     protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource randomSource, boolean b) {
-        System.out.println("BaobabeGrower: Selecting tree feature (Bees: " + b + ")");
         return BAOBABE_TREE;
     }
 }

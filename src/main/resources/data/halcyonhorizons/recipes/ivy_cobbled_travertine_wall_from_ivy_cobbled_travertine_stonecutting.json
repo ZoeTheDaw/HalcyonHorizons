@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "halcyonhorizons:ivy_cobbled_travertine"
+  },
+  "result": "halcyonhorizons:ivy_cobbled_travertine_wall"
+}

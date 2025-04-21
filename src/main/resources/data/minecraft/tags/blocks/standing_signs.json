@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "halcyonhorizons:baobabe_sign"
+    "halcyonhorizons:baobabe_sign",
+    "halcyonhorizons:crolive_sign",
+    "halcyonhorizons:glowpine_sign"
   ]
 }

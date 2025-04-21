@@ -8,9 +8,11 @@ import com.mojang.serialization.Codec;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -152,7 +154,7 @@ public class CroliveTreeFeature extends Feature<NoneFeatureConfiguration> {
         }
     }
 
-    public static boolean canReplace(BlockState state) {
-        return (state.isAir() || state.canBeReplaced() || state.is(HorizonsBlockRegistry.LAMPPAPER_BLOCK.get())) && !state.is(HorizonsTagRegistry.UNMOVABLE) && state.getFluidState().isEmpty();
+    private static boolean canReplace(BlockState state) {
+        return (state.isAir() || state.canBeReplaced() || state.is(HorizonsBlockRegistry.CROLIVE_BRANCH.get()) || state.is(BlockTags.DIRT) || state.is(Blocks.PACKED_MUD)) && !state.is(HorizonsTagRegistry.UNMOVABLE);
     }
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "halcyonhorizons:block/wall_inventory",
+  "textures": {
+    "wall": "halcyonhorizons:block/stratoschist/cobbled_stratoschist",
+    "top" : "halcyonhorizons:block/stratoschist/cobbled_stratoschist"
+  }
+}

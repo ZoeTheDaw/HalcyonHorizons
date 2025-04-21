@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "halcyonhorizons:block/glowpine_slab"
+    },
+    "type=double": {
+      "model": "halcyonhorizons:block/glowpine_planks"
+    },
+    "type=top": {
+      "model": "halcyonhorizons:block/glowpine_slab_top"
+    }
+  }
+}

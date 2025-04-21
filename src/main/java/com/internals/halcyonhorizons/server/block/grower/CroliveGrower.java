@@ -13,7 +13,6 @@ public class CroliveGrower extends AbstractTreeGrower {
 
     @Override
     protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource randomSource, boolean b) {
-        System.out.println("CroliveGrower: Selecting tree feature (Bees: " + b + ")");
         return CROLIVE_TREE;
     }
 }

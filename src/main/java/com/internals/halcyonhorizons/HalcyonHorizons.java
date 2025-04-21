@@ -71,7 +71,10 @@ public class HalcyonHorizons {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        HorizonsBlockEntityRegistry.expandVanillaDefinitions();
+        event.enqueueWork(() -> {
+            HorizonsBlockEntityRegistry.expandVanillaDefinitions();
+            HorizonsBlockRegistry.setup();
+        });
     }
 
     @SubscribeEvent

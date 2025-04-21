@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/door_bottom_left",
+  "render_type": "cutout_mipped",
+  "textures": {
+    "bottom": "halcyonhorizons:block/glowpine/glowpine_door_bottom",
+    "top": "halcyonhorizons:block/glowpine/glowpine_door_top"
+  }
+}

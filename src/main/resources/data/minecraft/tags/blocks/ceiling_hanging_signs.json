@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "halcyonhorizons:baobabe_hanging_sign"
+    "halcyonhorizons:baobabe_hanging_sign",
+    "halcyonhorizons:crolive_hanging_sign",
+    "halcyonhorizons:glowpine_hanging_sign"
   ]
 }

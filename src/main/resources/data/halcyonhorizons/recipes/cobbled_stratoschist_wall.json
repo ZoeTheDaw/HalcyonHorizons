@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "halcyonhorizons:cobbled_stratoschist"
+    }
+  },
+  "result": {
+    "item": "halcyonhorizons:cobbled_stratoschist_wall",
+    "count": 6
+  }
+}

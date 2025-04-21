@@ -141,11 +141,11 @@ public class LampboardBoxBlock extends BaseEntityBlock {
     }
 
     public List<ItemStack> getDrops(BlockState state, LootParams.Builder builder) {
-        BlockEntity $$2 = (BlockEntity) builder.getOptionalParameter(LootContextParams.BLOCK_ENTITY);
-        if ($$2 instanceof LampboardBoxBlockEntity lampboardBox) {
-            builder = builder.withDynamicDrop(CONTENTS, (p_56219_) -> {
+        BlockEntity blockEntity = (BlockEntity) builder.getOptionalParameter(LootContextParams.BLOCK_ENTITY);
+        if (blockEntity instanceof LampboardBoxBlockEntity lampboardBox) {
+            builder = builder.withDynamicDrop(CONTENTS, (itemStackConsumer) -> {
                 for (int i = 0; i < lampboardBox.getContainerSize(); ++i) {
-                    p_56219_.accept(lampboardBox.getItem(i));
+                    itemStackConsumer.accept(lampboardBox.getItem(i));
                 }
 
             });

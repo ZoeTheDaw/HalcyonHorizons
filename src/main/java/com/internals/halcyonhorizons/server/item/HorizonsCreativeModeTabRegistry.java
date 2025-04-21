@@ -90,7 +90,6 @@ public class HorizonsCreativeModeTabRegistry {
                         output.accept(HorizonsItemRegistry.BABY_FORMULA.get());
                         output.accept(HorizonsItemRegistry.BEAD_BERRIES.get());
 
-
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> ANTIQUE_ARCHIVES = CREATIVE_MODE_TABS.register("antique_archives",
@@ -133,6 +132,7 @@ public class HorizonsCreativeModeTabRegistry {
                         output.accept(HorizonsBlockRegistry.TRAVERTINE_BRICK_SLAB.get());
                         output.accept(HorizonsBlockRegistry.TRAVERTINE_BRICK_WALL.get());
                         output.accept(HorizonsBlockRegistry.CHISELED_TRAVERTINE_BRICKS.get());
+                        output.accept(HorizonsBlockRegistry.TRAVERTINE_PILLAR.get());
                         output.accept(HorizonsBlockRegistry.IVY_TRAVERTINE_BRICKS.get());
                         output.accept(HorizonsBlockRegistry.IVY_TRAVERTINE_BRICK_STAIRS.get());
                         output.accept(HorizonsBlockRegistry.IVY_TRAVERTINE_BRICK_SLAB.get());
@@ -150,6 +150,7 @@ public class HorizonsCreativeModeTabRegistry {
                         output.accept(HorizonsBlockRegistry.MARBLE_BRICK_SLAB.get());
                         output.accept(HorizonsBlockRegistry.MARBLE_BRICK_WALL.get());
                         output.accept(HorizonsBlockRegistry.CHISELED_MARBLE_BRICKS.get());
+                        output.accept(HorizonsBlockRegistry.MARBLE_PILLAR.get());
                         output.accept(HorizonsBlockRegistry.IVY_MARBLE_BRICKS.get());
                         output.accept(HorizonsBlockRegistry.IVY_MARBLE_BRICK_STAIRS.get());
                         output.accept(HorizonsBlockRegistry.IVY_MARBLE_BRICK_SLAB.get());
@@ -157,15 +158,42 @@ public class HorizonsCreativeModeTabRegistry {
                         output.accept(HorizonsBlockRegistry.IVY.get());
                         output.accept(HorizonsBlockRegistry.GOLD_BARS.get());
                         output.accept(HorizonsBlockRegistry.GOLD_BAR_GATE.get());
+
+                    }).build());
+
+    public static final RegistryObject<CreativeModeTab> AURORAL_SUMMIT = CREATIVE_MODE_TABS.register("auroral_summit",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(HorizonsBlockRegistry.GLOWPINE_PLANKS.get()))
+                    .title(Component.translatable("creativetab.auroral_summit"))
+                    .displayItems((itemDisplayParameters, output) -> {
                         output.accept(HorizonsBlockRegistry.GLOWPINE_LOG.get());
                         output.accept(HorizonsBlockRegistry.GLOWPINE_WOOD.get());
                         output.accept(HorizonsBlockRegistry.STRIPPED_GLOWPINE_LOG.get());
                         output.accept(HorizonsBlockRegistry.STRIPPED_GLOWPINE_WOOD.get());
+                        output.accept(HorizonsBlockRegistry.GLOWPINE_PLANKS.get());
+                        output.accept(HorizonsBlockRegistry.GLOWPINE_PLANKS_STAIRS.get());
+                        output.accept(HorizonsBlockRegistry.GLOWPINE_PLANKS_SLAB.get());
+                        output.accept(HorizonsBlockRegistry.GLOWPINE_PLANKS_FENCE.get());
+                        output.accept(HorizonsBlockRegistry.GLOWPINE_FENCE_GATE.get());
+                        output.accept(HorizonsItemRegistry.GLOWPINE_DOOR.get());
+                        output.accept(HorizonsItemRegistry.GLOWPINE_TRAPDOOR.get());
+                        output.accept(HorizonsItemRegistry.GLOWPINE_PRESSURE_PLATE.get());
+                        output.accept(HorizonsBlockRegistry.GLOWPINE_BUTTON.get());
+                        output.accept(HorizonsItemRegistry.GLOWPINE_SIGN.get());
+                        output.accept(HorizonsItemRegistry.GLOWPINE_HANGING_SIGN.get());
                         output.accept(HorizonsBlockRegistry.GLOWPINE_LEAVES.get());
+                        output.accept(HorizonsBlockRegistry.GLOWPINE_PINE_LEAVES.get());
                         output.accept(HorizonsBlockRegistry.GLOWPINE_SAPLING.get());
+                        output.accept(HorizonsItemRegistry.GLOWCONE.get());
+                        output.accept(HorizonsBlockRegistry.STRATOSCHIST.get());
+                        output.accept(HorizonsBlockRegistry.STRATOSCHIST_STAIRS.get());
+                        output.accept(HorizonsBlockRegistry.STRATOSCHIST_SLAB.get());
+                        output.accept(HorizonsBlockRegistry.STRATOSCHIST_WALL.get());
+                        output.accept(HorizonsBlockRegistry.COBBLED_STRATOSCHIST.get());
+                        output.accept(HorizonsBlockRegistry.COBBLED_STRATOSCHIST_STAIRS.get());
+                        output.accept(HorizonsBlockRegistry.COBBLED_STRATOSCHIST_SLAB.get());
+                        output.accept(HorizonsBlockRegistry.COBBLED_STRATOSCHIST_WALL.get());
 
                     }).build());
-
 
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);

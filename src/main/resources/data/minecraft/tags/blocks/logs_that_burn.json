@@ -4,6 +4,10 @@
     "halcyonhorizons:baobabe_log",
     "halcyonhorizons:baobabe_wood",
     "halcyonhorizons:stripped_baobabe_log",
-    "halcyonhorizons:stripped_baobabe_wood"
+    "halcyonhorizons:stripped_baobabe_wood",
+    "halcyonhorizons:glowpine_log",
+    "halcyonhorizons:glowpine_wood",
+    "halcyonhorizons:stripped_glowpine_log",
+    "halcyonhorizons:stripped_glowpine_wood"
   ]
 }

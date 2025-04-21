@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "halcyonhorizons:marble"
+  },
+  "result": "halcyonhorizons:marble_brick_stairs"
+}

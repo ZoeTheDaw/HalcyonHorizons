@@ -37,6 +37,8 @@ public class HorizonsBlockRegistry {
 
     public static final BlockBehaviour.Properties GLOWPINE_PLANKS_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.5F, 2.0F).sound(SoundType.WOOD).instrument(NoteBlockInstrument.BASS);
     public static final BlockBehaviour.Properties GLOWPINE_LOG_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.5F).sound(SoundType.WOOD).instrument(NoteBlockInstrument.BASS);
+    public static final BlockBehaviour.Properties STRATOSCHIST_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).strength(2.0F, 4.5F).sound(SoundType.DEEPSLATE).instrument(NoteBlockInstrument.BASS);
+
 
     public static final WoodType BAOBABE_WOOD_TYPE = WoodType.register(new WoodType("halcyonhorizons:baobabe", BlockSetType.CHERRY));
     public static final WoodType CROLIVE_WOOD_TYPE = WoodType.register(new WoodType("halcyonhorizons:crolive", BlockSetType.DARK_OAK));
@@ -133,9 +135,10 @@ public class HorizonsBlockRegistry {
     public static final RegistryObject<Block> CROLIVE_WOOD = registerBlockAndItem("crolive_wood", () -> new StrippableLogBlock(CROLIVE_LOG_PROPERTIES));
     public static final RegistryObject<Block> STRIPPED_CROLIVE_LOG = registerBlockAndItem("stripped_crolive_log", () -> new RotatedPillarBlock(CROLIVE_LOG_PROPERTIES));
     public static final RegistryObject<Block> STRIPPED_CROLIVE_WOOD = registerBlockAndItem("stripped_crolive_wood", () -> new RotatedPillarBlock(CROLIVE_LOG_PROPERTIES));
-    public static final RegistryObject<Block> CROLIVE_SAPLING = registerBlockAndItem("crolive_sapling", () -> new CroliveSaplingBlock(new CroliveGrower(), BlockBehaviour.Properties.of().mapColor(MapColor.GRASS).noCollission().randomTicks().instabreak().noOcclusion().sound(SoundType.WOOD), true));
+    public static final RegistryObject<Block> CROLIVE_SAPLING = registerBlockAndItem("crolive_sapling", () -> new CroliveSaplingBlock(new CroliveGrower(), BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noCollission().randomTicks().instabreak().noOcclusion().sound(SoundType.WOOD), true));
     public static final RegistryObject<Block> POTTED_CROLIVE_SAPLING = DEF_REG.register("potted_crolive_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, CROLIVE_SAPLING, BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> CROLIVE_BRANCH = registerBlockAndItem("crolive_branch", () -> new CroliveBranchBlock());
+    public static final RegistryObject<Block> POTTED_CROLIVE_BRANCH = DEF_REG.register("potted_crolive_branch", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, CROLIVE_BRANCH, BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> CROLIVE_PRESSURE_PLATE = DEF_REG.register("crolive_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(CROLIVE_PLANKS.get()).noCollission().strength(0.5F).sound(SoundType.STONE), BlockSetType.DARK_OAK));
     public static final RegistryObject<Block> CROLIVE_DOOR = DEF_REG.register("crolive_door", () -> new DoorBlock(BlockBehaviour.Properties.copy(CROLIVE_PLANKS.get()).strength(1.5F).sound(SoundType.STONE).noOcclusion(), BlockSetType.DARK_OAK));
     public static final RegistryObject<Block> CROLIVE_TRAPDOOR = DEF_REG.register("crolive_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(3.0F).sound(SoundType.STONE).noOcclusion(), BlockSetType.DARK_OAK));
@@ -163,6 +166,7 @@ public class HorizonsBlockRegistry {
     public static final RegistryObject<Block> IVY_TRAVERTINE_BRICK_STAIRS = registerBlockAndItem("ivy_travertine_brick_stairs", () -> new StairBlock(TRAVERTINE.get().defaultBlockState(), TRAVERTINE_PROPERTIES));
     public static final RegistryObject<Block> IVY_TRAVERTINE_BRICK_SLAB = registerBlockAndItem("ivy_travertine_brick_slab", () -> new SlabBlock(TRAVERTINE_PROPERTIES));
     public static final RegistryObject<Block> IVY_TRAVERTINE_BRICK_WALL = registerBlockAndItem("ivy_travertine_brick_wall", () -> new WallBlock(TRAVERTINE_PROPERTIES));
+    public static final RegistryObject<Block> TRAVERTINE_PILLAR = registerBlockAndItem("travertine_pillar", () -> new RotatedPillarBlock(TRAVERTINE_PROPERTIES));
 
     public static final RegistryObject<Block> MARBLE = registerBlockAndItem("marble", () -> new Block(MARBLE_PROPERTIES));
     public static final RegistryObject<Block> MARBLE_STAIRS = registerBlockAndItem("marble_stairs", () -> new StairBlock(MARBLE.get().defaultBlockState(), MARBLE_PROPERTIES));
@@ -181,6 +185,7 @@ public class HorizonsBlockRegistry {
     public static final RegistryObject<Block> SMOOTH_MARBLE = registerBlockAndItem("smooth_marble", () -> new Block(MARBLE_PROPERTIES));
     public static final RegistryObject<Block> SMOOTH_MARBLE_STAIRS = registerBlockAndItem("smooth_marble_stairs", () -> new StairBlock(MARBLE.get().defaultBlockState(), MARBLE_PROPERTIES));
     public static final RegistryObject<Block> SMOOTH_MARBLE_SLAB = registerBlockAndItem("smooth_marble_slab", () -> new SlabBlock(MARBLE_PROPERTIES));
+    public static final RegistryObject<Block> MARBLE_PILLAR = registerBlockAndItem("marble_pillar", () -> new RotatedPillarBlock(MARBLE_PROPERTIES));
 
     public static final RegistryObject<Block> GOLD_BARS = registerBlockAndItem("gold_bars", () -> new IronBarsBlock(BlockBehaviour.Properties.of().mapColor(MapColor.GOLD).strength(0.3F, 0.6F).sound(SoundType.METAL).noOcclusion()));
     public static final RegistryObject<Block> GOLD_BAR_GATE = registerBlockAndItem("gold_bar_gate", () -> new BarGateBlock(BlockBehaviour.Properties.of().mapColor(MapColor.GOLD).noOcclusion().strength(0.3F, 0.6F).sound(SoundType.METAL).noOcclusion().forceSolidOn(), SoundEvents.IRON_DOOR_OPEN, SoundEvents.IRON_DOOR_CLOSE));
@@ -191,9 +196,32 @@ public class HorizonsBlockRegistry {
     public static final RegistryObject<Block> GLOWPINE_WOOD = registerBlockAndItem("glowpine_wood", () -> new StrippableLogBlock(GLOWPINE_LOG_PROPERTIES.lightLevel(state -> 5)));
     public static final RegistryObject<Block> STRIPPED_GLOWPINE_LOG = registerBlockAndItem("stripped_glowpine_log", () -> new RotatedPillarBlock(GLOWPINE_LOG_PROPERTIES.lightLevel(state -> 10)));
     public static final RegistryObject<Block> STRIPPED_GLOWPINE_WOOD = registerBlockAndItem("stripped_glowpine_wood", () -> new RotatedPillarBlock(GLOWPINE_LOG_PROPERTIES.lightLevel(state -> 10)));
+    public static final RegistryObject<Block> GLOWPINE_PLANKS = registerBlockAndItem("glowpine_planks", () -> new Block(GLOWPINE_PLANKS_PROPERTIES.lightLevel(state -> 10)));
+    public static final RegistryObject<Block> GLOWPINE_PLANKS_STAIRS = registerBlockAndItem("glowpine_stairs", () -> new StairBlock(GLOWPINE_PLANKS.get().defaultBlockState(), GLOWPINE_PLANKS_PROPERTIES.lightLevel(state -> 10)));
+    public static final RegistryObject<Block> GLOWPINE_PLANKS_SLAB = registerBlockAndItem("glowpine_slab", () -> new SlabBlock(GLOWPINE_PLANKS_PROPERTIES.lightLevel(state -> 10)));
+    public static final RegistryObject<Block> GLOWPINE_PLANKS_FENCE = registerBlockAndItem("glowpine_fence", () -> new FenceBlock(GLOWPINE_PLANKS_PROPERTIES.lightLevel(state -> 10)));
+    public static final RegistryObject<Block> GLOWPINE_FENCE_GATE = registerBlockAndItem("glowpine_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.copy(GLOWPINE_PLANKS.get()).lightLevel(state -> 10).strength(2.0F, 3.0F).sound(SoundType.WOOD).forceSolidOn(), SoundEvents.CHERRY_WOOD_FENCE_GATE_CLOSE, SoundEvents.CHERRY_WOOD_FENCE_GATE_CLOSE));
+    public static final RegistryObject<Block> GLOWPINE_SIGN = DEF_REG.register("glowpine_sign", () -> new StandingSignBlock(BlockBehaviour.Properties.of().lightLevel(state -> 10).mapColor(MapColor.WOOD).noCollission().strength(1.0F).sound(SoundType.WOOD), GLOWPINE_WOOD_TYPE));
+    public static final RegistryObject<Block> GLOWPINE_WALL_SIGN = DEF_REG.register("glowpine_wall_sign", () -> new WallSignBlock(BlockBehaviour.Properties.of().lightLevel(state -> 10).mapColor(MapColor.WOOD).noCollission().strength(1.0F).sound(SoundType.WOOD), GLOWPINE_WOOD_TYPE));
+    public static final RegistryObject<Block> GLOWPINE_HANGING_SIGN = DEF_REG.register("glowpine_hanging_sign", () -> new CeilingHangingSignBlock(BlockBehaviour.Properties.of().lightLevel(state -> 10).mapColor(MapColor.WOOD).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F), GLOWPINE_WOOD_TYPE));
+    public static final RegistryObject<Block> GLOWPINE_WALL_HANGING_SIGN = DEF_REG.register("glowpine_wall_hanging_sign", () -> new WallHangingSignBlock(BlockBehaviour.Properties.of().lightLevel(state -> 10).mapColor(MapColor.WOOD).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).dropsLike(GLOWPINE_HANGING_SIGN.get()), GLOWPINE_WOOD_TYPE));
     public static final RegistryObject<Block> GLOWPINE_LEAVES = registerBlockAndItem("glowpine_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(0.2F).randomTicks().sound(SoundType.CHERRY_LEAVES).noOcclusion().isSuffocating((blockState, getter, pos) -> false)));
+    public static final RegistryObject<Block> GLOWPINE_PINE_LEAVES = registerBlockAndItem("glowpine_pine_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(0.2F).randomTicks().lightLevel(state -> 10).sound(SoundType.CHERRY_LEAVES).noOcclusion().isSuffocating((blockState, getter, pos) -> false)));
     public static final RegistryObject<Block> GLOWPINE_SAPLING = registerBlockAndItem("glowpine_sapling", () -> new GlowpineSaplingBlock(new GlowpineGrower(), BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).lightLevel(state -> 5).noCollission().randomTicks().instabreak().noOcclusion().sound(SoundType.GRASS), true));
-    public static final RegistryObject<Block> POTTED_GLOWPINE_SAPLING = DEF_REG.register("potted_glowpine_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, GLOWPINE_SAPLING, BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> POTTED_GLOWPINE_SAPLING = DEF_REG.register("potted_glowpine_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, GLOWPINE_SAPLING, BlockBehaviour.Properties.of().instabreak().lightLevel(state -> 5).noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> GLOWPINE_BUTTON = registerBlockAndItem("glowpine_button", () -> new ButtonBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).noCollission().lightLevel(state -> 5).strength(0.5F).sound(SoundType.WOOD), BlockSetType.DARK_OAK, 30, true));
+    public static final RegistryObject<Block> GLOWPINE_PRESSURE_PLATE = DEF_REG.register("glowpine_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(GLOWPINE_PLANKS.get()).lightLevel(state -> 5).noCollission().strength(0.5F).sound(SoundType.CHERRY_WOOD), BlockSetType.CHERRY));
+    public static final RegistryObject<Block> GLOWPINE_DOOR = DEF_REG.register("glowpine_door", () -> new DoorBlock(BlockBehaviour.Properties.copy(GLOWPINE_PLANKS.get()).lightLevel(state -> 10).strength(1.5F).sound(SoundType.WOOD).noOcclusion(), BlockSetType.DARK_OAK));
+    public static final RegistryObject<Block> GLOWPINE_TRAPDOOR = DEF_REG.register("glowpine_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.of().lightLevel(state -> 10).mapColor(MapColor.WOOD).strength(3.0F).sound(SoundType.WOOD).noOcclusion(), BlockSetType.DARK_OAK));
+
+    public static final RegistryObject<Block> STRATOSCHIST = registerBlockAndItem("stratoschist", () -> new Block(STRATOSCHIST_PROPERTIES));
+    public static final RegistryObject<Block> STRATOSCHIST_STAIRS = registerBlockAndItem("stratoschist_stairs", () -> new StairBlock(STRATOSCHIST.get().defaultBlockState(), STRATOSCHIST_PROPERTIES));
+    public static final RegistryObject<Block> STRATOSCHIST_SLAB = registerBlockAndItem("stratoschist_slab", () -> new SlabBlock(STRATOSCHIST_PROPERTIES));
+    public static final RegistryObject<Block> STRATOSCHIST_WALL = registerBlockAndItem("stratoschist_wall", () -> new WallBlock(STRATOSCHIST_PROPERTIES));
+    public static final RegistryObject<Block> COBBLED_STRATOSCHIST = registerBlockAndItem("cobbled_stratoschist", () -> new Block(STRATOSCHIST_PROPERTIES));
+    public static final RegistryObject<Block> COBBLED_STRATOSCHIST_STAIRS = registerBlockAndItem("cobbled_stratoschist_stairs", () -> new StairBlock(STRATOSCHIST.get().defaultBlockState(), STRATOSCHIST_PROPERTIES));
+    public static final RegistryObject<Block> COBBLED_STRATOSCHIST_SLAB = registerBlockAndItem("cobbled_stratoschist_slab", () -> new SlabBlock(STRATOSCHIST_PROPERTIES));
+    public static final RegistryObject<Block> COBBLED_STRATOSCHIST_WALL = registerBlockAndItem("cobbled_stratoschist_wall", () -> new WallBlock(STRATOSCHIST_PROPERTIES));
 
 
     private static RegistryObject<Block> registerBlockAndItem(String name, Supplier<Block> block, int itemType) {
@@ -214,9 +242,10 @@ public class HorizonsBlockRegistry {
         }
     }
 
-    private static void setup() {
+    public static void setup() {
         FlowerPotBlock flowerPotBlock = (FlowerPotBlock) Blocks.FLOWER_POT;
         flowerPotBlock.addPlant(CROLIVE_SAPLING.getId(), POTTED_CROLIVE_SAPLING);
+        flowerPotBlock.addPlant(CROLIVE_BRANCH.getId(), POTTED_CROLIVE_BRANCH);
         flowerPotBlock.addPlant(GLOWPINE_SAPLING.getId(), POTTED_GLOWPINE_SAPLING);
 
     }

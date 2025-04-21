@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "wooden_button",
+  "ingredients": [
+    {
+      "item": "halcyonhorizons:glowpine_planks"
+    }
+  ],
+  "result": {
+    "item": "halcyonhorizons:glowpine_button"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "halcyonhorizons:glowpine_logs"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "halcyonhorizons:glowpine_planks"
+  }
+}

@@ -69,4 +69,12 @@ public class HorizonsItemRegistry {
 
     public static final RegistryObject<Item> NIGHTLIGHT_GEL = DEF_REG.register("nightlight_gel", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> NIGHT_TORCH = DEF_REG.register("night_torch", () -> new StandingAndWallBlockItem(HorizonsBlockRegistry.NIGHT_TORCH.get(), HorizonsBlockRegistry.NIGHT_WALL_TORCH.get(), new Item.Properties(), Direction.DOWN));
+
+    public static final RegistryObject<Item> GLOWPINE_HANGING_SIGN = DEF_REG.register("glowpine_hanging_sign", () -> new HangingSignItem(HorizonsBlockRegistry.GLOWPINE_HANGING_SIGN.get(), HorizonsBlockRegistry.GLOWPINE_WALL_HANGING_SIGN.get(), (new Item.Properties()).stacksTo(16)));
+    public static final RegistryObject<Item> GLOWPINE_SIGN = DEF_REG.register("glowpine_sign", () -> new SignItem((new Item.Properties()).stacksTo(16), HorizonsBlockRegistry.GLOWPINE_SIGN.get(), HorizonsBlockRegistry.GLOWPINE_WALL_SIGN.get()));
+    public static final RegistryObject<Item> GLOWPINE_PRESSURE_PLATE = DEF_REG.register("glowpine_pressure_plate", () -> new BlockItem(HorizonsBlockRegistry.GLOWPINE_PRESSURE_PLATE.get(), (new Item.Properties())));
+    public static final RegistryObject<Item> GLOWPINE_DOOR = DEF_REG.register("glowpine_door", () -> new DoubleHighBlockItem(HorizonsBlockRegistry.GLOWPINE_DOOR.get(), (new Item.Properties())));
+    public static final RegistryObject<Item> GLOWPINE_TRAPDOOR = DEF_REG.register("glowpine_trapdoor", () -> new BlockItem(HorizonsBlockRegistry.GLOWPINE_TRAPDOOR.get(), (new Item.Properties())));
+    public static final RegistryObject<Item> GLOWCONE = DEF_REG.register("glowcone", () -> new Item(new Item.Properties()));
+
 }

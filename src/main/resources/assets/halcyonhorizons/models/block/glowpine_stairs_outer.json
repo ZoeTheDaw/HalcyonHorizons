@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "halcyonhorizons:block/glowpine/glowpine_planks",
+    "side": "halcyonhorizons:block/glowpine/glowpine_planks",
+    "top": "halcyonhorizons:block/glowpine/glowpine_planks"
+  }
+}

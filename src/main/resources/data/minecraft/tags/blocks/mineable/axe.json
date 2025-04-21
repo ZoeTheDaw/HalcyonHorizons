@@ -1,6 +1,6 @@
 {
   "replace": false,
-  "values" : [
+  "values": [
     "halcyonhorizons:baobabe_button",
     "halcyonhorizons:baobabe_door",
     "halcyonhorizons:baobabe_fence",
@@ -17,6 +17,23 @@
     "halcyonhorizons:baobabe_wall_sign",
     "halcyonhorizons:baobabe_wood",
     "halcyonhorizons:stripped_baobabe_log",
-    "halcyonhorizons:stripped_baobabe_wood"
+    "halcyonhorizons:stripped_baobabe_wood",
+    "halcyonhorizons:glowpine_button",
+    "halcyonhorizons:glowpine_door",
+    "halcyonhorizons:glowpine_fence",
+    "halcyonhorizons:glowpine_fence_gate",
+    "halcyonhorizons:glowpine_hanging_sign",
+    "halcyonhorizons:glowpine_log",
+    "halcyonhorizons:glowpine_planks",
+    "halcyonhorizons:glowpine_pressure_plate",
+    "halcyonhorizons:glowpine_sign",
+    "halcyonhorizons:glowpine_slab",
+    "halcyonhorizons:glowpine_stairs",
+    "halcyonhorizons:glowpine_trapdoor",
+    "halcyonhorizons:glowpine_wall_hanging_sign",
+    "halcyonhorizons:glowpine_wall_sign",
+    "halcyonhorizons:glowpine_wood",
+    "halcyonhorizons:stripped_glowpine_log",
+    "halcyonhorizons:stripped_glowpine_wood"
   ]
 }

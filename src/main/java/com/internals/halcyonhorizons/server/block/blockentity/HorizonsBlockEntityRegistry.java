@@ -21,6 +21,8 @@ public class HorizonsBlockEntityRegistry {
         validSignBlocks.add(HorizonsBlockRegistry.BAOBABE_WALL_SIGN.get());
         validSignBlocks.add(HorizonsBlockRegistry.CROLIVE_SIGN.get());
         validSignBlocks.add(HorizonsBlockRegistry.CROLIVE_WALL_SIGN.get());
+        validSignBlocks.add(HorizonsBlockRegistry.GLOWPINE_SIGN.get());
+        validSignBlocks.add(HorizonsBlockRegistry.GLOWPINE_WALL_SIGN.get());
         BlockEntityType.SIGN.validBlocks = validSignBlocks.build();
         ImmutableSet.Builder<Block> validHangingSignBlocks = new ImmutableSet.Builder<>();
         validHangingSignBlocks.addAll(BlockEntityType.HANGING_SIGN.validBlocks);
@@ -28,6 +30,8 @@ public class HorizonsBlockEntityRegistry {
         validHangingSignBlocks.add(HorizonsBlockRegistry.BAOBABE_WALL_HANGING_SIGN.get());
         validHangingSignBlocks.add(HorizonsBlockRegistry.CROLIVE_HANGING_SIGN.get());
         validHangingSignBlocks.add(HorizonsBlockRegistry.CROLIVE_WALL_HANGING_SIGN.get());
+        validHangingSignBlocks.add(HorizonsBlockRegistry.GLOWPINE_HANGING_SIGN.get());
+        validHangingSignBlocks.add(HorizonsBlockRegistry.GLOWPINE_WALL_HANGING_SIGN.get());
         BlockEntityType.HANGING_SIGN.validBlocks = validHangingSignBlocks.build();
     }
 }

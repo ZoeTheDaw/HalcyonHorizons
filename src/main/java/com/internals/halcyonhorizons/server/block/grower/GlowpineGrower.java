@@ -12,7 +12,6 @@ public class GlowpineGrower extends AbstractTreeGrower {
     public static final ResourceKey<ConfiguredFeature<?, ?>> GLOWPINE_TREE = ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(HalcyonHorizons.MODID, "glowpine_tree"));
     @Override
     protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource randomSource, boolean b) {
-        System.out.println("CroliveGrower: Selecting tree feature (Bees: " + b + ")");
         return GLOWPINE_TREE;
     }
 }

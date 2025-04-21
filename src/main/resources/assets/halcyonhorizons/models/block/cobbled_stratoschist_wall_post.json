@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_wall_post",
+  "textures": {
+    "wall": "halcyonhorizons:block/stratoschist/cobbled_stratoschist",
+    "top" : "halcyonhorizons:block/stratoschist/cobbled_stratoschist"
+  }
+}
