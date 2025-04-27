@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "halcyonhorizons:block/stratoschist_brick_slab"
+    },
+    "type=double": {
+      "model": "halcyonhorizons:block/stratoschist_bricks"
+    },
+    "type=top": {
+      "model": "halcyonhorizons:block/stratoschist_brick_slab_top"
+    }
+  }
+}

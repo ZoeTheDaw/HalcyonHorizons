@@ -2,13 +2,16 @@
   "replace": false,
   "values": [
     "halcyonhorizons:crolive_wall",
-    "halcyonhorizons:travertine_wall",
     "halcyonhorizons:cobbled_travertine_wall",
     "halcyonhorizons:ivy_cobbled_travertine_wall",
-    "halcyonhorizons:travertine_brick_wall",
     "halcyonhorizons:ivy_travertine_brick_wall",
-    "halcyonhorizons:marble_wall",
+    "halcyonhorizons:travertine_brick_wall",
+    "halcyonhorizons:travertine_wall",
+    "halcyonhorizons:ivy_marble_brick_wall",
     "halcyonhorizons:marble_brick_wall",
-    "halcyonhorizons:ivy_marble_brick_wall"
+    "halcyonhorizons:marble_wall",
+    "halcyonhorizons:cobbled_stratoschist_wall",
+    "halcyonhorizons:stratoschist_brick_wall",
+    "halcyonhorizons:stratoschist_wall"
   ]
 }

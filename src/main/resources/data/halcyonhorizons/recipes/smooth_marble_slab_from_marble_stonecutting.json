@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "halcyonhorizons:marble"
-  },
-  "result": "halcyonhorizons:smooth_marble_slab"
-}

@@ -75,6 +75,7 @@
   "item.halcyonhorizons.fluffpulp_diaper": "Fluffpulp Diaper",
   "item.halcyonhorizons.fluffpulp_feather": "Fluffpulp Feather",
   "item.halcyonhorizons.fluffpulp_strand": "Fluffpulp Strand",
+  "block.halcyonhorizons.wet_fluffpulp_block": "Wet Fluffpulp Block",
 
   "block.halcyonhorizons.lampboard_block": "Lampboard Block",
   "block.halcyonhorizons.lampboard_box": "Lampboard Box",
@@ -110,6 +111,9 @@
   "block.halcyonhorizons.cobbled_travertine_slab": "Cobbled Travertine Slab",
   "block.halcyonhorizons.cobbled_travertine_stairs": "Cobbled Travertine Stairs",
   "block.halcyonhorizons.cobbled_travertine_wall": "Cobbled Travertine Wall",
+  "block.halcyonhorizons.polished_travertine": "Polished Travertine",
+  "block.halcyonhorizons.polished_travertine_slab": "Polished Travertine Slab",
+  "block.halcyonhorizons.polished_travertine_stairs": "Polished Travertine Stairs",
   "block.halcyonhorizons.ivy_cobbled_travertine": "Ivy Cobbled Travertine",
   "block.halcyonhorizons.ivy_cobbled_travertine_slab": "Ivy Cobbled Travertine Slab",
   "block.halcyonhorizons.ivy_cobbled_travertine_stairs": "Ivy Cobbled Travertine Stairs",
@@ -130,9 +134,9 @@
   "block.halcyonhorizons.marble_slab": "Marble Slab",
   "block.halcyonhorizons.marble_stairs": "Marble Stairs",
   "block.halcyonhorizons.marble_wall": "Marble Wall",
-  "block.halcyonhorizons.smooth_marble": "Smooth Marble",
-  "block.halcyonhorizons.smooth_marble_slab": "Smooth Marble Slab",
-  "block.halcyonhorizons.smooth_marble_stairs": "Smooth Marble Stairs",
+  "block.halcyonhorizons.polished_marble": "Polished Marble",
+  "block.halcyonhorizons.polished_marble_slab": "Polished Marble Slab",
+  "block.halcyonhorizons.polished_marble_stairs": "Polished Marble Stairs",
   "block.halcyonhorizons.marble_bricks": "Marble Bricks",
   "block.halcyonhorizons.marble_brick_slab": "Marble Brick Slab",
   "block.halcyonhorizons.marble_brick_stairs": "Marble Brick Stairs",
@@ -146,6 +150,8 @@
   "block.halcyonhorizons.ivy_marble_brick_wall": "Ivy Marble Brick Wall",
 
   "block.halcyonhorizons.ivy": "Ivy",
+
+  "block.halcyonhorizons.gold_bars": "Gold Bars",
 
   "block.halcyonhorizons.glowpine_button": "Glowpine Button",
   "block.halcyonhorizons.glowpine_door": "Glowpine Door",
@@ -175,6 +181,27 @@
   "block.halcyonhorizons.cobbled_stratoschist_slab": "Cobbled Stratoschist Slab",
   "block.halcyonhorizons.cobbled_stratoschist_stairs": "Cobbled Stratoschist Stairs",
   "block.halcyonhorizons.cobbled_stratoschist_wall": "Cobbled Stratoschist Wall",
+  "block.halcyonhorizons.stratoschist_bricks": "Stratoschist Bricks",
+  "block.halcyonhorizons.stratoschist_brick_slab": "Stratoschist Brick Slab",
+  "block.halcyonhorizons.stratoschist_brick_stairs": "Stratoschist Brick Stairs",
+  "block.halcyonhorizons.stratoschist_brick_wall": "Stratoschist Brick Wall",
+  "block.halcyonhorizons.cracked_stratoschist_bricks": "Cracked Stratoschist Bricks",
+  "block.halcyonhorizons.chiseled_stratoschist_bricks": "Chiseled Stratoschist Bricks",
+  "block.halcyonhorizons.polished_stratoschist": "Polished Stratoschist",
+  "block.halcyonhorizons.polished_stratoschist_slab": "Polished Stratoschist Slab",
+  "block.halcyonhorizons.polished_stratoschist_stairs": "Polished Stratoschist Stairs",
+  "block.halcyonhorizons.stratoschist_pillar": "Stratoschist Pillar",
+
+  "block.halcyonhorizons.permafrost": "Permafrost",
+  "block.halcyonhorizons.permafrost_slab": "Permafrost Slab",
+  "block.halcyonhorizons.permafrost_stairs": "Permafrost Stairs",
+  "block.halcyonhorizons.permafrost_wall": "Permafrost Wall",
+  "block.halcyonhorizons.permafrost_bricks": "Permafrost Bricks",
+  "block.halcyonhorizons.permafrost_brick_slab": "Permafrost Brick Slab",
+  "block.halcyonhorizons.permafrost_brick_stairs": "Permafrost Brick Stairs",
+  "block.halcyonhorizons.permafrost_brick_wall": "Permafrost Brick Wall",
+
+
 
   "creativetab.avian_infirmary": "Avian Infirmary",
   "creativetab.antique_archives": "Antique Archives",

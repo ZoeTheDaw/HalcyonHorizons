@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "halcyonhorizons:stratoschist_bricks"
+  },
+  "result": "halcyonhorizons:stratoschist_brick_wall"
+}

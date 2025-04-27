@@ -51,8 +51,6 @@ public class HalcyonHorizons {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         HorizonsCreativeModeTabRegistry.register(modEventBus);
-//        ModBlocks.register(modEventBus);
-//        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::loadConfig);
         modEventBus.addListener(this::reloadConfig);

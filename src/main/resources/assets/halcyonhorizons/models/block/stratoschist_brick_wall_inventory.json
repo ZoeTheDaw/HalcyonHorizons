@@ -1,0 +1,7 @@
+{
+  "parent": "halcyonhorizons:block/wall_inventory",
+  "textures": {
+    "wall": "halcyonhorizons:block/stratoschist/stratoschist_bricks",
+    "top" : "halcyonhorizons:block/stratoschist/stratoschist_bricks"
+  }
+}

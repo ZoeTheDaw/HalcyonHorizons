@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "halcyonhorizons:crolive_planks"
+  },
+  "result": "halcyonhorizons:crolive_trapdoor"
+}

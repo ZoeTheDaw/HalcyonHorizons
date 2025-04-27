@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "halcyonhorizons:block/stratoschist/stratoschist_pillar_top",
+    "side": "halcyonhorizons:block/stratoschist/stratoschist_pillar"
+  }
+}

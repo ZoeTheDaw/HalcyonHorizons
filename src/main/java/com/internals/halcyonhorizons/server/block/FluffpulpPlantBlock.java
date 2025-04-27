@@ -26,7 +26,7 @@ public class FluffpulpPlantBlock extends BushBlock {
     protected static final VoxelShape SHAPE;
 
     public FluffpulpPlantBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.WOOL).strength(0.5F, .6F).sound(SoundType.WOOL).noOcclusion().noCollission().offsetType(BlockBehaviour.OffsetType.XZ));
+        super(BlockBehaviour.Properties.of().mapColor(MapColor.WOOL).strength(0.5F, .6F).sound(SoundType.WOOL).noOcclusion().noCollission().offsetType(BlockBehaviour.OffsetType.XYZ));
     }
 
     public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
