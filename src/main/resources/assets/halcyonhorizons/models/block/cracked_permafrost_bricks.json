@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "halcyonhorizons:block/permafrost/cracked_permafrost_bricks"
+  }
+}

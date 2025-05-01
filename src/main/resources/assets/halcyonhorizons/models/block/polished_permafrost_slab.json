@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "halcyonhorizons:block/permafrost/polished_permafrost",
+    "side": "halcyonhorizons:block/permafrost/polished_permafrost",
+    "top": "halcyonhorizons:block/permafrost/polished_permafrost"
+  }
+}

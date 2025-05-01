@@ -38,7 +38,7 @@ public class HorizonsBlockRegistry {
     public static final BlockBehaviour.Properties GLOWPINE_PLANKS_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.5F, 2.0F).sound(SoundType.WOOD).instrument(NoteBlockInstrument.BASS);
     public static final BlockBehaviour.Properties GLOWPINE_LOG_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.5F).sound(SoundType.WOOD).instrument(NoteBlockInstrument.BASS);
     public static final BlockBehaviour.Properties STRATOSCHIST_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).strength(2.0F, 4.5F).sound(SoundType.DEEPSLATE).instrument(NoteBlockInstrument.BASS);
-    public static final BlockBehaviour.Properties PERMAFROST_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.ICE).strength(2.0F, 4.5F).friction(0.98F).sound(SoundType.CORAL_BLOCK).instrument(NoteBlockInstrument.BASS);
+    public static final BlockBehaviour.Properties PERMAFROST_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.ICE).strength(2.0F, 4.5F).friction(0.98F).sound(SoundType.DEEPSLATE).instrument(NoteBlockInstrument.BASS);
 
 
     public static final WoodType BAOBABE_WOOD_TYPE = WoodType.register(new WoodType("halcyonhorizons:baobabe", BlockSetType.CHERRY));
@@ -243,9 +243,15 @@ public class HorizonsBlockRegistry {
     public static final RegistryObject<Block> PERMAFROST_SLAB = registerBlockAndItem("permafrost_slab", () -> new SlabBlock(PERMAFROST_PROPERTIES));
     public static final RegistryObject<Block> PERMAFROST_WALL = registerBlockAndItem("permafrost_wall", () -> new WallBlock(PERMAFROST_PROPERTIES));
     public static final RegistryObject<Block> PERMAFROST_BRICKS = registerBlockAndItem("permafrost_bricks", () -> new Block(PERMAFROST_PROPERTIES));
-    public static final RegistryObject<Block> PERMAFROST_BRICK_STAIRS = registerBlockAndItem("permafrost_brick_stairs", () -> new StairBlock(PERMAFROST_BRICKS.get().defaultBlockState(), PERMAFROST_PROPERTIES));
+    public static final RegistryObject<Block> PERMAFROST_BRICK_STAIRS = registerBlockAndItem("permafrost_brick_stairs", () -> new StairBlock(STRATOSCHIST.get().defaultBlockState(), PERMAFROST_PROPERTIES));
     public static final RegistryObject<Block> PERMAFROST_BRICK_SLAB = registerBlockAndItem("permafrost_brick_slab", () -> new SlabBlock(PERMAFROST_PROPERTIES));
     public static final RegistryObject<Block> PERMAFROST_BRICK_WALL = registerBlockAndItem("permafrost_brick_wall", () -> new WallBlock(PERMAFROST_PROPERTIES));
+    public static final RegistryObject<Block> CRACKED_PERMAFROST_BRICKS = registerBlockAndItem("cracked_permafrost_bricks", () -> new Block(PERMAFROST_PROPERTIES));
+    public static final RegistryObject<Block> CHISELED_PERMAFROST_BRICKS = registerBlockAndItem("chiseled_permafrost_bricks", () -> new Block(PERMAFROST_PROPERTIES));
+    public static final RegistryObject<Block> POLISHED_PERMAFROST = registerBlockAndItem("polished_permafrost", () -> new Block(PERMAFROST_PROPERTIES));
+    public static final RegistryObject<Block> POLISHED_PERMAFROST_STAIRS = registerBlockAndItem("polished_permafrost_stairs", () -> new StairBlock(STRATOSCHIST.get().defaultBlockState(), PERMAFROST_PROPERTIES));
+    public static final RegistryObject<Block> POLISHED_PERMAFROST_SLAB = registerBlockAndItem("polished_permafrost_slab", () -> new SlabBlock(PERMAFROST_PROPERTIES));
+    public static final RegistryObject<Block> PERMAFROST_PILLAR = registerBlockAndItem("permafrost_pillar", () -> new RotatedPillarBlock(PERMAFROST_PROPERTIES));
 
 
     private static RegistryObject<Block> registerBlockAndItem(String name, Supplier<Block> block, int itemType) {

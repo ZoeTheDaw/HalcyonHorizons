@@ -212,9 +212,16 @@ public class HorizonsCreativeModeTabRegistry {
                         output.accept(HorizonsBlockRegistry.PERMAFROST_SLAB.get());
                         output.accept(HorizonsBlockRegistry.PERMAFROST_WALL.get());
                         output.accept(HorizonsBlockRegistry.PERMAFROST_BRICKS.get());
+                        output.accept(HorizonsBlockRegistry.CRACKED_PERMAFROST_BRICKS.get());
                         output.accept(HorizonsBlockRegistry.PERMAFROST_BRICK_STAIRS.get());
                         output.accept(HorizonsBlockRegistry.PERMAFROST_BRICK_SLAB.get());
                         output.accept(HorizonsBlockRegistry.PERMAFROST_BRICK_WALL.get());
+                        output.accept(HorizonsBlockRegistry.CHISELED_PERMAFROST_BRICKS.get());
+                        output.accept(HorizonsBlockRegistry.PERMAFROST_PILLAR.get());
+                        output.accept(HorizonsBlockRegistry.POLISHED_PERMAFROST.get());
+                        output.accept(HorizonsBlockRegistry.POLISHED_PERMAFROST_STAIRS.get());
+                        output.accept(HorizonsBlockRegistry.POLISHED_PERMAFROST_SLAB.get());
+
 
                     }).build());
 

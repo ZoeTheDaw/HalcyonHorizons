@@ -1,0 +1,7 @@
+{
+  "__comment": "all mobs that can walk on permafrost blocks.",
+  "values": [
+    "minecraft:stray",
+    "minecraft:snow_golem"
+  ]
+}
