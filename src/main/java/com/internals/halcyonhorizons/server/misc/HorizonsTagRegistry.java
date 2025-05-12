@@ -4,6 +4,7 @@ import com.internals.halcyonhorizons.HalcyonHorizons;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
 public class HorizonsTagRegistry {
@@ -17,5 +18,11 @@ public class HorizonsTagRegistry {
 
     private static TagKey<Block> registerBlockTag(String name) {
         return TagKey.create(Registries.BLOCK, new ResourceLocation(HalcyonHorizons.MODID, name));
+    }
+
+
+
+    private static TagKey<Item> registerItemTag(String name) {
+        return TagKey.create(Registries.ITEM, new ResourceLocation(HalcyonHorizons.MODID, name));
     }
 }

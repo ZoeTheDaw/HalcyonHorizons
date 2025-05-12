@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "halcyonhorizons:polished_permafrost"
+  },
+  "result": "halcyonhorizons:polished_permafrost_stairs"
+}

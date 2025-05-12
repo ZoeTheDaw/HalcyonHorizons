@@ -11,8 +11,14 @@
     "halcyonhorizons:marble_brick_wall",
     "halcyonhorizons:marble_wall",
     "halcyonhorizons:permafrost_wall",
+    "halcyonhorizons:permafrost_brick_wall",
     "halcyonhorizons:cobbled_stratoschist_wall",
     "halcyonhorizons:stratoschist_brick_wall",
-    "halcyonhorizons:stratoschist_wall"
+    "halcyonhorizons:stratoschist_wall",
+    "halcyonhorizons:stripped_crolive_wall",
+    "halcyonhorizons:polished_marble_wall",
+    "halcyonhorizons:polished_permafrost_wall",
+    "halcyonhorizons:polished_stratoschist_wall",
+    "halcyonhorizons:polished_travertine_wall"
   ]
 }

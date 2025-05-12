@@ -38,7 +38,7 @@ public class HorizonsBlockRegistry {
     public static final BlockBehaviour.Properties GLOWPINE_PLANKS_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.5F, 2.0F).sound(SoundType.WOOD).instrument(NoteBlockInstrument.BASS);
     public static final BlockBehaviour.Properties GLOWPINE_LOG_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.5F).sound(SoundType.WOOD).instrument(NoteBlockInstrument.BASS);
     public static final BlockBehaviour.Properties STRATOSCHIST_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).strength(2.0F, 4.5F).sound(SoundType.DEEPSLATE).instrument(NoteBlockInstrument.BASS);
-    public static final BlockBehaviour.Properties PERMAFROST_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.ICE).strength(2.0F, 4.5F).friction(0.98F).sound(SoundType.DEEPSLATE).instrument(NoteBlockInstrument.BASS);
+    public static final BlockBehaviour.Properties PERMAFROST_PROPERTIES = BlockBehaviour.Properties.of().mapColor(MapColor.ICE).strength(2.0F, 4.5F).sound(SoundType.DEEPSLATE).instrument(NoteBlockInstrument.BASS);
 
 
     public static final WoodType BAOBABE_WOOD_TYPE = WoodType.register(new WoodType("halcyonhorizons:baobabe", BlockSetType.CHERRY));
@@ -128,7 +128,8 @@ public class HorizonsBlockRegistry {
     public static final RegistryObject<Block> CROLIVE_PLANKS_SLAB = registerBlockAndItem("crolive_slab", () -> new SlabBlock(CROLIVE_PLANKS_PROPERTIES));
     public static final RegistryObject<Block> CROLIVE_PLANKS_FENCE = registerBlockAndItem("crolive_fence", () -> new FenceBlock(CROLIVE_PLANKS_PROPERTIES));
     public static final RegistryObject<Block> CROLIVE_FENCE_GATE = registerBlockAndItem("crolive_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.copy(CROLIVE_PLANKS.get()).strength(2.0F, 3.0F).sound(SoundType.STONE).forceSolidOn(), SoundEvents.CHERRY_WOOD_FENCE_GATE_CLOSE, SoundEvents.CHERRY_WOOD_FENCE_GATE_CLOSE));
-    public static final RegistryObject<Block> CROLIVE_WOOD_WALL = registerBlockAndItem("crolive_wall", () -> new WallBlock(CROLIVE_PLANKS_PROPERTIES));
+    public static final RegistryObject<Block> CROLIVE_WOOD_WALL = registerBlockAndItem("crolive_wall", () -> new WallBlock(CROLIVE_LOG_PROPERTIES));
+    public static final RegistryObject<Block> STRIPPED_CROLIVE_WOOD_WALL = registerBlockAndItem("stripped_crolive_wall", () -> new WallBlock(CROLIVE_LOG_PROPERTIES));
     public static final RegistryObject<Block> CROLIVE_SIGN = DEF_REG.register("crolive_sign", () -> new StandingSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noCollission().strength(1.0F).sound(SoundType.STONE), CROLIVE_WOOD_TYPE));
     public static final RegistryObject<Block> CROLIVE_WALL_SIGN = DEF_REG.register("crolive_wall_sign", () -> new WallSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noCollission().strength(1.0F).sound(SoundType.STONE), CROLIVE_WOOD_TYPE));
     public static final RegistryObject<Block> CROLIVE_HANGING_SIGN = DEF_REG.register("crolive_hanging_sign", () -> new CeilingHangingSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F), CROLIVE_WOOD_TYPE));
@@ -161,6 +162,7 @@ public class HorizonsBlockRegistry {
     public static final RegistryObject<Block> POLISHED_TRAVERTINE = registerBlockAndItem("polished_travertine", () -> new Block(TRAVERTINE_PROPERTIES));
     public static final RegistryObject<Block> POLISHED_TRAVERTINE_STAIRS = registerBlockAndItem("polished_travertine_stairs", () -> new StairBlock(TRAVERTINE.get().defaultBlockState(), TRAVERTINE_PROPERTIES));
     public static final RegistryObject<Block> POLISHED_TRAVERTINE_SLAB = registerBlockAndItem("polished_travertine_slab", () -> new SlabBlock(TRAVERTINE_PROPERTIES));
+    public static final RegistryObject<Block> POLISHED_TRAVERTINE_WALL = registerBlockAndItem("polished_travertine_wall", () -> new WallBlock(TRAVERTINE_PROPERTIES));
     public static final RegistryObject<Block> TRAVERTINE_BRICKS = registerBlockAndItem("travertine_bricks", () -> new Block(TRAVERTINE_PROPERTIES));
     public static final RegistryObject<Block> TRAVERTINE_BRICK_STAIRS = registerBlockAndItem("travertine_brick_stairs", () -> new StairBlock(TRAVERTINE.get().defaultBlockState(), TRAVERTINE_PROPERTIES));
     public static final RegistryObject<Block> TRAVERTINE_BRICK_SLAB = registerBlockAndItem("travertine_brick_slab", () -> new SlabBlock(TRAVERTINE_PROPERTIES));
@@ -180,6 +182,7 @@ public class HorizonsBlockRegistry {
     public static final RegistryObject<Block> MARBLE_BRICKS = registerBlockAndItem("marble_bricks", () -> new Block(MARBLE_PROPERTIES));
     public static final RegistryObject<Block> MARBLE_BRICK_STAIRS = registerBlockAndItem("marble_brick_stairs", () -> new StairBlock(MARBLE.get().defaultBlockState(), MARBLE_PROPERTIES));
     public static final RegistryObject<Block> MARBLE_BRICK_SLAB = registerBlockAndItem("marble_brick_slab", () -> new SlabBlock(MARBLE_PROPERTIES));
+    public static final RegistryObject<Block> MARBLE_BRICK_FENCE = registerBlockAndItem("marble_brick_fence", () -> new FenceBlock(MARBLE_PROPERTIES));
     public static final RegistryObject<Block> MARBLE_BRICK_WALL = registerBlockAndItem("marble_brick_wall", () -> new WallBlock(MARBLE_PROPERTIES));
     public static final RegistryObject<Block> CRACKED_MARBLE_BRICKS = registerBlockAndItem("cracked_marble_bricks", () -> new Block(MARBLE_PROPERTIES));
     public static final RegistryObject<Block> CHISELED_MARBLE_BRICKS = registerBlockAndItem("chiseled_marble_bricks", () -> new Block(MARBLE_PROPERTIES));
@@ -190,6 +193,7 @@ public class HorizonsBlockRegistry {
     public static final RegistryObject<Block> POLISHED_MARBLE = registerBlockAndItem("polished_marble", () -> new Block(MARBLE_PROPERTIES));
     public static final RegistryObject<Block> POLISHED_MARBLE_STAIRS = registerBlockAndItem("polished_marble_stairs", () -> new StairBlock(MARBLE.get().defaultBlockState(), MARBLE_PROPERTIES));
     public static final RegistryObject<Block> POLISHED_MARBLE_SLAB = registerBlockAndItem("polished_marble_slab", () -> new SlabBlock(MARBLE_PROPERTIES));
+    public static final RegistryObject<Block> POLISHED_MARBLE_WALL = registerBlockAndItem("polished_marble_wall", () -> new WallBlock(MARBLE_PROPERTIES));
     public static final RegistryObject<Block> MARBLE_PILLAR = registerBlockAndItem("marble_pillar", () -> new RotatedPillarBlock(MARBLE_PROPERTIES));
 
     public static final RegistryObject<Block> GOLD_BARS = registerBlockAndItem("gold_bars", () -> new IronBarsBlock(BlockBehaviour.Properties.of().mapColor(MapColor.GOLD).strength(0.3F, 0.6F).sound(SoundType.METAL).noOcclusion()));
@@ -233,9 +237,12 @@ public class HorizonsBlockRegistry {
     public static final RegistryObject<Block> STRATOSCHIST_BRICK_WALL = registerBlockAndItem("stratoschist_brick_wall", () -> new WallBlock(STRATOSCHIST_PROPERTIES));
     public static final RegistryObject<Block> CRACKED_STRATOSCHIST_BRICKS = registerBlockAndItem("cracked_stratoschist_bricks", () -> new Block(STRATOSCHIST_PROPERTIES));
     public static final RegistryObject<Block> CHISELED_STRATOSCHIST_BRICKS = registerBlockAndItem("chiseled_stratoschist_bricks", () -> new Block(STRATOSCHIST_PROPERTIES));
+    public static final RegistryObject<Block> CHISELED_STRATOSCHIST_BRICKS_SOLAR = registerBlockAndItem("chiseled_stratoschist_bricks_solar", () -> new Block(STRATOSCHIST_PROPERTIES));
+    public static final RegistryObject<Block> CHISELED_STRATOSCHIST_BRICKS_LUNAR = registerBlockAndItem("chiseled_stratoschist_bricks_lunar", () -> new Block(STRATOSCHIST_PROPERTIES));
     public static final RegistryObject<Block> POLISHED_STRATOSCHIST = registerBlockAndItem("polished_stratoschist", () -> new Block(STRATOSCHIST_PROPERTIES));
     public static final RegistryObject<Block> POLISHED_STRATOSCHIST_STAIRS = registerBlockAndItem("polished_stratoschist_stairs", () -> new StairBlock(STRATOSCHIST.get().defaultBlockState(), STRATOSCHIST_PROPERTIES));
     public static final RegistryObject<Block> POLISHED_STRATOSCHIST_SLAB = registerBlockAndItem("polished_stratoschist_slab", () -> new SlabBlock(STRATOSCHIST_PROPERTIES));
+    public static final RegistryObject<Block> POLISHED_STRATOSCHIST_WALL = registerBlockAndItem("polished_stratoschist_wall", () -> new WallBlock(PERMAFROST_PROPERTIES));
     public static final RegistryObject<Block> STRATOSCHIST_PILLAR = registerBlockAndItem("stratoschist_pillar", () -> new RotatedPillarBlock(STRATOSCHIST_PROPERTIES));
 
     public static final RegistryObject<Block> PERMAFROST = registerBlockAndItem("permafrost", () -> new PermafrostBlock());
@@ -251,6 +258,7 @@ public class HorizonsBlockRegistry {
     public static final RegistryObject<Block> POLISHED_PERMAFROST = registerBlockAndItem("polished_permafrost", () -> new Block(PERMAFROST_PROPERTIES));
     public static final RegistryObject<Block> POLISHED_PERMAFROST_STAIRS = registerBlockAndItem("polished_permafrost_stairs", () -> new StairBlock(STRATOSCHIST.get().defaultBlockState(), PERMAFROST_PROPERTIES));
     public static final RegistryObject<Block> POLISHED_PERMAFROST_SLAB = registerBlockAndItem("polished_permafrost_slab", () -> new SlabBlock(PERMAFROST_PROPERTIES));
+    public static final RegistryObject<Block> POLISHED_PERMAFROST_WALL = registerBlockAndItem("polished_permafrost_wall", () -> new WallBlock(PERMAFROST_PROPERTIES));
     public static final RegistryObject<Block> PERMAFROST_PILLAR = registerBlockAndItem("permafrost_pillar", () -> new RotatedPillarBlock(PERMAFROST_PROPERTIES));
 
 

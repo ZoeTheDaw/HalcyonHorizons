@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "tag": "halcyonhorizons:stripped_crolive_logs"
+  },
+  "result": "halcyonhorizons:stripped_crolive_wall"
+}

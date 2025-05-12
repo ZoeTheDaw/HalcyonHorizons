@@ -19,7 +19,7 @@ import net.minecraft.world.level.pathfinder.PathComputationType;
 
 public class PermafrostBlock extends Block {
     public PermafrostBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.ICE).friction(0.98F).strength(1.2F, 4.5F).sound(SoundType.DEEPSLATE));
+        super(BlockBehaviour.Properties.of().mapColor(MapColor.ICE).strength(1.2F, 4.5F).sound(SoundType.DEEPSLATE));
     }
 
     public void stepOn(Level level, BlockPos blockPos, BlockState blockState, Entity entity) {

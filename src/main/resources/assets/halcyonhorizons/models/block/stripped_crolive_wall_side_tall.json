@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_wall_side_tall",
+  "textures": {
+    "wall": "halcyonhorizons:block/crolive/stripped_crolive_log",
+    "top" : "halcyonhorizons:block/crolive/stripped_crolive_log"
+  }
+}

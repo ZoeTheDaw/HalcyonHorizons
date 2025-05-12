@@ -13,7 +13,7 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.phys.Vec3;
 
-public class FluffpulpBlock extends Block{
+public class FluffpulpBlock extends Block {
     public static final int MAX_DEPTH = 6;
     public static final int MAX_COUNT = 64;
     private static final Direction[] ALL_DIRECTIONS = Direction.values();
@@ -75,7 +75,7 @@ public class FluffpulpBlock extends Block{
     private boolean removeWaterBreadthFirstSearch(Level level, BlockPos blockPos) {
         BlockState fluffpulpState = level.getBlockState(blockPos);
         return BlockPos.breadthFirstTraversal(blockPos, 3, 65, (blockPos1, blockPosConsumer) -> {
-            for(Direction direction : ALL_DIRECTIONS) {
+            for (Direction direction : ALL_DIRECTIONS) {
                 blockPosConsumer.accept(blockPos1.relative(direction));
             }
 
@@ -90,7 +90,7 @@ public class FluffpulpBlock extends Block{
                 } else {
                     Block block = blockstate.getBlock();
                     if (block instanceof BucketPickup) {
-                        BucketPickup bucketpickup = (BucketPickup)block;
+                        BucketPickup bucketpickup = (BucketPickup) block;
                         if (!bucketpickup.pickupBlock(level, blockPos1, blockstate).isEmpty()) {
                             return true;
                         }

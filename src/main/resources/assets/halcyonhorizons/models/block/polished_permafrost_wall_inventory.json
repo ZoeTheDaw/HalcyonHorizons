@@ -1,0 +1,7 @@
+{
+  "parent": "halcyonhorizons:block/wall_inventory",
+  "textures": {
+    "wall": "halcyonhorizons:block/permafrost/polished_permafrost",
+    "top" : "halcyonhorizons:block/permafrost/polished_permafrost"
+  }
+}

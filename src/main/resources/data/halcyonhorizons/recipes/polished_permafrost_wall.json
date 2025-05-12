@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "halcyonhorizons:polished_permafrost"
+    }
+  },
+  "result": {
+    "item": "halcyonhorizons:polished_permafrost_wall",
+    "count": 6
+  }
+}

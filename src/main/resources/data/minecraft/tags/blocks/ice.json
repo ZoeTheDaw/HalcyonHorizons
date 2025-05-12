@@ -2,16 +2,8 @@
   "replace": false,
   "values": [
     "halcyonhorizons:permafrost",
-    "halcyonhorizons:permafrost_brick_slab",
-    "halcyonhorizons:permafrost_brick_stairs",
-    "halcyonhorizons:permafrost_brick_wall",
-    "halcyonhorizons:permafrost_bricks",
-    "halcyonhorizons:permafrost_pillar",
     "halcyonhorizons:permafrost_slab",
     "halcyonhorizons:permafrost_stairs",
-    "halcyonhorizons:permafrost_wall",
-    "halcyonhorizons:polished_permafrost",
-    "halcyonhorizons:polished_permafrost_slab",
-    "halcyonhorizons:polished_permafrost_stairs"
+    "halcyonhorizons:permafrost_wall"
   ]
 }

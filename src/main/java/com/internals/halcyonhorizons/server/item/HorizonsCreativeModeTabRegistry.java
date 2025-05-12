@@ -108,6 +108,7 @@ public class HorizonsCreativeModeTabRegistry {
                         output.accept(HorizonsBlockRegistry.CROLIVE_PLANKS_FENCE.get());
                         output.accept(HorizonsBlockRegistry.CROLIVE_FENCE_GATE.get());
                         output.accept(HorizonsBlockRegistry.CROLIVE_WOOD_WALL.get());
+                        output.accept(HorizonsBlockRegistry.STRIPPED_CROLIVE_WOOD_WALL.get());
                         output.accept(HorizonsItemRegistry.CROLIVE_DOOR.get());
                         output.accept(HorizonsItemRegistry.CROLIVE_TRAPDOOR.get());
                         output.accept(HorizonsItemRegistry.CROLIVE_PRESSURE_PLATE.get());
@@ -131,6 +132,7 @@ public class HorizonsCreativeModeTabRegistry {
                         output.accept(HorizonsBlockRegistry.POLISHED_TRAVERTINE.get());
                         output.accept(HorizonsBlockRegistry.POLISHED_TRAVERTINE_STAIRS.get());
                         output.accept(HorizonsBlockRegistry.POLISHED_TRAVERTINE_SLAB.get());
+                        output.accept(HorizonsBlockRegistry.POLISHED_TRAVERTINE_WALL.get());
                         output.accept(HorizonsBlockRegistry.TRAVERTINE_BRICKS.get());
                         output.accept(HorizonsBlockRegistry.CRACKED_TRAVERTINE_BRICKS.get());
                         output.accept(HorizonsBlockRegistry.TRAVERTINE_BRICK_STAIRS.get());
@@ -149,10 +151,12 @@ public class HorizonsCreativeModeTabRegistry {
                         output.accept(HorizonsBlockRegistry.POLISHED_MARBLE.get());
                         output.accept(HorizonsBlockRegistry.POLISHED_MARBLE_STAIRS.get());
                         output.accept(HorizonsBlockRegistry.POLISHED_MARBLE_SLAB.get());
+                        output.accept(HorizonsBlockRegistry.POLISHED_MARBLE_WALL.get());
                         output.accept(HorizonsBlockRegistry.MARBLE_BRICKS.get());
                         output.accept(HorizonsBlockRegistry.CRACKED_MARBLE_BRICKS.get());
                         output.accept(HorizonsBlockRegistry.MARBLE_BRICK_STAIRS.get());
                         output.accept(HorizonsBlockRegistry.MARBLE_BRICK_SLAB.get());
+                        output.accept(HorizonsBlockRegistry.MARBLE_BRICK_FENCE.get());
                         output.accept(HorizonsBlockRegistry.MARBLE_BRICK_WALL.get());
                         output.accept(HorizonsBlockRegistry.CHISELED_MARBLE_BRICKS.get());
                         output.accept(HorizonsBlockRegistry.MARBLE_PILLAR.get());
@@ -203,10 +207,13 @@ public class HorizonsCreativeModeTabRegistry {
                         output.accept(HorizonsBlockRegistry.STRATOSCHIST_BRICK_SLAB.get());
                         output.accept(HorizonsBlockRegistry.STRATOSCHIST_BRICK_WALL.get());
                         output.accept(HorizonsBlockRegistry.CHISELED_STRATOSCHIST_BRICKS.get());
+                        output.accept(HorizonsBlockRegistry.CHISELED_STRATOSCHIST_BRICKS_SOLAR.get());
+                        output.accept(HorizonsBlockRegistry.CHISELED_STRATOSCHIST_BRICKS_LUNAR.get());
                         output.accept(HorizonsBlockRegistry.STRATOSCHIST_PILLAR.get());
                         output.accept(HorizonsBlockRegistry.POLISHED_STRATOSCHIST.get());
                         output.accept(HorizonsBlockRegistry.POLISHED_STRATOSCHIST_STAIRS.get());
                         output.accept(HorizonsBlockRegistry.POLISHED_STRATOSCHIST_SLAB.get());
+                        output.accept(HorizonsBlockRegistry.POLISHED_STRATOSCHIST_WALL.get());
                         output.accept(HorizonsBlockRegistry.PERMAFROST.get());
                         output.accept(HorizonsBlockRegistry.PERMAFROST_STAIRS.get());
                         output.accept(HorizonsBlockRegistry.PERMAFROST_SLAB.get());
@@ -221,6 +228,7 @@ public class HorizonsCreativeModeTabRegistry {
                         output.accept(HorizonsBlockRegistry.POLISHED_PERMAFROST.get());
                         output.accept(HorizonsBlockRegistry.POLISHED_PERMAFROST_STAIRS.get());
                         output.accept(HorizonsBlockRegistry.POLISHED_PERMAFROST_SLAB.get());
+                        output.accept(HorizonsBlockRegistry.POLISHED_PERMAFROST_WALL.get());
 
 
                     }).build());

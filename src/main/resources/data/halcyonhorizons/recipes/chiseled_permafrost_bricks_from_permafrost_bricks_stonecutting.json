@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "halcyonhorizons:permafrost_bricks"
+  },
+  "result": "halcyonhorizons:chiseled_permafrost_bricks"
+}

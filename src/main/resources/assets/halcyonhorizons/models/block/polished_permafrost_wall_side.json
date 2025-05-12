@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_wall_side",
+  "textures": {
+    "wall": "halcyonhorizons:block/permafrost/polished_permafrost",
+    "top" : "halcyonhorizons:block/permafrost/polished_permafrost"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "halcyonhorizons:permafrost_bricks"
+    }
+  },
+  "result": {
+    "item": "halcyonhorizons:permafrost_brick_wall",
+    "count": 6
+  }
+}

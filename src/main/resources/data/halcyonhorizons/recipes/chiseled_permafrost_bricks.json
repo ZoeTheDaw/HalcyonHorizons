@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "halcyonhorizons:permafrost_brick_slab"
+    }
+  },
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "result": {
+    "item": "halcyonhorizons:chiseled_permafrost_bricks"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "halcyonhorizons:block/wall_inventory",
+  "textures": {
+    "wall": "halcyonhorizons:block/crolive/stripped_crolive_log",
+    "top" : "halcyonhorizons:block/crolive/stripped_crolive_log"
+  }
+}
